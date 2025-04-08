@@ -38,6 +38,7 @@
     <Folder Include="Data\Migrations\AppDb\" />
     <Folder Include="Data\Migrations\PersistedGrantsDb\" />
     <Folder Include="Keys\" />
+    <Folder Include="logs\" />
   </ItemGroup>
 
 </Project>

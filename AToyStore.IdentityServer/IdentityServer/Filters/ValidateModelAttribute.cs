@@ -3,9 +3,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace IdentityServer.Filters;
 
-/// <summary>
 /// Фильтр, автоматически проверяющий валидность модели и возвращающий 400 Bad Request при ошибках валидации.
-/// </summary>
 public class ValidateModelAttribute : ActionFilterAttribute
 {
     // Метод вызывается перед выполнением действия контроллера

@@ -4,9 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace IdentityServer.Data.Configurations;
 
-/// <summary>
-/// Конфигурация сущности User с использованием Fluent API.
-/// </summary>
+/// Конфигурация сущности User 
 public class UserConfiguration : IEntityTypeConfiguration<User>
 {
     public void Configure(EntityTypeBuilder<User> builder)

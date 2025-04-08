@@ -3,9 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace IdentityServer.Models;
 
-/// <summary>
 /// Модель refresh-токена для обновления JWT без повторной аутентификации.
-/// </summary>
 public class RefreshToken
 {
     // Уникальный идентификатор токена

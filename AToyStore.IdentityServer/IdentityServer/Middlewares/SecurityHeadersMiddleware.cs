@@ -37,8 +37,8 @@ public class SecurityHeadersMiddleware
         // Отключает передачу Referer-заголовка для защиты от утечек
         headers["Referrer-Policy"] = "no-referrer";
 
-        // HSTS — сообщает браузеру всегда использовать HTTPS (включай только при HTTPS!)
-        headers["Strict-Transport-Security"] = "max-age=63072000; includeSubDomains; preload";
+        // HSTS — сообщает браузеру всегда использовать HTTPS (включить для HTTPS)
+        //headers["Strict-Transport-Security"] = "max-age=63072000; includeSubDomains; preload";
 
         // Запрещает доступ к API браузера (геолокация, камера, микрофон и т.д.)
         headers["Permissions-Policy"] = "geolocation=(), camera=(), microphone=(), fullscreen=(self)";
