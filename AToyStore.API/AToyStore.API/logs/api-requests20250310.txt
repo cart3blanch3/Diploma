@@ -1,0 +1,982 @@
+2025-03-10 13:42:10.985 +05:00 [INF] User profile is available. Using 'C:\Users\Sergey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-10 13:42:11.198 +05:00 [INF] Now listening on: https://localhost:7117
+2025-03-10 13:42:11.201 +05:00 [INF] Now listening on: http://localhost:5062
+2025-03-10 13:42:11.258 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-10 13:42:11.260 +05:00 [INF] Hosting environment: Development
+2025-03-10 13:42:11.262 +05:00 [INF] Content root path: C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API
+2025-03-10 13:42:45.050 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 13:42:45.090 +05:00 [INF] CORS policy execution successful.
+2025-03-10 13:42:45.093 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 13.0383 ms
+2025-03-10 13:42:45.105 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 57.7714ms
+2025-03-10 13:42:45.117 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 13:42:45.127 +05:00 [INF] CORS policy execution successful.
+2025-03-10 13:42:45.188 +05:00 [INF] 🔹 Получен JWT: null
+2025-03-10 13:42:45.205 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> System.MissingMethodException: Method not found: 'Byte[] Microsoft.IdentityModel.Tokens.Base64UrlEncoder.UnsafeDecode(System.ReadOnlyMemory`1<Char>)'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2025-03-10 13:42:45.228 +05:00 [ERR] ❌ Ошибка аутентификации: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2025-03-10 13:42:45.231 +05:00 [INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2025-03-10 13:42:45.240 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 13:42:45.244 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 13:42:45.245 +05:00 [INF] HTTP GET /api/products responded 401 in 123.0373 ms
+2025-03-10 13:42:45.248 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 131.0762ms
+2025-03-10 13:50:06.569 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 13:50:06.574 +05:00 [INF] CORS policy execution successful.
+2025-03-10 13:50:06.576 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 3.5893 ms
+2025-03-10 13:50:06.579 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 9.2435ms
+2025-03-10 13:50:06.586 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 13:50:06.588 +05:00 [INF] CORS policy execution successful.
+2025-03-10 13:50:06.590 +05:00 [INF] 🔹 Получен JWT: null
+2025-03-10 13:50:06.591 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> System.MissingMethodException: Method not found: 'Byte[] Microsoft.IdentityModel.Tokens.Base64UrlEncoder.UnsafeDecode(System.ReadOnlyMemory`1<Char>)'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2025-03-10 13:50:06.601 +05:00 [ERR] ❌ Ошибка аутентификации: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2025-03-10 13:50:06.603 +05:00 [INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2025-03-10 13:50:06.605 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 13:50:06.606 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 13:50:06.607 +05:00 [INF] HTTP GET /api/products responded 401 in 19.2080 ms
+2025-03-10 13:50:06.608 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 22.3418ms
+2025-03-10 13:52:01.045 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/ - null null
+2025-03-10 13:52:01.259 +05:00 [INF] 🔹 Получен JWT: null
+2025-03-10 13:52:01.264 +05:00 [INF] ➡️ Входящий запрос: GET /
+2025-03-10 13:52:01.269 +05:00 [INF] ⬅️ Ответ: 404
+2025-03-10 13:52:01.270 +05:00 [INF] HTTP GET / responded 404 in 11.6093 ms
+2025-03-10 13:52:01.272 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/ - 404 0 null 230.6096ms
+2025-03-10 13:52:01.276 +05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5062/, Response status code: 404
+2025-03-10 13:57:45.425 +05:00 [INF] User profile is available. Using 'C:\Users\Sergey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-10 13:57:45.634 +05:00 [INF] Now listening on: https://localhost:7117
+2025-03-10 13:57:45.634 +05:00 [INF] Now listening on: http://localhost:5062
+2025-03-10 13:57:45.678 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-10 13:57:45.680 +05:00 [INF] Hosting environment: Development
+2025-03-10 13:57:45.681 +05:00 [INF] Content root path: C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API
+2025-03-10 13:57:51.531 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 13:57:51.563 +05:00 [INF] CORS policy execution successful.
+2025-03-10 13:57:51.566 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 5.1641 ms
+2025-03-10 13:57:51.576 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 53.1545ms
+2025-03-10 13:57:51.588 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 13:57:51.593 +05:00 [INF] CORS policy execution successful.
+2025-03-10 13:57:51.663 +05:00 [INF] 🔑 Заголовок Authorization: ["Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4ZjA3OThlYS04ZjdhLTQyYmEtYTRmMy1iNzIzNzkxMTc5OTIiLCJlbWFpbCI6ImFkbWluQGF0b3lzdG9yZS5jb20iLCJmdWxsTmFtZSI6IkFkbWluIFVzZXIiLCJyb2xlIjoiQWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc0MTU5NzU1Nn0.LlMRCkLjjOCZjDUQie54kdsR7Xeo7GFlEkixJ1V0hmDaBBz0WXPoz9J295eCFYfPQfReDrXG4jEWhNhFq9R0jD1qytoKS-LYBq0NYPDT6QvdHQ-XYAAwUbgXJSmsIsnYmHqjPm_CDJaFrjnePgVHExANAlfZmgc-1gAOb98nZ9AtTmtnvUGyweIryE5Fo8IJ-AFXvLsDVY78FVCR6HLcuaVCrBbf1cw3848RLXvOoObzCdWokqfngPeTd14yPVnD007aXhqDoDux2DxLCvAruEGJwYxWWAIwnx53HMVz7pOGlHRRTYOl16wSsCtfjKmviImjZZzZ6JjekqyNs6oCkg"]
+2025-03-10 13:57:51.680 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> System.MissingMethodException: Method not found: 'Byte[] Microsoft.IdentityModel.Tokens.Base64UrlEncoder.UnsafeDecode(System.ReadOnlyMemory`1<Char>)'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2025-03-10 13:57:51.707 +05:00 [ERR] ❌ Ошибка аутентификации: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2025-03-10 13:57:51.710 +05:00 [INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2025-03-10 13:57:51.714 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 13:57:51.720 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 13:57:51.721 +05:00 [INF] HTTP GET /api/products responded 401 in 128.5967 ms
+2025-03-10 13:57:51.723 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 135.0942ms
+2025-03-10 13:59:08.625 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 13:59:08.629 +05:00 [INF] CORS policy execution successful.
+2025-03-10 13:59:08.629 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 1.1430 ms
+2025-03-10 13:59:08.632 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 35.1601ms
+2025-03-10 13:59:08.640 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 13:59:08.642 +05:00 [INF] CORS policy execution successful.
+2025-03-10 13:59:08.644 +05:00 [INF] 🔑 Заголовок Authorization: ["Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4ZjA3OThlYS04ZjdhLTQyYmEtYTRmMy1iNzIzNzkxMTc5OTIiLCJlbWFpbCI6ImFkbWluQGF0b3lzdG9yZS5jb20iLCJmdWxsTmFtZSI6IkFkbWluIFVzZXIiLCJyb2xlIjoiQWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc0MTU5ODAyMH0.HNu0sIifbwUqhhnHZwpKtjjVqZLLcxHmDrLbvycLLmXKTK5-GPGwuvUkS9ShnD5tfcHiW2p4joBAHFerpi9YjoK2r6NMMyLltF6jUe1wLblOPjNp3GlVkHlcprSDDhCvxbUU0IGx7vBh9r0IqqYplfyYl4xG_Ei_QDXUDNC_gQZSO_zwnh21VzYeHj4tewNYP10kU9Vt0DeFYJOMbdePCwgPTGdLBU02hrQiKsRdS200mugi5U7B9LOqPHhkGWrX4thEHSAJpYfo7chE-vt0L6bMwjahT_PhgR6SisWcCcUlDEQgRCqDcqjS7-pxhZatZVlGAFpQld1ZEduQk_hBFA"]
+2025-03-10 13:59:08.646 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> System.MissingMethodException: Method not found: 'Byte[] Microsoft.IdentityModel.Tokens.Base64UrlEncoder.UnsafeDecode(System.ReadOnlyMemory`1<Char>)'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2025-03-10 13:59:08.648 +05:00 [ERR] ❌ Ошибка аутентификации: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2025-03-10 13:59:08.649 +05:00 [INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2025-03-10 13:59:08.651 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 13:59:08.652 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 13:59:08.652 +05:00 [INF] HTTP GET /api/products responded 401 in 9.9938 ms
+2025-03-10 13:59:08.654 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 13.1036ms
+2025-03-10 14:02:44.906 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:02:44.909 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:02:44.910 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 1.1319 ms
+2025-03-10 14:02:44.911 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 5.9325ms
+2025-03-10 14:02:44.919 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 14:02:44.921 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:02:44.923 +05:00 [INF] 🔑 Заголовок Authorization: ["Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmY2FlNjU1OS05ZjNiLTQ5OGMtYmM2Ni01MWM2NWI4MDM1MDYiLCJlbWFpbCI6InNlcmdlaTA1MDM3QGdtYWlsLmNvbSIsImZ1bGxOYW1lIjoic3NzIiwicm9sZSI6IkNsaWVudCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkNsaWVudCIsImV4cCI6MTc0MTU5ODI1MH0.AEezot_HtcLffp71sx6q5Z8HeNTWrsUv9bMLflIlKSKLLde_OFGnDGTqq2DTvXC_WNegAgBEA3sQq-TP89mZMDRs0K0QSQvki-Xee-ksWz8DyC1zOlE2srCLGsnrGrEMOaShiw_tctv0_UDMhwgLjz-JbCJ9qQesTjK4QPZ0HSO831bxfX9Xjko8Z2DGMAAh1OKy7MYi5_mAGIrzdGmZEm66mYsa3UXG_yPzcK8fJPQzU-S0f6KdAoFM_ZXpggXIqg3lx72gEXdD2IbjmKDKwd7N21AQroRaU6LCctZc95pwnP_oYOAhHVaW8MxKZlDdFdBq-XkWMsijSaUoq0vFTA"]
+2025-03-10 14:02:44.925 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> System.MissingMethodException: Method not found: 'Byte[] Microsoft.IdentityModel.Tokens.Base64UrlEncoder.UnsafeDecode(System.ReadOnlyMemory`1<Char>)'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2025-03-10 14:02:44.927 +05:00 [ERR] ❌ Ошибка аутентификации: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2025-03-10 14:02:44.928 +05:00 [INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2025-03-10 14:02:44.930 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 14:02:44.931 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 14:02:44.932 +05:00 [INF] HTTP GET /api/products responded 401 in 10.8375 ms
+2025-03-10 14:02:44.934 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 14.3777ms
+2025-03-10 14:04:55.823 +05:00 [INF] Application is shutting down...
+2025-03-10 14:06:27.054 +05:00 [INF] User profile is available. Using 'C:\Users\Sergey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-10 14:06:27.320 +05:00 [INF] Now listening on: https://localhost:7117
+2025-03-10 14:06:27.323 +05:00 [INF] Now listening on: http://localhost:5062
+2025-03-10 14:06:27.380 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-10 14:06:27.381 +05:00 [INF] Hosting environment: Development
+2025-03-10 14:06:27.383 +05:00 [INF] Content root path: C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API
+2025-03-10 14:06:56.816 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:06:56.865 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:06:56.868 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 8.0585 ms
+2025-03-10 14:06:56.884 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 72.0594ms
+2025-03-10 14:06:56.891 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 14:06:56.896 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:06:56.997 +05:00 [INF] 🔑 Заголовок Authorization: ["Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmY2FlNjU1OS05ZjNiLTQ5OGMtYmM2Ni01MWM2NWI4MDM1MDYiLCJlbWFpbCI6InNlcmdlaTA1MDM3QGdtYWlsLmNvbSIsImZ1bGxOYW1lIjoic3NzIiwicm9sZSI6IkNsaWVudCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkNsaWVudCIsImV4cCI6MTc0MTU5ODUwMn0.dYhvG5xcriOAhFDGnn5wJF4nFZBO2wIc2nqW-4hfqEQ_Im2AzFD4Z2fJgCJdE_jHnvqg08eKQcvUIltCpPlE2ZnKKjMd3sZiS2Ba5ZqjU9PeSYjsZv48yS9Ml3Uz4HXyuPgi_rxNM1nTR5gYNt2bX45s8_NC1srTV9QHU4h_SEd4uEy70aWkk_BLFVd3RjKTneTyAJrJcNY2bJsEuS-9cg_ks1VKhYn3B-CCUjNv3o_f_4A8UX0hIpuecuutb-m7xxb9vgSzUv0vRHb9LttVVobrT0OsY-fMVvLCda_4k1MR7pCG04AF9NiJi-MVztRweeR_3NxZRt4S75y5D3uUtQ"]
+2025-03-10 14:06:57.394 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: '', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-03-10 14:06:57.400 +05:00 [ERR] ❌ Ошибка аутентификации: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: '', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-03-10 14:06:57.404 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: '', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-03-10 14:06:57.422 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 14:06:57.429 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 14:06:57.432 +05:00 [INF] HTTP GET /api/products responded 401 in 536.3847 ms
+2025-03-10 14:06:57.438 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 546.7304ms
+2025-03-10 14:09:36.061 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:09:36.070 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:09:36.072 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 2.5545 ms
+2025-03-10 14:09:36.080 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 20.4353ms
+2025-03-10 14:09:36.087 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 14:09:36.091 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:09:36.094 +05:00 [INF] 🔑 Заголовок Authorization: ["Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmY2FlNjU1OS05ZjNiLTQ5OGMtYmM2Ni01MWM2NWI4MDM1MDYiLCJlbWFpbCI6InNlcmdlaTA1MDM3QGdtYWlsLmNvbSIsImZ1bGxOYW1lIjoic3NzIiwicm9sZSI6IkNsaWVudCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkNsaWVudCIsImV4cCI6MTc0MTU5ODY2OX0.nXEBy7hpqIUe9VpI4BJ_BIQvya7zl3lWLs25wz8-CBZT3VyfK4kzHFLw9JJP-uR2NOTAtIor6E1Z1YPsMcpu_Cv5S2LpsrPkQJL0-LX7zczFikZ52EqAK6dgMPz8FAuaOlMWvhDLjHxB3a7HPDJQUxy3UFtTE467mQQ2NGM8ta2qrCidVbGXLtlp6mSxYNx-YWllLyFnrA9wrw7n5mDFiCECqwF9FwagvCd39WJDqC2FtVbpd0nUExT5ZGvhF62kUgVeXxGs9ISiSTU371U8Zm8efaX7_7-rd-hg2p_rOL-U_yUXUIQ_v-GItP0x_RT-MEUER8-ewJeZZWHT4GgxNA"]
+2025-03-10 14:09:36.112 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: '', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-03-10 14:09:36.120 +05:00 [ERR] ❌ Ошибка аутентификации: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: '', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-03-10 14:09:36.123 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: '', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-03-10 14:09:36.127 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 14:09:36.128 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 14:09:36.129 +05:00 [INF] HTTP GET /api/products responded 401 in 38.2974 ms
+2025-03-10 14:09:36.130 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 43.2487ms
+2025-03-10 14:09:55.660 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:09:55.664 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:09:55.665 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 1.6006 ms
+2025-03-10 14:09:55.668 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 7.4372ms
+2025-03-10 14:09:55.671 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 14:09:55.673 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:09:55.674 +05:00 [INF] 🔑 Заголовок Authorization: ["Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmY2FlNjU1OS05ZjNiLTQ5OGMtYmM2Ni01MWM2NWI4MDM1MDYiLCJlbWFpbCI6InNlcmdlaTA1MDM3QGdtYWlsLmNvbSIsImZ1bGxOYW1lIjoic3NzIiwicm9sZSI6IkNsaWVudCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkNsaWVudCIsImV4cCI6MTc0MTU5ODY2OX0.nXEBy7hpqIUe9VpI4BJ_BIQvya7zl3lWLs25wz8-CBZT3VyfK4kzHFLw9JJP-uR2NOTAtIor6E1Z1YPsMcpu_Cv5S2LpsrPkQJL0-LX7zczFikZ52EqAK6dgMPz8FAuaOlMWvhDLjHxB3a7HPDJQUxy3UFtTE467mQQ2NGM8ta2qrCidVbGXLtlp6mSxYNx-YWllLyFnrA9wrw7n5mDFiCECqwF9FwagvCd39WJDqC2FtVbpd0nUExT5ZGvhF62kUgVeXxGs9ISiSTU371U8Zm8efaX7_7-rd-hg2p_rOL-U_yUXUIQ_v-GItP0x_RT-MEUER8-ewJeZZWHT4GgxNA"]
+2025-03-10 14:09:55.688 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: '', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-03-10 14:09:55.699 +05:00 [ERR] ❌ Ошибка аутентификации: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: '', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-03-10 14:09:55.701 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: '', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-03-10 14:09:55.703 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 14:09:55.705 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 14:09:55.705 +05:00 [INF] HTTP GET /api/products responded 401 in 32.8530 ms
+2025-03-10 14:09:55.707 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 36.3226ms
+2025-03-10 14:14:06.706 +05:00 [INF] User profile is available. Using 'C:\Users\Sergey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-10 14:14:06.936 +05:00 [INF] Now listening on: https://localhost:7117
+2025-03-10 14:14:06.937 +05:00 [INF] Now listening on: http://localhost:5062
+2025-03-10 14:14:06.973 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-10 14:14:06.974 +05:00 [INF] Hosting environment: Development
+2025-03-10 14:14:06.975 +05:00 [INF] Content root path: C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API
+2025-03-10 14:14:28.414 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:14:28.437 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:14:28.443 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 6.5208 ms
+2025-03-10 14:14:28.452 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 41.0309ms
+2025-03-10 14:14:28.457 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 14:14:28.460 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:14:28.763 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-03-10 14:14:28.770 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-03-10 14:14:28.775 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 14:14:28.779 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 14:14:28.783 +05:00 [INF] HTTP GET /api/products responded 401 in 323.4876 ms
+2025-03-10 14:14:28.787 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 330.541ms
+2025-03-10 14:15:55.914 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:15:55.917 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:15:55.918 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 1.2039 ms
+2025-03-10 14:15:55.919 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 7.3362ms
+2025-03-10 14:15:55.928 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 14:15:55.930 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:15:55.947 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-03-10 14:15:55.958 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-03-10 14:15:55.961 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 14:15:55.963 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 14:15:55.964 +05:00 [INF] HTTP GET /api/products responded 401 in 33.7230 ms
+2025-03-10 14:15:55.966 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 37.199ms
+2025-03-10 14:16:29.494 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:16:49.357 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:16:49.978 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:16:50.125 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:16:50.258 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:17:13.874 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:17:53.278 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:17:53.281 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:17:53.290 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:17:53.294 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:17:53.299 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:17:53.302 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:17:53.304 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 25.2835 ms
+2025-03-10 14:17:53.304 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 22.8660 ms
+2025-03-10 14:17:53.312 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 83818.1065ms
+2025-03-10 14:17:53.323 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 63965.8102ms
+2025-03-10 14:17:53.305 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 15.1928 ms
+2025-03-10 14:17:53.306 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 11.9162 ms
+2025-03-10 14:17:53.307 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 8.0444 ms
+2025-03-10 14:17:53.308 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 5.4619 ms
+2025-03-10 14:17:53.326 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:17:53.331 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:17:53.333 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 63354.6829ms
+2025-03-10 14:17:53.335 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 63210.6726ms
+2025-03-10 14:17:53.338 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 63079.6681ms
+2025-03-10 14:17:53.339 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 39464.8412ms
+2025-03-10 14:17:53.341 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:17:53.345 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:17:53.347 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:17:53.349 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:17:53.351 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:17:53.354 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:17:53.355 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 13.3776 ms
+2025-03-10 14:17:53.355 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 10.6445 ms
+2025-03-10 14:17:53.357 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:17:53.359 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:17:53.364 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:17:53.366 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:17:53.368 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 41.4835ms
+2025-03-10 14:17:53.370 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 38.9394ms
+2025-03-10 14:17:53.371 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 13.4951 ms
+2025-03-10 14:17:53.371 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 12.2827 ms
+2025-03-10 14:17:53.372 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 7.9912 ms
+2025-03-10 14:17:53.373 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 6.7763 ms
+2025-03-10 14:17:53.375 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:17:53.378 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 14:17:53.380 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 32.83ms
+2025-03-10 14:17:53.381 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 32.4708ms
+2025-03-10 14:17:53.387 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:17:53.389 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:17:53.383 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 31.9376ms
+2025-03-10 14:17:53.396 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 8.7164 ms
+2025-03-10 14:17:53.385 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 31.3119ms
+2025-03-10 14:17:53.406 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 31.5027ms
+2025-03-10 14:17:53.421 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-03-10 14:17:53.430 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-03-10 14:17:53.439 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 14:17:53.440 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 14:17:53.441 +05:00 [INF] HTTP GET /api/products responded 401 in 52.5282 ms
+2025-03-10 14:17:53.443 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 64.9803ms
+2025-03-10 14:17:53.447 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 14:17:53.449 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:17:53.463 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-03-10 14:17:53.475 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-03-10 14:17:53.478 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 14:17:53.480 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 14:17:53.481 +05:00 [INF] HTTP GET /api/products responded 401 in 32.2539 ms
+2025-03-10 14:17:53.489 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 42.3801ms
+2025-03-10 14:17:53.496 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 14:17:53.499 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:17:53.523 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-03-10 14:17:53.538 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-03-10 14:17:53.540 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 14:17:53.542 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 14:17:53.543 +05:00 [INF] HTTP GET /api/products responded 401 in 44.5766 ms
+2025-03-10 14:17:53.546 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 50.5947ms
+2025-03-10 14:17:53.555 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 14:17:53.557 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:17:53.580 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-03-10 14:17:53.607 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-03-10 14:17:53.616 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 14:17:53.619 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 14:17:53.620 +05:00 [INF] HTTP GET /api/products responded 401 in 63.3231 ms
+2025-03-10 14:17:53.622 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 67.4621ms
+2025-03-10 14:17:53.628 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 14:17:53.630 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:17:53.645 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-03-10 14:17:53.662 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-03-10 14:17:53.665 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 14:17:53.668 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 14:17:53.669 +05:00 [INF] HTTP GET /api/products responded 401 in 39.0285 ms
+2025-03-10 14:17:53.674 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 46.5404ms
+2025-03-10 14:17:53.682 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 14:17:53.686 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:17:53.705 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-03-10 14:17:53.718 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-03-10 14:17:53.726 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 14:17:53.729 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 14:17:53.730 +05:00 [INF] HTTP GET /api/products responded 401 in 44.2370 ms
+2025-03-10 14:17:53.732 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 50.3632ms
+2025-03-10 14:17:53.744 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 14:17:53.746 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:17:53.766 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-03-10 14:17:53.788 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-03-10 14:17:53.791 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 14:17:53.793 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 14:17:53.794 +05:00 [INF] HTTP GET /api/products responded 401 in 48.1150 ms
+2025-03-10 14:17:53.798 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 53.8436ms
+2025-03-10 14:18:01.184 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:18:01.189 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:18:01.190 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 1.0761 ms
+2025-03-10 14:18:01.191 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 7.9227ms
+2025-03-10 14:18:01.197 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 14:18:01.214 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:18:01.227 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-03-10 14:18:01.233 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '-YEiyct-tayEnfk2Do2eIlSlyRkQqPtK6iGihS6kTm0'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-03-10 14:18:01.235 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 14:18:01.235 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 14:18:01.239 +05:00 [INF] HTTP GET /api/products responded 401 in 25.6991 ms
+2025-03-10 14:18:01.241 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 43.7762ms
+2025-03-10 14:23:08.478 +05:00 [INF] User profile is available. Using 'C:\Users\Sergey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-10 14:23:08.858 +05:00 [INF] Now listening on: https://localhost:7117
+2025-03-10 14:23:08.860 +05:00 [INF] Now listening on: http://localhost:5062
+2025-03-10 14:23:08.927 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-10 14:23:08.930 +05:00 [INF] Hosting environment: Development
+2025-03-10 14:23:08.932 +05:00 [INF] Content root path: C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API
+2025-03-10 14:23:55.931 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:23:55.957 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:23:55.962 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 6.3093 ms
+2025-03-10 14:23:55.971 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 42.6669ms
+2025-03-10 14:23:55.978 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 14:23:55.981 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:23:56.255 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '30nUUONV6Q3ESjYgk-tcF0HmHMM9XswlfOVlS03-TIw'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-03-10 14:23:56.262 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '30nUUONV6Q3ESjYgk-tcF0HmHMM9XswlfOVlS03-TIw'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-03-10 14:23:56.267 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 14:23:56.271 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 14:23:56.273 +05:00 [INF] HTTP GET /api/products responded 401 in 292.3765 ms
+2025-03-10 14:23:56.276 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 297.6077ms
+2025-03-10 14:25:51.710 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:25:51.714 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:25:51.715 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 2.1292 ms
+2025-03-10 14:25:51.718 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 7.8043ms
+2025-03-10 14:25:51.724 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 14:25:51.726 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:25:51.751 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '30nUUONV6Q3ESjYgk-tcF0HmHMM9XswlfOVlS03-TIw'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-03-10 14:25:51.756 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '30nUUONV6Q3ESjYgk-tcF0HmHMM9XswlfOVlS03-TIw'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-03-10 14:25:51.759 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 14:25:51.763 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 14:25:51.764 +05:00 [INF] HTTP GET /api/products responded 401 in 37.7472 ms
+2025-03-10 14:25:51.765 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 41.4957ms
+2025-03-10 14:26:06.549 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:26:06.553 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:26:06.555 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 1.7412 ms
+2025-03-10 14:26:06.560 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 11.2632ms
+2025-03-10 14:26:06.566 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 14:26:06.571 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:26:06.589 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '30nUUONV6Q3ESjYgk-tcF0HmHMM9XswlfOVlS03-TIw'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-03-10 14:26:06.596 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '30nUUONV6Q3ESjYgk-tcF0HmHMM9XswlfOVlS03-TIw'. , KeyId: MyRSAKey
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-03-10 14:26:06.598 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 14:26:06.599 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 14:26:06.600 +05:00 [INF] HTTP GET /api/products responded 401 in 28.6449 ms
+2025-03-10 14:26:06.601 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 34.8784ms
+2025-03-10 14:34:38.983 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:34:38.988 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:34:38.989 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 0.9827 ms
+2025-03-10 14:34:38.993 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 12.7808ms
+2025-03-10 14:34:39.001 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 14:34:39.003 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:34:39.015 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidSignatureException: IDX10511: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '30nUUONV6Q3ESjYgk-tcF0HmHMM9XswlfOVlS03-TIw'. , KeyId: MyRSAKey
+'. 
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Matched key was in 'TokenValidationParameters'. 
+kid: 'MyRSAKey'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10511 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-03-10 14:34:39.024 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10511: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '30nUUONV6Q3ESjYgk-tcF0HmHMM9XswlfOVlS03-TIw'. , KeyId: MyRSAKey
+'. 
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Matched key was in 'TokenValidationParameters'. 
+kid: 'MyRSAKey'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10511 for details.
+2025-03-10 14:34:39.026 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 14:34:39.026 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 14:34:39.027 +05:00 [INF] HTTP GET /api/products responded 401 in 24.3664 ms
+2025-03-10 14:34:39.028 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 27.5027ms
+2025-03-10 14:38:48.978 +05:00 [INF] User profile is available. Using 'C:\Users\Sergey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-10 14:38:49.282 +05:00 [INF] Now listening on: https://localhost:7117
+2025-03-10 14:38:49.296 +05:00 [INF] Now listening on: http://localhost:5062
+2025-03-10 14:38:49.355 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-10 14:38:49.357 +05:00 [INF] Hosting environment: Development
+2025-03-10 14:38:49.358 +05:00 [INF] Content root path: C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API
+2025-03-10 14:39:28.207 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:39:28.233 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:39:28.237 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 6.2334 ms
+2025-03-10 14:39:28.245 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 41.9023ms
+2025-03-10 14:39:28.252 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 14:39:28.255 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:39:28.520 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidSignatureException: IDX10511: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '30nUUONV6Q3ESjYgk-tcF0HmHMM9XswlfOVlS03-TIw'. , KeyId: MyRSAKey
+'. 
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Matched key was in 'TokenValidationParameters'. 
+kid: 'MyRSAKey'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10511 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-03-10 14:39:28.530 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10511: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'MyRSAKey', InternalId: '30nUUONV6Q3ESjYgk-tcF0HmHMM9XswlfOVlS03-TIw'. , KeyId: MyRSAKey
+'. 
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Matched key was in 'TokenValidationParameters'. 
+kid: 'MyRSAKey'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10511 for details.
+2025-03-10 14:39:28.538 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 14:39:28.545 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 14:39:28.547 +05:00 [INF] HTTP GET /api/products responded 401 in 291.4884 ms
+2025-03-10 14:39:28.550 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 297.2607ms
+2025-03-10 14:54:57.697 +05:00 [INF] User profile is available. Using 'C:\Users\Sergey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-10 14:54:58.033 +05:00 [INF] Now listening on: https://localhost:7117
+2025-03-10 14:54:58.035 +05:00 [INF] Now listening on: http://localhost:5062
+2025-03-10 14:54:58.075 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-10 14:54:58.076 +05:00 [INF] Hosting environment: Development
+2025-03-10 14:54:58.077 +05:00 [INF] Content root path: C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API
+2025-03-10 14:56:20.639 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 14:56:20.666 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:56:20.670 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 5.6656 ms
+2025-03-10 14:56:20.681 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 45.259ms
+2025-03-10 14:56:20.691 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 14:56:20.694 +05:00 [INF] CORS policy execution successful.
+2025-03-10 14:56:20.731 +05:00 [INF] 🔑 Заголовок Authorization: ["Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ik15UlNBS2V5IiwidHlwIjoiSldUIn0.eyJzdWIiOiJmY2FlNjU1OS05ZjNiLTQ5OGMtYmM2Ni01MWM2NWI4MDM1MDYiLCJlbWFpbCI6InNlcmdlaTA1MDM3QGdtYWlsLmNvbSIsImZ1bGxOYW1lIjoic3NzIiwicm9sZSI6IkNsaWVudCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkNsaWVudCIsImV4cCI6MTc0MTYwMTQ3MSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo3MTE3IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDYyIn0.JbprpwpfFu-vtcNhPhXWvNsY9FA1GjZXc6YcL894AvDYfTsleBm_r1BQn2AnJmVx0TcAV_FnWPbbpaMucmqgO_ofIBDF11gCjRCbl16JsR8iFXOay9w-fVh3z3kQXzMqe1dMyezTDb3NIdzl9S6UG2YaeC2vtovbG_YNVIos8Llgizp8VHHNTc5B-NtWIJBjtRUwMeGuqQoY8QtsvbcAAR7LUuDAUWWWT2wKsAAHLoRYL9k06AHkgqqAUTm-hvdrTLLV65OC9zgqCNtUB99Ttz0YoDLSvm39oXzHuyUesVKRTVVwfoZgTf263I9isai_xXaAgITxccM2RqP_CxMelw"]
+2025-03-10 14:56:20.957 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidAudienceException: IDX10214: Audience validation failed. Audiences: 'http://localhost:5062'. Did not match: validationParameters.ValidAudience: 'AToyStore.API' or validationParameters.ValidAudiences: 'null'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateAudience(IEnumerable`1 audiences, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-03-10 14:56:20.963 +05:00 [ERR] ❌ Ошибка аутентификации: IDX10214: Audience validation failed. Audiences: 'http://localhost:5062'. Did not match: validationParameters.ValidAudience: 'AToyStore.API' or validationParameters.ValidAudiences: 'null'.
+2025-03-10 14:56:20.967 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10214: Audience validation failed. Audiences: 'http://localhost:5062'. Did not match: validationParameters.ValidAudience: 'AToyStore.API' or validationParameters.ValidAudiences: 'null'.
+2025-03-10 14:56:20.973 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 14:56:20.977 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 14:56:20.978 +05:00 [INF] HTTP GET /api/products responded 401 in 283.8970 ms
+2025-03-10 14:56:20.984 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 293.118ms
+2025-03-10 14:59:43.644 +05:00 [INF] User profile is available. Using 'C:\Users\Sergey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-10 14:59:43.862 +05:00 [INF] Now listening on: https://localhost:7117
+2025-03-10 14:59:43.864 +05:00 [INF] Now listening on: http://localhost:5062
+2025-03-10 14:59:43.904 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-10 14:59:43.905 +05:00 [INF] Hosting environment: Development
+2025-03-10 14:59:43.907 +05:00 [INF] Content root path: C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API
+2025-03-10 15:03:15.418 +05:00 [INF] User profile is available. Using 'C:\Users\Sergey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-10 15:03:16.227 +05:00 [INF] Now listening on: http://localhost:5062
+2025-03-10 15:03:16.304 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-10 15:03:16.306 +05:00 [INF] Hosting environment: Development
+2025-03-10 15:03:16.306 +05:00 [INF] Content root path: C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API
+2025-03-10 15:04:22.949 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 15:04:22.975 +05:00 [INF] CORS policy execution successful.
+2025-03-10 15:04:22.978 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 5.2647 ms
+2025-03-10 15:04:22.988 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 42.2048ms
+2025-03-10 15:04:22.996 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 15:04:23.000 +05:00 [INF] CORS policy execution successful.
+2025-03-10 15:04:23.039 +05:00 [INF] 🔑 Заголовок Authorization: ["Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ik15UlNBS2V5IiwidHlwIjoiSldUIn0.eyJzdWIiOiJmY2FlNjU1OS05ZjNiLTQ5OGMtYmM2Ni01MWM2NWI4MDM1MDYiLCJlbWFpbCI6InNlcmdlaTA1MDM3QGdtYWlsLmNvbSIsImZ1bGxOYW1lIjoic3NzIiwicm9sZSI6IkNsaWVudCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkNsaWVudCIsImV4cCI6MTc0MTYwMTk1NSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MTE1IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDYyIn0.Mge93ZlK5S2fBmM5D4AX8_9xE-_DRTKu5lZ_-hpuo2t1X0rIBV6fGlHct6vcy29DbVuVaOn--2e9NFxuEB45Z4hKQOWsvI8ch5GiAPxLu_EzUbTdl1kUf71ymjKEUmhPcF8s7-bu3i3MEfVjCypsoKtovI_KmsX92XXd0TEkJIqBupwhe2_Y5-j6QG4kEePBmEwPPpQT4O0SM7jPFruElcLeVkC8-ad7MKR4YvBbjYlt5nd0Y9qsD5YGkP4CArSAfmuoxqYHW-zdmcoZehxme7DfxCBSaOe8CM5gDf8IYEs5qwuwu0_x1xjlMEh7UHRsg0QEUMyVJTduV06Zy1dXmA"]
+2025-03-10 15:04:23.308 +05:00 [INF] ➡️ Входящий запрос: GET /api/products
+2025-03-10 15:04:23.312 +05:00 [INF] Executing endpoint 'AToyStore.API.Controllers.ProductsController.GetProducts (AToyStore.API)'
+2025-03-10 15:04:23.322 +05:00 [INF] Route matched with {action = "GetProducts", controller = "Products"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetProducts() on controller AToyStore.API.Controllers.ProductsController (AToyStore.API).
+2025-03-10 15:04:25.879 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-10 15:04:25.887 +05:00 [INF] Executed action AToyStore.API.Controllers.ProductsController.GetProducts (AToyStore.API) in 2559.5318ms
+2025-03-10 15:04:25.888 +05:00 [INF] Executed endpoint 'AToyStore.API.Controllers.ProductsController.GetProducts (AToyStore.API)'
+2025-03-10 15:04:25.889 +05:00 [INF] ⬅️ Ответ: 200
+2025-03-10 15:04:25.890 +05:00 [INF] HTTP GET /api/products responded 200 in 2890.6463 ms
+2025-03-10 15:04:25.893 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 200 null application/json; charset=utf-8 2896.5133ms
+2025-03-10 15:04:48.619 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 15:04:48.622 +05:00 [INF] CORS policy execution successful.
+2025-03-10 15:04:48.623 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 1.0191 ms
+2025-03-10 15:04:48.624 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 7.2617ms
+2025-03-10 15:04:48.631 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 15:04:48.633 +05:00 [INF] CORS policy execution successful.
+2025-03-10 15:04:48.635 +05:00 [INF] 🔑 Заголовок Authorization: ["Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ik15UlNBS2V5IiwidHlwIjoiSldUIn0.eyJzdWIiOiI4ZjA3OThlYS04ZjdhLTQyYmEtYTRmMy1iNzIzNzkxMTc5OTIiLCJlbWFpbCI6ImFkbWluQGF0b3lzdG9yZS5jb20iLCJmdWxsTmFtZSI6IkFkbWluIFVzZXIiLCJyb2xlIjoiQWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc0MTYwMTk4NSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MTE1IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDYyIn0.JyaOmk1yM1cq4dm3vE2WXA2xNnzR-r-ZcyWAVDGW5GTteXBy88eaDD_1KaRIzUsPbwd2w7aScXy1jP24VUQ2jnS87ilnit_VXq5QCzHTmzylLTFCPbsEKUClJYhPjOA3UPD7FzGN_sB3ehJIkIf8Mq35ziYc15OsHndHkZQvYM28qPv0CNRYp8HUlkpPiUYupxNJSCnHJrEkZdtzm74Q--S6ZfaSUCBL1T3as00oZgQly0KpaDCTzojLJf1ZXXWNdApB06T11l6-fOtQRo0ii_M1DiOX1yUXfxnKGSKPQjoF7KtLo30tuqbYJ4nV7fC4oX5a_TW72nmwfXcUfDqXqg"]
+2025-03-10 15:04:48.646 +05:00 [INF] ➡️ Входящий запрос: GET /api/products
+2025-03-10 15:04:48.647 +05:00 [INF] Executing endpoint 'AToyStore.API.Controllers.ProductsController.GetProducts (AToyStore.API)'
+2025-03-10 15:04:48.648 +05:00 [INF] Route matched with {action = "GetProducts", controller = "Products"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetProducts() on controller AToyStore.API.Controllers.ProductsController (AToyStore.API).
+2025-03-10 15:04:50.197 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-10 15:04:50.199 +05:00 [INF] Executed action AToyStore.API.Controllers.ProductsController.GetProducts (AToyStore.API) in 1550.1022ms
+2025-03-10 15:04:50.201 +05:00 [INF] Executed endpoint 'AToyStore.API.Controllers.ProductsController.GetProducts (AToyStore.API)'
+2025-03-10 15:04:50.203 +05:00 [INF] ⬅️ Ответ: 200
+2025-03-10 15:04:50.204 +05:00 [INF] HTTP GET /api/products responded 200 in 1571.2352 ms
+2025-03-10 15:04:50.206 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 200 null application/json; charset=utf-8 1574.4228ms
+2025-03-10 15:09:28.003 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 15:09:28.008 +05:00 [INF] CORS policy execution successful.
+2025-03-10 15:09:28.009 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 0.9783 ms
+2025-03-10 15:09:28.013 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 9.9556ms
+2025-03-10 15:09:28.021 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5062/api/products - null 0
+2025-03-10 15:09:28.024 +05:00 [INF] CORS policy execution successful.
+2025-03-10 15:09:28.027 +05:00 [INF] 🔑 Заголовок Authorization: ["Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ik15UlNBS2V5IiwidHlwIjoiSldUIn0.eyJzdWIiOiI4ZjA3OThlYS04ZjdhLTQyYmEtYTRmMy1iNzIzNzkxMTc5OTIiLCJlbWFpbCI6ImFkbWluQGF0b3lzdG9yZS5jb20iLCJmdWxsTmFtZSI6IkFkbWluIFVzZXIiLCJyb2xlIjoiQWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc0MTYwMTk4NSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MTE1IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDYyIn0.JyaOmk1yM1cq4dm3vE2WXA2xNnzR-r-ZcyWAVDGW5GTteXBy88eaDD_1KaRIzUsPbwd2w7aScXy1jP24VUQ2jnS87ilnit_VXq5QCzHTmzylLTFCPbsEKUClJYhPjOA3UPD7FzGN_sB3ehJIkIf8Mq35ziYc15OsHndHkZQvYM28qPv0CNRYp8HUlkpPiUYupxNJSCnHJrEkZdtzm74Q--S6ZfaSUCBL1T3as00oZgQly0KpaDCTzojLJf1ZXXWNdApB06T11l6-fOtQRo0ii_M1DiOX1yUXfxnKGSKPQjoF7KtLo30tuqbYJ4nV7fC4oX5a_TW72nmwfXcUfDqXqg"]
+2025-03-10 15:09:28.032 +05:00 [INF] ➡️ Входящий запрос: POST /api/products
+2025-03-10 15:09:28.033 +05:00 [INF] Executing endpoint 'AToyStore.API.Controllers.ProductsController.CreateProduct (AToyStore.API)'
+2025-03-10 15:09:28.037 +05:00 [INF] Route matched with {action = "CreateProduct", controller = "Products"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateProduct() on controller AToyStore.API.Controllers.ProductsController (AToyStore.API).
+2025-03-10 15:09:29.862 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-10 15:09:29.864 +05:00 [INF] Executed action AToyStore.API.Controllers.ProductsController.CreateProduct (AToyStore.API) in 1825.4834ms
+2025-03-10 15:09:29.866 +05:00 [INF] Executed endpoint 'AToyStore.API.Controllers.ProductsController.CreateProduct (AToyStore.API)'
+2025-03-10 15:09:29.867 +05:00 [INF] ⬅️ Ответ: 200
+2025-03-10 15:09:29.868 +05:00 [INF] HTTP POST /api/products responded 200 in 1843.6275 ms
+2025-03-10 15:09:29.869 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5062/api/products - 200 null application/json; charset=utf-8 1847.7272ms
+2025-03-10 15:31:47.102 +05:00 [INF] User profile is available. Using 'C:\Users\Sergey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-10 15:31:47.331 +05:00 [INF] Now listening on: http://localhost:5062
+2025-03-10 15:31:47.385 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-10 15:31:47.388 +05:00 [INF] Hosting environment: Development
+2025-03-10 15:31:47.390 +05:00 [INF] Content root path: C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API
+2025-03-10 15:32:10.029 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 15:32:10.052 +05:00 [INF] CORS policy execution successful.
+2025-03-10 15:32:10.057 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 5.6934 ms
+2025-03-10 15:32:10.065 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 39.4952ms
+2025-03-10 15:32:10.072 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 15:32:10.075 +05:00 [INF] CORS policy execution successful.
+2025-03-10 15:32:10.114 +05:00 [INF] 🔑 Заголовок Authorization: ["Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ik15UlNBS2V5IiwidHlwIjoiSldUIn0.eyJzdWIiOiJmY2FlNjU1OS05ZjNiLTQ5OGMtYmM2Ni01MWM2NWI4MDM1MDYiLCJlbWFpbCI6InNlcmdlaTA1MDM3QGdtYWlsLmNvbSIsImZ1bGxOYW1lIjoic3NzIiwicm9sZSI6IkNsaWVudCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkNsaWVudCIsImV4cCI6MTc0MTYwMzYxMywiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MTE1IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDYyIn0.QW9jP8xYvMlgxMkqJzTbianERshQQlq9XtkFw_ErKPqmxicUPpSTDSC_uZFF2DlOtk9f7x5ubtH3SxFHGQahrNC8KLLq52vHmU_TNNLSzQTm-QUYJ9A8Yv3DAd5eCKctDDwWF5cSrbiTozPA022xM20DzCSJKyjSsghAU-AdNx6KRGgV9MB2Y1yodAGWYMHEEyFrzvwVz2PNm7ZWe7PDLaQRzsqj4mqcv4EkCqv7MTp2P16mie0N_H7r5Y3J9-1CHFGKSBena1gK-Vmid1K2xFAW3IY9k5wqQf0GDMd9ZD0xMYsRFM74nCyvB3Z1t4DP5NG_mFXIQn52G97tHWBjwQ"]
+2025-03-10 15:32:10.368 +05:00 [INF] ➡️ Входящий запрос: GET /api/products
+2025-03-10 15:32:10.373 +05:00 [INF] Executing endpoint 'AToyStore.API.Controllers.ProductsController.GetProducts (AToyStore.API)'
+2025-03-10 15:32:10.383 +05:00 [INF] Route matched with {action = "GetProducts", controller = "Products"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetProducts() on controller AToyStore.API.Controllers.ProductsController (AToyStore.API).
+2025-03-10 15:32:12.336 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-10 15:32:12.347 +05:00 [INF] Executed action AToyStore.API.Controllers.ProductsController.GetProducts (AToyStore.API) in 1959.4059ms
+2025-03-10 15:32:12.349 +05:00 [INF] Executed endpoint 'AToyStore.API.Controllers.ProductsController.GetProducts (AToyStore.API)'
+2025-03-10 15:32:12.352 +05:00 [INF] ⬅️ Ответ: 200
+2025-03-10 15:32:12.354 +05:00 [INF] HTTP GET /api/products responded 200 in 2279.4141 ms
+2025-03-10 15:32:12.357 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 200 null application/json; charset=utf-8 2285.7172ms
+2025-03-10 19:35:04.129 +05:00 [INF] User profile is available. Using 'C:\Users\Sergey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-10 19:35:04.364 +05:00 [INF] Now listening on: http://localhost:5062
+2025-03-10 19:35:04.411 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-10 19:35:04.412 +05:00 [INF] Hosting environment: Development
+2025-03-10 19:35:04.414 +05:00 [INF] Content root path: C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API
+2025-03-10 19:36:01.826 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 19:36:01.850 +05:00 [INF] CORS policy execution successful.
+2025-03-10 19:36:01.854 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 5.7669 ms
+2025-03-10 19:36:01.864 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 40.7331ms
+2025-03-10 19:36:01.867 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 19:36:01.871 +05:00 [INF] CORS policy execution successful.
+2025-03-10 19:36:01.922 +05:00 [INF] 🔑 Заголовок Authorization: ["Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ik15UlNBS2V5IiwidHlwIjoiSldUIn0.eyJzdWIiOiJmY2FlNjU1OS05ZjNiLTQ5OGMtYmM2Ni01MWM2NWI4MDM1MDYiLCJlbWFpbCI6InNlcmdlaTA1MDM3QGdtYWlsLmNvbSIsImZ1bGxOYW1lIjoic3NzIiwicm9sZSI6IkNsaWVudCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkNsaWVudCIsImV4cCI6MTc0MTYxODI0MywiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MTE1IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDYyIn0.iUDYFRH9OAzub5WZXhGGqpp0XaBdARuTrh8askEd7EaWgPG-KhdpincWfpRmwOrOJM00zVq_qrYr_nbWDNwk_vB55khXShUryKwewureHdFc00gMsHk_EhL_gBQfjKpqGvjIwxpg9CssNUnb0W_U7Qbr6ILyM4UAiah9a5FBGyeSCfl5ShPfVuHpTWIWQoUS1GoIft21f0h34avmfonQqfaYNP7DBhJZ7xRyMYa7p01syQFgF4nd24ORUxmjL6mksGbJHzLZ6HCcl9HuIzuE-veJopC8yuWs6OV73MVjPx6amwv1mQwozvdVGGp5Pa_Edci_q0ckhMwagOqsJM8TDg"]
+2025-03-10 19:36:02.179 +05:00 [INF] ➡️ Входящий запрос: GET /api/products
+2025-03-10 19:36:02.183 +05:00 [INF] Executing endpoint 'AToyStore.API.Controllers.ProductsController.GetProducts (AToyStore.API)'
+2025-03-10 19:36:02.195 +05:00 [INF] Route matched with {action = "GetProducts", controller = "Products"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetProducts() on controller AToyStore.API.Controllers.ProductsController (AToyStore.API).
+2025-03-10 19:36:03.931 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-10 19:36:03.940 +05:00 [INF] Executed action AToyStore.API.Controllers.ProductsController.GetProducts (AToyStore.API) in 1738.7658ms
+2025-03-10 19:36:03.941 +05:00 [INF] Executed endpoint 'AToyStore.API.Controllers.ProductsController.GetProducts (AToyStore.API)'
+2025-03-10 19:36:03.942 +05:00 [INF] ⬅️ Ответ: 200
+2025-03-10 19:36:03.943 +05:00 [INF] HTTP GET /api/products responded 200 in 2072.1954 ms
+2025-03-10 19:36:03.948 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 200 null application/json; charset=utf-8 2080.2904ms
+2025-03-10 19:43:49.375 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 19:43:49.380 +05:00 [INF] CORS policy execution successful.
+2025-03-10 19:43:49.381 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 1.3979 ms
+2025-03-10 19:43:49.383 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 10.8584ms
+2025-03-10 19:43:49.386 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 19:43:49.387 +05:00 [INF] CORS policy execution successful.
+2025-03-10 19:43:49.389 +05:00 [INF] 🔑 Заголовок Authorization: ["Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ik15UlNBS2V5IiwidHlwIjoiSldUIn0.eyJzdWIiOiJmY2FlNjU1OS05ZjNiLTQ5OGMtYmM2Ni01MWM2NWI4MDM1MDYiLCJlbWFpbCI6InNlcmdlaTA1MDM3QGdtYWlsLmNvbSIsImZ1bGxOYW1lIjoic3NzIiwicm9sZSI6IkNsaWVudCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkNsaWVudCIsImV4cCI6MTc0MTYxODI0MywiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MTE1IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDYyIn0.iUDYFRH9OAzub5WZXhGGqpp0XaBdARuTrh8askEd7EaWgPG-KhdpincWfpRmwOrOJM00zVq_qrYr_nbWDNwk_vB55khXShUryKwewureHdFc00gMsHk_EhL_gBQfjKpqGvjIwxpg9CssNUnb0W_U7Qbr6ILyM4UAiah9a5FBGyeSCfl5ShPfVuHpTWIWQoUS1GoIft21f0h34avmfonQqfaYNP7DBhJZ7xRyMYa7p01syQFgF4nd24ORUxmjL6mksGbJHzLZ6HCcl9HuIzuE-veJopC8yuWs6OV73MVjPx6amwv1mQwozvdVGGp5Pa_Edci_q0ckhMwagOqsJM8TDg"]
+2025-03-10 19:43:49.399 +05:00 [INF] ➡️ Входящий запрос: GET /api/products
+2025-03-10 19:43:49.400 +05:00 [INF] Executing endpoint 'AToyStore.API.Controllers.ProductsController.GetProducts (AToyStore.API)'
+2025-03-10 19:43:49.401 +05:00 [INF] Route matched with {action = "GetProducts", controller = "Products"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetProducts() on controller AToyStore.API.Controllers.ProductsController (AToyStore.API).
+2025-03-10 19:43:51.211 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-10 19:43:51.215 +05:00 [INF] Executed action AToyStore.API.Controllers.ProductsController.GetProducts (AToyStore.API) in 1810.9332ms
+2025-03-10 19:43:51.216 +05:00 [INF] Executed endpoint 'AToyStore.API.Controllers.ProductsController.GetProducts (AToyStore.API)'
+2025-03-10 19:43:51.217 +05:00 [INF] ⬅️ Ответ: 200
+2025-03-10 19:43:51.218 +05:00 [INF] HTTP GET /api/products responded 200 in 1830.9976 ms
+2025-03-10 19:43:51.220 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 200 null application/json; charset=utf-8 1834.456ms
+2025-03-10 22:19:45.190 +05:00 [INF] User profile is available. Using 'C:\Users\Sergey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-10 22:19:45.411 +05:00 [INF] Now listening on: http://localhost:5062
+2025-03-10 22:19:45.454 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-10 22:19:45.456 +05:00 [INF] Hosting environment: Development
+2025-03-10 22:19:45.457 +05:00 [INF] Content root path: C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API
+2025-03-10 22:36:24.416 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 22:36:24.453 +05:00 [INF] CORS policy execution successful.
+2025-03-10 22:36:24.456 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 5.0102 ms
+2025-03-10 22:36:24.473 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 63.1266ms
+2025-03-10 22:36:24.490 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 22:36:24.498 +05:00 [INF] CORS policy execution successful.
+2025-03-10 22:36:24.579 +05:00 [INF] 🔑 Заголовок Authorization: ["Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ik15UlNBS2V5IiwidHlwIjoiSldUIn0.eyJzdWIiOiJmY2FlNjU1OS05ZjNiLTQ5OGMtYmM2Ni01MWM2NWI4MDM1MDYiLCJlbWFpbCI6InNlcmdlaTA1MDM3QGdtYWlsLmNvbSIsImZ1bGxOYW1lIjoic3NzIiwicm9sZSI6IkNsaWVudCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkNsaWVudCIsImV4cCI6MTc0MTYyODA5MSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MTE1IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDYyIn0.QSBpaLgTul_C3sL24pMrzc79TsuTymoFhpsSmnaS5zzj-_igScON24felMG8mBfLqR1YPnQXPlrhfeMbr0WgK7OgXq3-HSievVgUc5NPWULwVQfhmt9MVUuHhPZsNooXal0hOjlZibqF20TzpSCnZeZk-XaZOvJm6TfhHfR_YxxruFMNMzc6jaVTqR-mUv47Fgchkf-GuKHFu8kFfhAQ3xUPXnBGlSZsodJUkVQomhE72ufJiVRnO7evdXZCDSh0Ayw2YvjXadKWLpWuBPIBiBWDFl_MhjM0dTGDW1cT-ync4TmfMwaio9vDrkPgl3Q4IS3-ErWF_iWQllEgjF__nA"]
+2025-03-10 22:36:24.966 +05:00 [INF] ➡️ Входящий запрос: GET /api/products
+2025-03-10 22:36:24.971 +05:00 [INF] Executing endpoint 'AToyStore.API.Controllers.ProductsController.GetProducts (AToyStore.API)'
+2025-03-10 22:36:25.000 +05:00 [INF] Route matched with {action = "GetProducts", controller = "Products"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetProducts() on controller AToyStore.API.Controllers.ProductsController (AToyStore.API).
+2025-03-10 22:36:33.524 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-10 22:36:33.537 +05:00 [INF] Executed action AToyStore.API.Controllers.ProductsController.GetProducts (AToyStore.API) in 8525.0394ms
+2025-03-10 22:36:33.541 +05:00 [INF] Executed endpoint 'AToyStore.API.Controllers.ProductsController.GetProducts (AToyStore.API)'
+2025-03-10 22:36:33.542 +05:00 [INF] ⬅️ Ответ: 200
+2025-03-10 22:36:33.544 +05:00 [INF] HTTP GET /api/products responded 200 in 9046.4125 ms
+2025-03-10 22:36:33.546 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 200 null application/json; charset=utf-8 9056.2758ms
+2025-03-10 22:39:10.717 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 22:39:10.722 +05:00 [INF] CORS policy execution successful.
+2025-03-10 22:39:10.724 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 2.0412 ms
+2025-03-10 22:39:10.727 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 10.8845ms
+2025-03-10 22:39:10.735 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 22:39:10.737 +05:00 [INF] CORS policy execution successful.
+2025-03-10 22:39:10.738 +05:00 [INF] 🔑 Заголовок Authorization: ["Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ik15UlNBS2V5IiwidHlwIjoiSldUIn0.eyJzdWIiOiJmY2FlNjU1OS05ZjNiLTQ5OGMtYmM2Ni01MWM2NWI4MDM1MDYiLCJlbWFpbCI6InNlcmdlaTA1MDM3QGdtYWlsLmNvbSIsImZ1bGxOYW1lIjoic3NzIiwicm9sZSI6IkNsaWVudCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkNsaWVudCIsImV4cCI6MTc0MTYyODA5MSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MTE1IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDYyIn0.QSBpaLgTul_C3sL24pMrzc79TsuTymoFhpsSmnaS5zzj-_igScON24felMG8mBfLqR1YPnQXPlrhfeMbr0WgK7OgXq3-HSievVgUc5NPWULwVQfhmt9MVUuHhPZsNooXal0hOjlZibqF20TzpSCnZeZk-XaZOvJm6TfhHfR_YxxruFMNMzc6jaVTqR-mUv47Fgchkf-GuKHFu8kFfhAQ3xUPXnBGlSZsodJUkVQomhE72ufJiVRnO7evdXZCDSh0Ayw2YvjXadKWLpWuBPIBiBWDFl_MhjM0dTGDW1cT-ync4TmfMwaio9vDrkPgl3Q4IS3-ErWF_iWQllEgjF__nA"]
+2025-03-10 22:39:10.749 +05:00 [INF] ➡️ Входящий запрос: GET /api/products
+2025-03-10 22:39:10.750 +05:00 [INF] Executing endpoint 'AToyStore.API.Controllers.ProductsController.GetProducts (AToyStore.API)'
+2025-03-10 22:39:10.751 +05:00 [INF] Route matched with {action = "GetProducts", controller = "Products"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetProducts() on controller AToyStore.API.Controllers.ProductsController (AToyStore.API).
+2025-03-10 22:39:12.713 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-10 22:39:12.716 +05:00 [INF] Executed action AToyStore.API.Controllers.ProductsController.GetProducts (AToyStore.API) in 1961.588ms
+2025-03-10 22:39:12.717 +05:00 [INF] Executed endpoint 'AToyStore.API.Controllers.ProductsController.GetProducts (AToyStore.API)'
+2025-03-10 22:39:12.720 +05:00 [INF] ⬅️ Ответ: 200
+2025-03-10 22:39:12.721 +05:00 [INF] HTTP GET /api/products responded 200 in 1984.1618 ms
+2025-03-10 22:39:12.722 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 200 null application/json; charset=utf-8 1987.5816ms
+2025-03-10 22:40:51.962 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 22:40:51.968 +05:00 [INF] CORS policy execution successful.
+2025-03-10 22:40:51.968 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 0.6541 ms
+2025-03-10 22:40:51.971 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 9.1522ms
+2025-03-10 22:40:51.977 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 22:40:51.979 +05:00 [INF] CORS policy execution successful.
+2025-03-10 22:40:51.981 +05:00 [INF] 🔑 Заголовок Authorization: ["Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ik15UlNBS2V5IiwidHlwIjoiSldUIn0.eyJzdWIiOiJmY2FlNjU1OS05ZjNiLTQ5OGMtYmM2Ni01MWM2NWI4MDM1MDYiLCJlbWFpbCI6InNlcmdlaTA1MDM3QGdtYWlsLmNvbSIsImZ1bGxOYW1lIjoic3NzIiwicm9sZSI6IkNsaWVudCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkNsaWVudCIsImV4cCI6MTc0MTYyODA5MSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MTE1IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDYyIn0.QSBpaLgTul_C3sL24pMrzc79TsuTymoFhpsSmnaS5zzj-_igScON24felMG8mBfLqR1YPnQXPlrhfeMbr0WgK7OgXq3-HSievVgUc5NPWULwVQfhmt9MVUuHhPZsNooXal0hOjlZibqF20TzpSCnZeZk-XaZOvJm6TfhHfR_YxxruFMNMzc6jaVTqR-mUv47Fgchkf-GuKHFu8kFfhAQ3xUPXnBGlSZsodJUkVQomhE72ufJiVRnO7evdXZCDSh0Ayw2YvjXadKWLpWuBPIBiBWDFl_MhjM0dTGDW1cT-ync4TmfMwaio9vDrkPgl3Q4IS3-ErWF_iWQllEgjF__nA"]
+2025-03-10 22:40:51.991 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10.03.2025 17:34:51', Current time (UTC): '10.03.2025 17:40:51'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-03-10 22:40:52.026 +05:00 [ERR] ❌ Ошибка аутентификации: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10.03.2025 17:34:51', Current time (UTC): '10.03.2025 17:40:51'.
+2025-03-10 22:40:52.028 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10.03.2025 17:34:51', Current time (UTC): '10.03.2025 17:40:51'.
+2025-03-10 22:40:52.030 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 22:40:52.034 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 22:40:52.035 +05:00 [INF] HTTP GET /api/products responded 401 in 56.4826 ms
+2025-03-10 22:40:52.039 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 62.1925ms
+2025-03-10 22:41:05.840 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 22:41:05.843 +05:00 [INF] CORS policy execution successful.
+2025-03-10 22:41:05.844 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 0.7295 ms
+2025-03-10 22:41:05.846 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 6.3871ms
+2025-03-10 22:41:05.853 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 22:41:05.856 +05:00 [INF] CORS policy execution successful.
+2025-03-10 22:41:05.856 +05:00 [INF] 🔑 Заголовок Authorization: ["Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ik15UlNBS2V5IiwidHlwIjoiSldUIn0.eyJzdWIiOiJmY2FlNjU1OS05ZjNiLTQ5OGMtYmM2Ni01MWM2NWI4MDM1MDYiLCJlbWFpbCI6InNlcmdlaTA1MDM3QGdtYWlsLmNvbSIsImZ1bGxOYW1lIjoic3NzIiwicm9sZSI6IkNsaWVudCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkNsaWVudCIsImV4cCI6MTc0MTYyODA5MSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MTE1IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDYyIn0.QSBpaLgTul_C3sL24pMrzc79TsuTymoFhpsSmnaS5zzj-_igScON24felMG8mBfLqR1YPnQXPlrhfeMbr0WgK7OgXq3-HSievVgUc5NPWULwVQfhmt9MVUuHhPZsNooXal0hOjlZibqF20TzpSCnZeZk-XaZOvJm6TfhHfR_YxxruFMNMzc6jaVTqR-mUv47Fgchkf-GuKHFu8kFfhAQ3xUPXnBGlSZsodJUkVQomhE72ufJiVRnO7evdXZCDSh0Ayw2YvjXadKWLpWuBPIBiBWDFl_MhjM0dTGDW1cT-ync4TmfMwaio9vDrkPgl3Q4IS3-ErWF_iWQllEgjF__nA"]
+2025-03-10 22:41:05.860 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10.03.2025 17:34:51', Current time (UTC): '10.03.2025 17:41:05'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-03-10 22:41:05.867 +05:00 [ERR] ❌ Ошибка аутентификации: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10.03.2025 17:34:51', Current time (UTC): '10.03.2025 17:41:05'.
+2025-03-10 22:41:05.868 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10.03.2025 17:34:51', Current time (UTC): '10.03.2025 17:41:05'.
+2025-03-10 22:41:05.869 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 22:41:05.871 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 22:41:05.872 +05:00 [INF] HTTP GET /api/products responded 401 in 16.4649 ms
+2025-03-10 22:41:05.873 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 20.546ms
+2025-03-10 22:43:35.558 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 22:43:35.561 +05:00 [INF] CORS policy execution successful.
+2025-03-10 22:43:35.562 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 1.6147 ms
+2025-03-10 22:43:35.565 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 8.1216ms
+2025-03-10 22:43:35.572 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 22:43:35.574 +05:00 [INF] CORS policy execution successful.
+2025-03-10 22:43:35.576 +05:00 [INF] 🔑 Заголовок Authorization: ["Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ik15UlNBS2V5IiwidHlwIjoiSldUIn0.eyJzdWIiOiJmY2FlNjU1OS05ZjNiLTQ5OGMtYmM2Ni01MWM2NWI4MDM1MDYiLCJlbWFpbCI6InNlcmdlaTA1MDM3QGdtYWlsLmNvbSIsImZ1bGxOYW1lIjoic3NzIiwicm9sZSI6IkNsaWVudCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkNsaWVudCIsImV4cCI6MTc0MTYyODA5MSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MTE1IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDYyIn0.QSBpaLgTul_C3sL24pMrzc79TsuTymoFhpsSmnaS5zzj-_igScON24felMG8mBfLqR1YPnQXPlrhfeMbr0WgK7OgXq3-HSievVgUc5NPWULwVQfhmt9MVUuHhPZsNooXal0hOjlZibqF20TzpSCnZeZk-XaZOvJm6TfhHfR_YxxruFMNMzc6jaVTqR-mUv47Fgchkf-GuKHFu8kFfhAQ3xUPXnBGlSZsodJUkVQomhE72ufJiVRnO7evdXZCDSh0Ayw2YvjXadKWLpWuBPIBiBWDFl_MhjM0dTGDW1cT-ync4TmfMwaio9vDrkPgl3Q4IS3-ErWF_iWQllEgjF__nA"]
+2025-03-10 22:43:35.578 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10.03.2025 17:34:51', Current time (UTC): '10.03.2025 17:43:35'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-03-10 22:43:35.582 +05:00 [ERR] ❌ Ошибка аутентификации: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10.03.2025 17:34:51', Current time (UTC): '10.03.2025 17:43:35'.
+2025-03-10 22:43:35.583 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10.03.2025 17:34:51', Current time (UTC): '10.03.2025 17:43:35'.
+2025-03-10 22:43:35.584 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 22:43:35.585 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 22:43:35.586 +05:00 [INF] HTTP GET /api/products responded 401 in 11.8516 ms
+2025-03-10 22:43:35.587 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 14.8881ms
+2025-03-10 22:47:36.173 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 22:47:36.178 +05:00 [INF] CORS policy execution successful.
+2025-03-10 22:47:36.180 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 1.9334 ms
+2025-03-10 22:47:36.182 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 11.3446ms
+2025-03-10 22:47:36.189 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 22:47:36.190 +05:00 [INF] CORS policy execution successful.
+2025-03-10 22:47:36.192 +05:00 [INF] 🔑 Заголовок Authorization: ["Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ik15UlNBS2V5IiwidHlwIjoiSldUIn0.eyJzdWIiOiJmY2FlNjU1OS05ZjNiLTQ5OGMtYmM2Ni01MWM2NWI4MDM1MDYiLCJlbWFpbCI6InNlcmdlaTA1MDM3QGdtYWlsLmNvbSIsImZ1bGxOYW1lIjoic3NzIiwicm9sZSI6IkNsaWVudCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkNsaWVudCIsImV4cCI6MTc0MTYyODA5MSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MTE1IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDYyIn0.QSBpaLgTul_C3sL24pMrzc79TsuTymoFhpsSmnaS5zzj-_igScON24felMG8mBfLqR1YPnQXPlrhfeMbr0WgK7OgXq3-HSievVgUc5NPWULwVQfhmt9MVUuHhPZsNooXal0hOjlZibqF20TzpSCnZeZk-XaZOvJm6TfhHfR_YxxruFMNMzc6jaVTqR-mUv47Fgchkf-GuKHFu8kFfhAQ3xUPXnBGlSZsodJUkVQomhE72ufJiVRnO7evdXZCDSh0Ayw2YvjXadKWLpWuBPIBiBWDFl_MhjM0dTGDW1cT-ync4TmfMwaio9vDrkPgl3Q4IS3-ErWF_iWQllEgjF__nA"]
+2025-03-10 22:47:36.195 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10.03.2025 17:34:51', Current time (UTC): '10.03.2025 17:47:36'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-03-10 22:47:36.198 +05:00 [ERR] ❌ Ошибка аутентификации: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10.03.2025 17:34:51', Current time (UTC): '10.03.2025 17:47:36'.
+2025-03-10 22:47:36.199 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10.03.2025 17:34:51', Current time (UTC): '10.03.2025 17:47:36'.
+2025-03-10 22:47:36.200 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-03-10 22:47:36.201 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-03-10 22:47:36.201 +05:00 [INF] HTTP GET /api/products responded 401 in 11.1657 ms
+2025-03-10 22:47:36.203 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 401 0 null 13.9227ms
+2025-03-10 22:47:54.784 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/products - null null
+2025-03-10 22:47:54.786 +05:00 [INF] CORS policy execution successful.
+2025-03-10 22:47:54.787 +05:00 [INF] HTTP OPTIONS /api/products responded 204 in 1.3762 ms
+2025-03-10 22:47:54.789 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/products - 204 null null 5.9363ms
+2025-03-10 22:47:54.795 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/products - null null
+2025-03-10 22:47:54.799 +05:00 [INF] CORS policy execution successful.
+2025-03-10 22:47:54.800 +05:00 [INF] 🔑 Заголовок Authorization: ["Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ik15UlNBS2V5IiwidHlwIjoiSldUIn0.eyJzdWIiOiJmY2FlNjU1OS05ZjNiLTQ5OGMtYmM2Ni01MWM2NWI4MDM1MDYiLCJlbWFpbCI6InNlcmdlaTA1MDM3QGdtYWlsLmNvbSIsImZ1bGxOYW1lIjoic3NzIiwicm9sZSI6IkNsaWVudCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkNsaWVudCIsImV4cCI6MTc0MTYyOTc2NiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MTE1IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDYyIn0.IiYOhpkjZELpVmESOsBGsA5V6719RH3tAdosPMsiQ69GyuIqVNnd7ulXuoJMt2FhsxAAodrLnKM6YufftFHczyW-Y_p2TO5XzJbFFcnWCML25_3lD8pdIP3korvXGVtBPqe-wafmHuGVNFo4kGXjwYkdW5tVkX5lofaflypwipi4j65-u5qnDFrsuoVa252CiEMvbeKGT6f7sVbdAj6SusrxLSVEXEa4gN-FvF1gHziPw4-Eia8_kqihExp5QygkHlDltVuz64mpxTUieNbK5l1FU9jnNkrV7FFAAHKfvTL0z24AbXDTycUFzFeKdw-7uVrX7-0zAUkdyQQIxaKJTg"]
+2025-03-10 22:47:54.803 +05:00 [INF] ➡️ Входящий запрос: GET /api/products
+2025-03-10 22:47:54.805 +05:00 [INF] Executing endpoint 'AToyStore.API.Controllers.ProductsController.GetProducts (AToyStore.API)'
+2025-03-10 22:47:54.807 +05:00 [INF] Route matched with {action = "GetProducts", controller = "Products"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetProducts() on controller AToyStore.API.Controllers.ProductsController (AToyStore.API).
+2025-03-10 22:47:59.225 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-10 22:47:59.228 +05:00 [INF] Executed action AToyStore.API.Controllers.ProductsController.GetProducts (AToyStore.API) in 4414.1798ms
+2025-03-10 22:47:59.230 +05:00 [INF] Executed endpoint 'AToyStore.API.Controllers.ProductsController.GetProducts (AToyStore.API)'
+2025-03-10 22:47:59.230 +05:00 [INF] ⬅️ Ответ: 200
+2025-03-10 22:47:59.231 +05:00 [INF] HTTP GET /api/products responded 200 in 4432.7704 ms
+2025-03-10 22:47:59.233 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/products - 200 null application/json; charset=utf-8 4437.4733ms

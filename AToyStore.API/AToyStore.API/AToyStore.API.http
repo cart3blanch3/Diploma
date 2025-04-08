@@ -1,0 +1,6 @@
+@AToyStore.API_HostAddress = http://localhost:5062
+
+GET {{AToyStore.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

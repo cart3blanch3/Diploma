@@ -1,0 +1,5 @@
+2025-04-06 16:45:04.727 +05:00 [INF] User profile is available. Using 'C:\Users\Sergey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-06 16:45:04.848 +05:00 [INF] Now listening on: http://localhost:5062
+2025-04-06 16:45:04.853 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-06 16:45:04.854 +05:00 [INF] Hosting environment: Development
+2025-04-06 16:45:04.855 +05:00 [INF] Content root path: C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API
