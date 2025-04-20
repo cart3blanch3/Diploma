@@ -13,3 +13,4 @@ C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Infrastructure\obj\Debug\net8.0
 C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Infrastructure\obj\Debug\net8.0\refint\AToyStore.Infrastructure.dll
 C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Infrastructure\obj\Debug\net8.0\AToyStore.Infrastructure.pdb
 C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Infrastructure\obj\Debug\net8.0\ref\AToyStore.Infrastructure.dll
+C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Infrastructure\obj\Debug\net8.0\AToyStore.Infrastructure.sourcelink.json

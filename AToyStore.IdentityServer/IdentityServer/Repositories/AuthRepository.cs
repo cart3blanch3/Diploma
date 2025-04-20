@@ -1,11 +1,12 @@
 ﻿using IdentityServer.Data;
 using IdentityServer.Models;
+using IdentityServer.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace IdentityServer.Repositories;
 
-public class AuthRepository
+public class AuthRepository : IAuthRepository
 {
     private readonly UserManager<User> _userManager;
     private readonly AppDbContext _context;
@@ -95,6 +96,10 @@ public class AuthRepository
     // Установить блокировку пользователю на указанное количество минут
     public async Task LockUserAsync(User user, int lockoutMinutes) =>
         await _userManager.SetLockoutEndDateAsync(user, DateTimeOffset.UtcNow.AddMinutes(lockoutMinutes));
+
+    /// Получить значение времени блокировки по умолчанию
+    public TimeSpan GetDefaultLockoutTimeSpan() =>
+        _userManager.Options.Lockout.DefaultLockoutTimeSpan;
 
     // Получить количество неудачных попыток входа
     public async Task<int> GetFailedLoginAttemptsAsync(User user) =>

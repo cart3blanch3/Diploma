@@ -3,21 +3,22 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using IdentityServer.Models;
 using IdentityServer.Repositories;
+using IdentityServer.Interfaces;
 using Microsoft.IdentityModel.Tokens;
 using Serilog;
 
 namespace IdentityServer.Services;
 
 /// Сервис для генерации JWT access и refresh токенов.
-public class TokenService
+public class TokenService : ITokenService
 {
     private readonly IConfiguration _configuration;
-    private readonly AuthRepository _authRepository;
+    private readonly IAuthRepository _authRepository;
     private readonly RSA _rsa;
     private readonly RsaSecurityKey _rsaKey;
 
     // Конструктор - загружает RSA-ключ и подготавливает криптографическую подпись
-    public TokenService(IConfiguration configuration, AuthRepository authRepository)
+    public TokenService(IConfiguration configuration, IAuthRepository authRepository)
     {
         _configuration = configuration;
         _authRepository = authRepository;

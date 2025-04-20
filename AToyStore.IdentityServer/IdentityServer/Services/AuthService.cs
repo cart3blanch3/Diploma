@@ -1,7 +1,6 @@
 ﻿using IdentityServer.Models;
-using IdentityServer.Repositories;
+using IdentityServer.Interfaces;
 using IdentityServer.Requests;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Serilog;
 using System.Net;
@@ -10,26 +9,24 @@ using System.Security;
 namespace IdentityServer.Services;
 
 /// Сервис для управления аутентификацией и безопасностью пользователей.
-public class AuthService
+public class AuthService : IAuthService
 {
-    private readonly AuthRepository _authRepository;
-    private readonly TokenService _tokenService;
-    private readonly EmailService _emailService;
+    private readonly IAuthRepository _authRepository;
+    private readonly ITokenService _tokenService;
+    private readonly IEmailService _emailService;
     private readonly IHttpContextAccessor _httpContextAccessor;
-    private readonly UserManager<User> _userManager;
 
     public AuthService(
-        AuthRepository authRepository,
-        TokenService tokenService,
-        EmailService emailService,
-        IHttpContextAccessor httpContextAccessor,
-        UserManager<User> userManager)
+        IAuthRepository authRepository,
+        ITokenService tokenService,
+        IEmailService emailService,
+        IHttpContextAccessor httpContextAccessor
+        )
     {
         _authRepository = authRepository;
         _tokenService = tokenService;
         _emailService = emailService;
         _httpContextAccessor = httpContextAccessor;
-        _userManager = userManager;
     }
 
     // Регистрация нового пользователя
@@ -105,14 +102,14 @@ public class AuthService
                 // Логируем блокировку
                 if (await _authRepository.IsUserInRoleAsync(user, "Admin"))
                 {
-                    Log.Fatal("Администратор {Email} заблокирован из-за {FailedAttempts} попыток", user.Email, attemptsBeforeLock + 1);
+                    Log.Fatal("Администратор {Email} заблокирован после {FailedAttempts} неудачных попыток входа", user.Email, attemptsBeforeLock + 1);
                 }
                 else
                 {
-                    Log.Warning("Пользователь {Email} заблокирован после {Attempts} попыток", user.Email, attemptsBeforeLock + 1);
+                    Log.Warning("Пользователь {Email} заблокирован после {Attempts} неудачных попыток входа", user.Email, attemptsBeforeLock + 1);
                 }
 
-                var lockoutTime = _userManager.Options.Lockout.DefaultLockoutTimeSpan.TotalMinutes;
+                var lockoutTime = _authRepository.GetDefaultLockoutTimeSpan().TotalMinutes;
                 throw new SecurityException($"Аккаунт заблокирован на {lockoutTime} минут.");
             }
 

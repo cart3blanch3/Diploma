@@ -56,3 +56,4 @@ C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API\bin\Debug\net8.0\Serilog.Se
 C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API\bin\Debug\net8.0\Serilog.Sinks.Console.dll
 C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
 C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API\bin\Debug\net8.0\Serilog.Sinks.File.dll
+C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API\obj\Debug\net8.0\AToyStore.API.sourcelink.json

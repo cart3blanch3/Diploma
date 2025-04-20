@@ -13,3 +13,4 @@ C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Application\obj\Debug\net8.0\AT
 C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Application\obj\Debug\net8.0\refint\AToyStore.Application.dll
 C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Application\obj\Debug\net8.0\AToyStore.Application.pdb
 C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Application\obj\Debug\net8.0\ref\AToyStore.Application.dll
+C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Application\obj\Debug\net8.0\AToyStore.Application.sourcelink.json

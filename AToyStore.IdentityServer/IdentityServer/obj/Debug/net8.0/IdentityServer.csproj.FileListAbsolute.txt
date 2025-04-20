@@ -166,3 +166,4 @@ C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\bin\Debug\net8.
 C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\bin\Debug\net8.0\Serilog.Sinks.Network.dll
 C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\bin\Debug\net8.0\Serilog.Sinks.Syslog.dll
 C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\obj\Debug\net8.0\IdentityServer.sourcelink.json

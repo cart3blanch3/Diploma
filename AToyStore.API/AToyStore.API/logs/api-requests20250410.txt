@@ -1,0 +1,16 @@
+2025-04-10 21:12:24.102 +05:00 [INF] User profile is available. Using 'C:\Users\Sergey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-10 21:12:24.301 +05:00 [INF] Now listening on: http://localhost:5062
+2025-04-10 21:12:24.304 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-10 21:12:24.306 +05:00 [INF] Hosting environment: Development
+2025-04-10 21:12:24.307 +05:00 [INF] Content root path: C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API
+2025-04-10 22:49:29.125 +05:00 [INF] User profile is available. Using 'C:\Users\Sergey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-10 22:49:29.371 +05:00 [INF] Now listening on: http://localhost:5062
+2025-04-10 22:49:29.381 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-10 22:49:29.386 +05:00 [INF] Hosting environment: Development
+2025-04-10 22:49:29.388 +05:00 [INF] Content root path: C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API
+2025-04-10 23:21:26.000 +05:00 [INF] User profile is available. Using 'C:\Users\Sergey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-10 23:21:26.286 +05:00 [INF] Now listening on: http://localhost:5062
+2025-04-10 23:21:26.381 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-10 23:21:26.405 +05:00 [INF] Hosting environment: Development
+2025-04-10 23:21:26.408 +05:00 [INF] Content root path: C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API
+2025-04-10 23:26:15.058 +05:00 [INF] Application is shutting down...

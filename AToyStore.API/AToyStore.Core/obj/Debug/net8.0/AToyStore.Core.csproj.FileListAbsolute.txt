@@ -9,3 +9,4 @@ C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Core\obj\Debug\net8.0\AToyStore
 C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Core\obj\Debug\net8.0\refint\AToyStore.Core.dll
 C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Core\obj\Debug\net8.0\AToyStore.Core.pdb
 C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Core\obj\Debug\net8.0\ref\AToyStore.Core.dll
+C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Core\obj\Debug\net8.0\AToyStore.Core.sourcelink.json

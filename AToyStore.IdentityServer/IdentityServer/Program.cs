@@ -4,6 +4,7 @@ using IdentityServer.Filters;
 using IdentityServer.Middlewares;
 using IdentityServer.Models;
 using IdentityServer.Repositories;
+using IdentityServer.Interfaces;
 using IdentityServer.Services;
 using IdentityServer4.EntityFramework.DbContexts;
 using Microsoft.AspNetCore.Diagnostics;
@@ -88,10 +89,10 @@ builder.Services.Configure<IdentityOptions>(options =>
 
 
 // Регистрация зависимостей
-builder.Services.AddScoped<AuthRepository>();
-builder.Services.AddScoped<AuthService>();
-builder.Services.AddScoped<TokenService>();
-builder.Services.AddScoped<EmailService>();
+builder.Services.AddScoped<IAuthRepository, AuthRepository>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 // Документация Swagger
 builder.Services.AddEndpointsApiExplorer();

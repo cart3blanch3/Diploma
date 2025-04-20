@@ -1,4 +1,5 @@
-﻿using MailKit.Net.Smtp;
+﻿using IdentityServer.Interfaces;
+using MailKit.Net.Smtp;
 using MailKit.Security;
 using MimeKit;
 using Serilog;
@@ -6,7 +7,7 @@ using Serilog;
 namespace IdentityServer.Services;
 
 // Сервис отправки email-сообщений через SMTP
-public class EmailService
+public class EmailService : IEmailService
 {
     private readonly IConfiguration _configuration;
 
