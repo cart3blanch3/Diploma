@@ -5,5 +5,5 @@ namespace IdentityServer.Interfaces;
 public interface ITokenService
 {
     Task<string> GenerateAccessToken(User user);
-    RefreshToken GenerateRefreshToken(User user);
+    RefreshToken GenerateRefreshToken(User user, string fingerprint);
 }

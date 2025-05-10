@@ -10,6 +10,7 @@ export interface RegisterRequest {
 export interface LoginRequest {
     email: string;
     password: string;
+    fingerprint: string;
 }
 
 export interface ForgotPasswordRequest {
@@ -27,6 +28,10 @@ export interface ConfirmEmailRequest {
     token: string;
 }
 
+export interface RefreshTokenRequest {
+    fingerprint: string;
+}
+
 export const confirmEmail = async (data: ConfirmEmailRequest) => {
     return await api.post("/confirm-email", data);
 };
@@ -36,24 +41,48 @@ export const register = async (data: RegisterRequest) => {
 };
 
 export const login = async (data: LoginRequest) => {
-    const response = await api.post("/login", data);
-    
+    console.log(data);
+    const response = await api.post("/login", data, { withCredentials: true });
+    console.log(response);
     if (response.data.Requires2FA) {
         return { Requires2FA: true };
     }
 
     sessionStorage.setItem("accessToken", response.data.accessToken);
-    sessionStorage.setItem("refreshToken", response.data.refreshToken);
     return response.data;
 };
 
-export const verify2FA = async (email: string, code: string) => {
-    const response = await api.post("/verify-2fa", { email, code });
+export const verify2FA = async (
+    email: string,
+    code: string,
+    fingerprint: string
+) => {
+    const response = await api.post(
+        "/verify-2fa",
+        { email, code, fingerprint },
+        { withCredentials: true }
+    );
 
     sessionStorage.setItem("accessToken", response.data.accessToken);
-    sessionStorage.setItem("refreshToken", response.data.refreshToken);
-
     return response.data;
+};
+
+export const refreshAccessToken = async (
+    fingerprint: string
+): Promise<string | null> => {
+    try {
+        const response = await api.post(
+            "/refresh-token",
+            { fingerprint },
+            { withCredentials: true }
+        );
+        const { accessToken } = response.data;
+        sessionStorage.setItem("accessToken", accessToken);
+        return accessToken;
+    } catch (err) {
+        sessionStorage.removeItem("accessToken");
+        return null;
+    }
 };
 
 export const forgotPassword = async (email: string) => {
@@ -63,5 +92,3 @@ export const forgotPassword = async (email: string) => {
 export const resetPassword = async (data: ResetPasswordRequest) => {
     return await api.post("/reset-password", data);
 };
-
-export {};

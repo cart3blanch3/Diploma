@@ -7,6 +7,7 @@ import { login, verify2FA } from "../services/authService";
 import { useAuth } from "../context/AuthContext";
 import ForgotPasswordModal from "./ForgotPasswordModal";
 import { toast } from "react-toastify";
+import { getDeviceFingerprint } from "../utils/fingerprint";
 import "../styles/AuthModal.css";
 
 Modal.setAppElement("#root");
@@ -89,10 +90,14 @@ const LoginModal: React.FC<LoginModalProps> = ({
     onClose();
   };
 
+  
+
   const onSubmit = async (data: any) => {
     setIsSubmittingLogin(true);
     try {
-      const response = await login(data);
+      const fingerprint = await getDeviceFingerprint(); 
+      const response = await login({ ...data, fingerprint });
+
       if (response.requires2FA) {
         setRequires2FA(true);
         setEmail(data.email);
@@ -101,6 +106,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
         toast.info("Код 2FA отправлен на почту");
         return;
       }
+
       authLogin(sessionStorage.getItem("accessToken") || "");
       toast.success("Успешный вход!");
       handleLoginClose();
@@ -111,15 +117,18 @@ const LoginModal: React.FC<LoginModalProps> = ({
     } finally {
       setIsSubmittingLogin(false);
     }
-  };  
+  };
 
   const onSubmit2FA = async () => {
     setIsSubmitting2FA(true);
     try {
-      const response = await verify2FA(email, code);
-      if (!response || !response.accessToken || !response.refreshToken) {
+      const fingerprint = await getDeviceFingerprint(); // Получаем fingerprint
+      const response = await verify2FA(email, code, fingerprint);
+
+      if (!response || !response.accessToken) {
         throw new Error("Некорректный ответ сервера");
       }
+
       authLogin(response.accessToken);
       toast.success("2FA успешно подтверждена!");
       setIs2FASuccess(true);
@@ -131,17 +140,19 @@ const LoginModal: React.FC<LoginModalProps> = ({
     } finally {
       setIsSubmitting2FA(false);
     }
-  };  
+  };
 
   const resend2FACode = async () => {
     try {
-      await login({ email, password: cachedPassword });
+      const fingerprint = await getDeviceFingerprint(); // Получаем fingerprint
+      await login({ email, password: cachedPassword, fingerprint });
       toast.success("📧 Код отправлен повторно");
       setCooldown2FA(60);
     } catch {
       toast.error("Ошибка при повторной отправке кода");
     }
   };
+
 
   return (
     <>

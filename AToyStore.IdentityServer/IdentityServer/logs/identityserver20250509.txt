@@ -1,0 +1,111 @@
+2025-05-09 14:28:34.517 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 4.0930 ms
+2025-05-09 14:28:40.390 +05:00 [WRN] Неверный пароль у пользователя admin@atoystore.com
+2025-05-09 14:28:40.466 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Security.SecurityException: Неверный пароль.
+   at IdentityServer.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 118
+   at IdentityServer.Controllers.AuthController.Login(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 41
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-09 14:28:40.498 +05:00 [WRN] Ошибка 403: Неверный пароль. | Path: /auth/login
+2025-05-09 14:28:40.511 +05:00 [INF] HTTP POST /auth/login responded 403 in 5920.5505 ms
+2025-05-09 14:29:08.447 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.2540 ms
+2025-05-09 14:29:08.698 +05:00 [INF] Пользователь admin@atoystore.com успешно вошёл в систему.
+2025-05-09 14:29:08.870 +05:00 [INF] HTTP POST /auth/login responded 200 in 416.8118 ms
+2025-05-09 15:01:24.293 +05:00 [INF] HTTP GET /auth/me responded 302 in 49.3050 ms
+2025-05-09 15:01:24.378 +05:00 [INF] HTTP GET /auth/me responded 302 in 3.8280 ms
+2025-05-09 15:01:24.445 +05:00 [INF] HTTP GET /auth/login responded 405 in 3.0686 ms
+2025-05-09 15:01:24.451 +05:00 [INF] HTTP GET /auth/login responded 405 in 0.3317 ms
+2025-05-09 15:03:06.712 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.7357 ms
+2025-05-09 15:03:07.107 +05:00 [INF] Пользователь admin@atoystore.com успешно вошёл в систему.
+2025-05-09 15:03:07.308 +05:00 [INF] HTTP POST /auth/login responded 200 in 591.1633 ms
+2025-05-09 15:03:07.320 +05:00 [INF] HTTP GET /auth/me responded 302 in 1.2733 ms
+2025-05-09 15:03:07.325 +05:00 [INF] HTTP GET /auth/login responded 405 in 0.1837 ms
+2025-05-09 15:06:17.407 +05:00 [INF] HTTP GET /auth/me responded 401 in 85.0722 ms
+2025-05-09 15:06:17.423 +05:00 [INF] HTTP GET /auth/me responded 401 in 7.6074 ms
+2025-05-09 15:06:28.024 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 1.1259 ms
+2025-05-09 15:06:28.315 +05:00 [INF] Пользователь admin@atoystore.com успешно вошёл в систему.
+2025-05-09 15:06:28.503 +05:00 [INF] HTTP POST /auth/login responded 200 in 474.0400 ms
+2025-05-09 15:06:28.513 +05:00 [INF] HTTP GET /auth/me responded 401 in 2.3343 ms
+2025-05-09 15:08:13.866 +05:00 [INF] HTTP GET / responded 404 in 0.2525 ms
+2025-05-09 15:09:06.858 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.9551 ms
+2025-05-09 15:09:07.129 +05:00 [WRN] Неверный пароль у пользователя sergei05037@gmail.com
+2025-05-09 15:09:07.252 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Security.SecurityException: Неверный пароль.
+   at IdentityServer.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 118
+   at IdentityServer.Controllers.AuthController.Login(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 42
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 220
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-09 15:09:07.275 +05:00 [WRN] Ошибка 403: Неверный пароль. | Path: /auth/login
+2025-05-09 15:09:07.280 +05:00 [INF] HTTP POST /auth/login responded 403 in 414.1916 ms
+2025-05-09 15:09:13.668 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.3277 ms
+2025-05-09 15:09:13.855 +05:00 [WRN] Неверный пароль у пользователя sergei05037@gmail.com
+2025-05-09 15:09:13.944 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Security.SecurityException: Неверный пароль.
+   at IdentityServer.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 118
+   at IdentityServer.Controllers.AuthController.Login(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 42
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 220
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-09 15:09:13.954 +05:00 [WRN] Ошибка 403: Неверный пароль. | Path: /auth/login
+2025-05-09 15:09:13.955 +05:00 [INF] HTTP POST /auth/login responded 403 in 281.6236 ms
+2025-05-09 15:09:24.487 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.3124 ms
+2025-05-09 15:09:24.631 +05:00 [INF] Пользователь admin@atoystore.com успешно вошёл в систему.
+2025-05-09 15:09:24.639 +05:00 [INF] HTTP POST /auth/login responded 200 in 146.7536 ms
+2025-05-09 15:09:24.645 +05:00 [INF] HTTP GET /auth/me responded 401 in 2.3485 ms
+2025-05-09 15:09:34.253 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.5329 ms
+2025-05-09 15:09:34.403 +05:00 [WRN] Неверный пароль у пользователя admin@atoystore.com
+2025-05-09 15:09:34.488 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Security.SecurityException: Неверный пароль.
+   at IdentityServer.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 118
+   at IdentityServer.Controllers.AuthController.Login(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 42
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 220
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-09 15:09:34.500 +05:00 [WRN] Ошибка 403: Неверный пароль. | Path: /auth/login
+2025-05-09 15:09:34.504 +05:00 [INF] HTTP POST /auth/login responded 403 in 246.2910 ms
+2025-05-09 15:18:50.338 +05:00 [INF] HTTP GET /auth/me responded 401 in 75.6492 ms
+2025-05-09 15:18:50.346 +05:00 [INF] HTTP GET /auth/me responded 401 in 6.2981 ms
+2025-05-09 15:19:05.076 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 1.6051 ms
+2025-05-09 15:19:05.479 +05:00 [INF] Пользователь admin@atoystore.com успешно вошёл в систему.
+2025-05-09 15:19:05.649 +05:00 [INF] HTTP POST /auth/login responded 200 in 566.0744 ms
+2025-05-09 15:19:05.661 +05:00 [INF] HTTP GET /auth/me responded 200 in 3.3335 ms

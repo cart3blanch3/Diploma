@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AToyStore.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+acbafef2f927849d3df604ac1d35d8a809985923")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+907734bbdb9d880362c4e577424f272a48412f1b")]
 [assembly: System.Reflection.AssemblyProductAttribute("AToyStore.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AToyStore.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

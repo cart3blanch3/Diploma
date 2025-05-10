@@ -139,7 +139,7 @@ public class AuthService : IAuthService
 
         // Генерация токенов при успешной аутентификации
         var accessToken = await _tokenService.GenerateAccessToken(user);
-        var refreshToken = _tokenService.GenerateRefreshToken(user);
+        var refreshToken = _tokenService.GenerateRefreshToken(user, request.Fingerprint);
         await _authRepository.SaveRefreshTokenAsync(refreshToken);
 
         // Возвращаем токены
@@ -158,7 +158,8 @@ public class AuthService : IAuthService
             throw new SecurityException("Неверный 2FA код.");
 
         var accessToken = await _tokenService.GenerateAccessToken(user);
-        var refreshToken = _tokenService.GenerateRefreshToken(user);
+        var refreshToken = _tokenService.GenerateRefreshToken(user, request.Fingerprint);
+
         await _authRepository.SaveRefreshTokenAsync(refreshToken);
 
         return (accessToken, refreshToken.Token);
@@ -215,29 +216,44 @@ public class AuthService : IAuthService
     }
 
     // Обновление access и refresh токенов по refresh-токену
-    public async Task<(string AccessToken, string RefreshToken)> RefreshTokenAsync(string refreshToken)
+    public async Task<(string AccessToken, string RefreshToken)> RefreshTokenAsync(string fingerprint)
     {
-        // Поиск refresh-токена
-        var storedToken = await _authRepository.GetRefreshTokenAsync(refreshToken);
+        // Достаём токен из HttpOnly cookie
+        var refreshToken = _httpContextAccessor.HttpContext?.Request.Cookies["refreshToken"];
+        if (string.IsNullOrEmpty(refreshToken))
+            throw new SecurityException("Refresh-токен отсутствует.");
 
-        // Проверка существования токена и срока его действия
+        // Находим токен в базе
+        var storedToken = await _authRepository.GetRefreshTokenAsync(refreshToken);
         if (storedToken == null || storedToken.ExpiresAt <= DateTime.UtcNow)
             throw new SecurityException("Refresh-токен недействителен или истёк.");
 
-        // Получаем пользователя, которому принадлежит токен
+        // Сравниваем fingerprint
+        if (storedToken.Fingerprint != fingerprint)
+            throw new SecurityException("Неверный отпечаток устройства.");
+
+        // Получаем пользователя
         var user = await _authRepository.GetUserByIdAsync(storedToken.UserId);
         if (user == null)
             throw new UnauthorizedAccessException("Пользователь не найден.");
 
-        // Генерация новых токенов
+        // Генерируем новые токены
         var newAccessToken = await _tokenService.GenerateAccessToken(user);
-        var newRefreshToken = _tokenService.GenerateRefreshToken(user);
+        var newRefreshToken = _tokenService.GenerateRefreshToken(user, fingerprint);
 
-        // Обновляем refresh-токен: помечаем старый как использованный и сохраняем новый
+        // Обновляем
         await _authRepository.InvalidateRefreshTokenAsync(storedToken);
         await _authRepository.SaveRefreshTokenAsync(newRefreshToken);
 
-        // Возвращаем новые токены клиенту
+        // Устанавливаем новый refresh-токен в HttpOnly cookie
+        _httpContextAccessor.HttpContext?.Response.Cookies.Append("refreshToken", newRefreshToken.Token, new CookieOptions
+        {
+            HttpOnly = true,
+            Secure = true,
+            SameSite = SameSiteMode.Strict,
+            Expires = newRefreshToken.ExpiresAt
+        });
+
         return (newAccessToken, newRefreshToken.Token);
     }
 }

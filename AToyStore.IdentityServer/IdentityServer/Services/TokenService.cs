@@ -95,7 +95,7 @@ public class TokenService : ITokenService
     }
 
     // Генерация RefreshToken — используется для обновления AccessToken без повторного входа
-    public RefreshToken GenerateRefreshToken(User user)
+    public RefreshToken GenerateRefreshToken(User user, string fingerprint)
     {
         try
         {
@@ -111,9 +111,10 @@ public class TokenService : ITokenService
             // Формируем refresh-токен
             return new RefreshToken
             {
-                Token = Convert.ToBase64String(randomNumber), // кодируем случайные байты в строку
+                Token = Convert.ToBase64String(randomNumber), // случайный токен в base64
                 ExpiresAt = DateTime.UtcNow.AddMinutes(lifetime), // срок действия
-                UserId = user.Id // привязка к пользователю
+                UserId = user.Id, // ID пользователя
+                Fingerprint = fingerprint // Привязка токена к fingerprint устройства
             };
         }
         catch (Exception ex)

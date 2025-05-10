@@ -26,8 +26,12 @@ namespace IdentityServer.Requests
         string Email,
 
         [Required(ErrorMessage = "Пароль обязателен")]
-        string Password
+        string Password,
+
+        [Required(ErrorMessage = "Отпечаток устройства обязателен")]
+        string Fingerprint
     );
+
 
     public record VerifyTwoFactorRequest(
         [Required(ErrorMessage = "Email обязателен")]
@@ -35,8 +39,12 @@ namespace IdentityServer.Requests
         string Email,
 
         [Required(ErrorMessage = "Код обязателен")]
-        string Code
+        string Code,
+
+        [Required(ErrorMessage = "Отпечаток устройства обязателен")]
+        string Fingerprint
     );
+
 
     public record ForgotPasswordRequest(
         [Required(ErrorMessage = "Email обязателен")]
@@ -69,7 +77,7 @@ namespace IdentityServer.Requests
     );
 
     public record RefreshTokenRequest(
-        [Required(ErrorMessage = "Refresh-токен обязателен")]
-        string RefreshToken = ""
+        [Required(ErrorMessage = "Отпечаток устройства обязателен")]
+        string Fingerprint
     );
 }

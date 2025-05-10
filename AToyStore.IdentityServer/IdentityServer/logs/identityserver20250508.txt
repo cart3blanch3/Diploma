@@ -1,0 +1,16 @@
+2025-05-08 17:14:20.357 +05:00 [INF] Starting IdentityServer4 version 4.1.2+997a6cdd643e46cd5762b710c4ddc43574cbec2e
+2025-05-08 17:14:20.945 +05:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2025-05-08 17:14:29.809 +05:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2025-05-08 17:14:29.856 +05:00 [INF] HTTP GET /.well-known/openid-configuration responded 200 in 79.2794 ms
+2025-05-08 17:14:29.957 +05:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2025-05-08 17:14:30.010 +05:00 [INF] Showing login: User is not authenticated
+2025-05-08 17:14:30.014 +05:00 [INF] HTTP GET /connect/authorize responded 302 in 94.7059 ms
+2025-05-08 17:14:30.028 +05:00 [INF] HTTP GET /Account/Login responded 404 in 5.1604 ms
+2025-05-08 17:14:39.602 +05:00 [INF] HTTP GET /Account/Login responded 404 in 0.5210 ms
+2025-05-08 17:14:40.060 +05:00 [INF] HTTP GET /Account/Login responded 404 in 0.3078 ms
+2025-05-08 17:14:48.458 +05:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2025-05-08 17:14:48.461 +05:00 [INF] HTTP GET /.well-known/openid-configuration responded 200 in 6.1878 ms
+2025-05-08 17:14:48.478 +05:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2025-05-08 17:14:48.479 +05:00 [INF] Showing login: User is not authenticated
+2025-05-08 17:14:48.480 +05:00 [INF] HTTP GET /connect/authorize responded 302 in 4.1977 ms
+2025-05-08 17:14:48.485 +05:00 [INF] HTTP GET /Account/Login responded 404 in 0.1429 ms

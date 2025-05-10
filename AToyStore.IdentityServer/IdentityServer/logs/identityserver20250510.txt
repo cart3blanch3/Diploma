@@ -1,0 +1,163 @@
+2025-05-10 16:08:34.354 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 22.0976 ms
+2025-05-10 16:08:34.490 +05:00 [INF] HTTP POST /auth/login responded 400 in 78.2177 ms
+2025-05-10 16:08:38.819 +05:00 [INF] HTTP POST /auth/login responded 400 in 12.5007 ms
+2025-05-10 16:08:49.122 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.3675 ms
+2025-05-10 16:08:49.147 +05:00 [INF] HTTP POST /auth/login responded 400 in 18.2349 ms
+2025-05-10 16:09:09.909 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.3541 ms
+2025-05-10 16:09:09.917 +05:00 [INF] HTTP POST /auth/login responded 400 in 2.5419 ms
+2025-05-10 16:09:17.768 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.1614 ms
+2025-05-10 16:09:17.777 +05:00 [INF] HTTP POST /auth/login responded 400 in 2.2616 ms
+2025-05-10 16:10:07.005 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 1.0235 ms
+2025-05-10 16:10:07.043 +05:00 [INF] HTTP POST /auth/login responded 400 in 29.8063 ms
+2025-05-10 16:11:13.290 +05:00 [INF] HTTP OPTIONS /auth/refresh-token responded 204 in 0.2513 ms
+2025-05-10 16:11:13.306 +05:00 [INF] HTTP POST /auth/refresh-token responded 400 in 9.2419 ms
+2025-05-10 16:20:01.004 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 15.3792 ms
+2025-05-10 16:20:18.655 +05:00 [INF] Пользователь admin@atoystore.com успешно вошёл в систему.
+2025-05-10 16:20:18.993 +05:00 [INF] HTTP POST /auth/login responded 200 in 813.2560 ms
+2025-05-10 16:21:35.760 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 22.2674 ms
+2025-05-10 16:21:36.151 +05:00 [INF] Пользователь admin@atoystore.com успешно вошёл в систему.
+2025-05-10 16:21:36.371 +05:00 [INF] HTTP POST /auth/login responded 200 in 552.6668 ms
+2025-05-10 16:30:54.419 +05:00 [INF] HTTP OPTIONS /auth/refresh-token responded 204 in 0.9527 ms
+2025-05-10 16:30:54.419 +05:00 [INF] HTTP OPTIONS /auth/refresh-token responded 204 in 0.9527 ms
+2025-05-10 16:30:54.488 +05:00 [INF] HTTP POST /auth/refresh-token responded 400 in 56.1671 ms
+2025-05-10 16:30:54.488 +05:00 [INF] HTTP POST /auth/refresh-token responded 400 in 53.2430 ms
+2025-05-10 16:32:05.324 +05:00 [INF] HTTP OPTIONS /auth/refresh-token responded 204 in 0.7892 ms
+2025-05-10 16:32:05.339 +05:00 [INF] HTTP POST /auth/refresh-token responded 400 in 12.0732 ms
+2025-05-10 16:33:40.295 +05:00 [INF] HTTP GET /.well-known/openid-configuration responded 404 in 0.2221 ms
+2025-05-10 16:33:52.320 +05:00 [INF] HTTP GET /.well-known/openid-configuration responded 404 in 0.1385 ms
+2025-05-10 16:35:00.467 +05:00 [INF] HTTP GET /.well-known/openid-configuration responded 404 in 1.5174 ms
+2025-05-10 16:39:14.350 +05:00 [INF] HTTP OPTIONS /auth/refresh-token responded 204 in 0.8672 ms
+2025-05-10 16:39:14.387 +05:00 [INF] HTTP POST /auth/refresh-token responded 400 in 5.2225 ms
+2025-05-10 16:41:52.701 +05:00 [INF] HTTP GET /.well-known/openid-configuration responded 404 in 0.6997 ms
+2025-05-10 16:43:10.860 +05:00 [INF] HTTP GET /.well-known/openid-configuration responded 404 in 0.1939 ms
+2025-05-10 16:44:32.385 +05:00 [INF] HTTP OPTIONS /auth/refresh-token responded 204 in 2.2950 ms
+2025-05-10 16:44:32.400 +05:00 [INF] HTTP POST /auth/refresh-token responded 400 in 7.2349 ms
+2025-05-10 16:49:16.300 +05:00 [INF] HTTP GET /.well-known/openid-configuration responded 404 in 16.0743 ms
+2025-05-10 16:49:36.250 +05:00 [INF] HTTP GET /.well-known/openid-configuration responded 404 in 0.7234 ms
+2025-05-10 16:52:29.739 +05:00 [INF] HTTP GET /.well-known/openid-configuration responded 404 in 0.3466 ms
+2025-05-10 16:54:36.106 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 2.2341 ms
+2025-05-10 16:54:36.232 +05:00 [INF] HTTP POST /auth/login responded 400 in 111.7516 ms
+2025-05-10 16:55:11.639 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.3630 ms
+2025-05-10 16:55:11.649 +05:00 [INF] HTTP POST /auth/login responded 400 in 6.4639 ms
+2025-05-10 16:55:40.648 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 37.9165 ms
+2025-05-10 16:55:40.667 +05:00 [INF] HTTP POST /auth/login responded 400 in 12.1723 ms
+2025-05-10 16:56:52.084 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 19.2982 ms
+2025-05-10 16:56:52.212 +05:00 [INF] HTTP POST /auth/login responded 400 in 62.7328 ms
+2025-05-10 16:57:00.624 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.4705 ms
+2025-05-10 16:57:00.637 +05:00 [INF] HTTP POST /auth/login responded 400 in 6.5390 ms
+2025-05-10 16:58:50.296 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.3491 ms
+2025-05-10 16:58:50.319 +05:00 [INF] HTTP POST /auth/login responded 400 in 17.1524 ms
+2025-05-10 16:59:06.365 +05:00 [INF] HTTP OPTIONS /auth/refresh-token responded 204 in 0.2363 ms
+2025-05-10 16:59:18.259 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Security.SecurityException: Неверный отпечаток устройства.
+   at IdentityServer.Services.AuthService.RefreshTokenAsync(String fingerprint) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 233
+   at IdentityServer.Controllers.AuthController.RefreshToken(RefreshTokenRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 94
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 220
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-10 16:59:18.259 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Security.SecurityException: Неверный отпечаток устройства.
+   at IdentityServer.Services.AuthService.RefreshTokenAsync(String fingerprint) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 233
+   at IdentityServer.Controllers.AuthController.RefreshToken(RefreshTokenRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 94
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 220
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-10 16:59:18.290 +05:00 [WRN] Ошибка 403: Неверный отпечаток устройства. | Path: /auth/refresh-token
+2025-05-10 16:59:18.301 +05:00 [WRN] Ошибка 403: Неверный отпечаток устройства. | Path: /auth/refresh-token
+2025-05-10 16:59:18.305 +05:00 [INF] HTTP POST /auth/refresh-token responded 403 in 1973.2742 ms
+2025-05-10 16:59:18.305 +05:00 [INF] HTTP POST /auth/refresh-token responded 403 in 11937.0205 ms
+2025-05-10 16:59:26.245 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.5597 ms
+2025-05-10 16:59:26.255 +05:00 [INF] HTTP POST /auth/login responded 400 in 4.9302 ms
+2025-05-10 16:59:35.974 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.1697 ms
+2025-05-10 16:59:35.986 +05:00 [INF] HTTP POST /auth/login responded 400 in 4.5596 ms
+2025-05-10 17:00:22.717 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.5096 ms
+2025-05-10 17:00:22.726 +05:00 [INF] HTTP POST /auth/login responded 400 in 3.1177 ms
+2025-05-10 17:00:25.454 +05:00 [INF] HTTP POST /auth/login responded 400 in 4.4746 ms
+2025-05-10 17:03:02.430 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.3609 ms
+2025-05-10 17:03:02.441 +05:00 [INF] HTTP POST /auth/login responded 400 in 3.0243 ms
+2025-05-10 17:03:34.158 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 5.2667 ms
+2025-05-10 17:03:34.168 +05:00 [INF] HTTP POST /auth/login responded 400 in 3.0047 ms
+2025-05-10 17:04:16.857 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 21.7120 ms
+2025-05-10 17:04:17.076 +05:00 [INF] HTTP POST /auth/login responded 400 in 78.8064 ms
+2025-05-10 17:04:23.896 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.4480 ms
+2025-05-10 17:04:23.910 +05:00 [INF] HTTP POST /auth/login responded 400 in 7.3529 ms
+2025-05-10 17:04:32.113 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.5318 ms
+2025-05-10 17:04:32.131 +05:00 [INF] HTTP POST /auth/login responded 400 in 11.7586 ms
+2025-05-10 17:04:45.673 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.4191 ms
+2025-05-10 17:04:45.683 +05:00 [INF] HTTP POST /auth/login responded 400 in 4.1283 ms
+2025-05-10 17:05:17.690 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.2731 ms
+2025-05-10 17:05:17.702 +05:00 [INF] HTTP POST /auth/login responded 400 in 5.3629 ms
+2025-05-10 17:06:16.353 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 5.1509 ms
+2025-05-10 17:06:16.361 +05:00 [INF] HTTP POST /auth/login responded 400 in 3.4798 ms
+2025-05-10 17:06:18.756 +05:00 [INF] HTTP POST /auth/login responded 400 in 4.2822 ms
+2025-05-10 17:06:33.703 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.8950 ms
+2025-05-10 17:06:33.711 +05:00 [INF] HTTP POST /auth/login responded 400 in 3.2371 ms
+2025-05-10 17:06:49.571 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.1551 ms
+2025-05-10 17:06:49.582 +05:00 [INF] HTTP POST /auth/login responded 400 in 3.2634 ms
+2025-05-10 17:07:17.260 +05:00 [INF] HTTP OPTIONS /auth/refresh-token responded 204 in 0.2157 ms
+2025-05-10 17:07:42.092 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Security.SecurityException: Refresh-токен отсутствует.
+   at IdentityServer.Services.AuthService.RefreshTokenAsync(String fingerprint) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 224
+   at IdentityServer.Controllers.AuthController.RefreshToken(RefreshTokenRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 94
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 220
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-10 17:07:42.092 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Security.SecurityException: Refresh-токен отсутствует.
+   at IdentityServer.Services.AuthService.RefreshTokenAsync(String fingerprint) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 224
+   at IdentityServer.Controllers.AuthController.RefreshToken(RefreshTokenRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 94
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 220
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-10 17:07:42.117 +05:00 [WRN] Ошибка 403: Refresh-токен отсутствует. | Path: /auth/refresh-token
+2025-05-10 17:07:43.789 +05:00 [INF] HTTP POST /auth/refresh-token responded 403 in 26526.1291 ms
+2025-05-10 17:07:45.379 +05:00 [WRN] Ошибка 403: Refresh-токен отсутствует. | Path: /auth/refresh-token
+2025-05-10 17:07:46.266 +05:00 [INF] HTTP POST /auth/refresh-token responded 403 in 16063.9096 ms
+2025-05-10 17:07:56.668 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.2142 ms
+2025-05-10 17:07:58.809 +05:00 [INF] HTTP POST /auth/login responded 400 in 3.8738 ms
+2025-05-10 17:08:07.367 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.2921 ms
+2025-05-10 17:08:07.377 +05:00 [INF] HTTP POST /auth/login responded 400 in 4.2605 ms
+2025-05-10 17:09:15.406 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.4447 ms
+2025-05-10 17:09:17.336 +05:00 [INF] HTTP POST /auth/login responded 400 in 3.2900 ms

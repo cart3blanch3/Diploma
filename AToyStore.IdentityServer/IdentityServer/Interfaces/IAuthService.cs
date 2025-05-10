@@ -10,5 +10,5 @@ public interface IAuthService
     Task ConfirmEmailAsync(ConfirmEmailRequest request);
     Task ForgotPasswordAsync(ForgotPasswordRequest request);
     Task ResetPasswordAsync(ResetPasswordRequest request);
-    Task<(string AccessToken, string RefreshToken)> RefreshTokenAsync(string refreshToken);
+    Task<(string AccessToken, string RefreshToken)> RefreshTokenAsync(string fingerprint);
 }

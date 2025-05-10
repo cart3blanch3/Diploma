@@ -31,6 +31,11 @@ namespace IdentityServer.Data.Migrations.AppDb
                     b.Property<DateTime>("ExpiresAt")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<string>("Fingerprint")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
                     b.Property<bool>("IsRevoked")
                         .HasColumnType("boolean");
 

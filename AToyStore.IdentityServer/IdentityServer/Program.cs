@@ -1,12 +1,10 @@
-﻿using IdentityServer.Config;
-using IdentityServer.Data;
+﻿using IdentityServer.Data;
 using IdentityServer.Filters;
 using IdentityServer.Middlewares;
 using IdentityServer.Models;
 using IdentityServer.Repositories;
 using IdentityServer.Interfaces;
 using IdentityServer.Services;
-using IdentityServer4.EntityFramework.DbContexts;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -18,6 +16,7 @@ using Serilog.Events;
 using Serilog.Sinks.Http.BatchFormatters;
 using System.Security;
 using System.Security.Cryptography;
+using Microsoft.AspNetCore.Antiforgery;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -56,9 +55,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL"),
         npgsql => npgsql.MigrationsAssembly(migrationsAssembly)));
 
-builder.Services.AddDbContext<PersistedGrantDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL"),
-        npgsql => npgsql.MigrationsAssembly(migrationsAssembly)));
+//builder.Services.AddDbContext<PersistedGrantDbContext>(options =>
+//    options.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL"),
+//        npgsql => npgsql.MigrationsAssembly(migrationsAssembly)));
 
 // Использование кастомного хэшера паролей на основе BCrypt
 builder.Services.AddScoped<IPasswordHasher<User>, BcryptPasswordHasher<User>>();
@@ -67,6 +66,18 @@ builder.Services.AddScoped<IPasswordHasher<User>, BcryptPasswordHasher<User>>();
 builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Cookie.Name = "AToyStore.Auth";
+    options.Cookie.HttpOnly = true;
+    /*options.Cookie.SecurePolicy = CookieSecurePolicy.Always;*/ // Только по HTTPS
+    options.Cookie.SameSite = SameSiteMode.Strict; // Или Lax, если взаимодействие с внешними ресурсами
+    options.LoginPath = "/auth/login";
+    options.AccessDeniedPath = "/auth/access-denied";
+    options.SlidingExpiration = true;
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+});
 
 // Настройка параметров пароля
 builder.Services.Configure<IdentityOptions>(options =>
@@ -87,6 +98,11 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Lockout.AllowedForNewUsers = true;
 });
 
+builder.Services.AddAntiforgery(options =>
+{
+    options.Cookie.Name = "X-CSRF-TOKEN";
+    options.HeaderName = "X-CSRF-TOKEN";
+});
 
 // Регистрация зависимостей
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
@@ -118,19 +134,6 @@ var key = new RsaSecurityKey(rsa)
     KeyId = builder.Configuration["JwtSettings:KeyId"]
 };
 var signingCredentials = new SigningCredentials(key, SecurityAlgorithms.RsaSha256);
-
-// Настройка IdentityServer
-builder.Services.AddIdentityServer()
-    .AddSigningCredential(signingCredentials)
-    .AddAspNetIdentity<User>()
-    .AddOperationalStore(options =>
-    {
-        options.ConfigureDbContext = b =>
-            b.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL"));
-    })
-    .AddInMemoryClients(IdentityServerConfig.GetClients())
-    .AddInMemoryApiScopes(IdentityServerConfig.GetApiScopes())
-    .AddInMemoryIdentityResources(IdentityServerConfig.GetIdentityResources());
 
 builder.Services.AddAuthorization();
 builder.Services.AddHttpContextAccessor();
@@ -202,9 +205,23 @@ app.UseExceptionHandler(errorApp =>
     });
 });
 
+app.Use(async (context, next) =>
+{
+    var antiforgery = context.RequestServices.GetRequiredService<IAntiforgery>();
+    var tokens = antiforgery.GetAndStoreTokens(context);
+
+    context.Response.Cookies.Append("X-CSRF-TOKEN", tokens.RequestToken!, new CookieOptions
+    {
+        HttpOnly = false,
+        Secure = true,
+        SameSite = SameSiteMode.Strict
+    });
+
+    await next();
+});
+
 // Использование CORS, IdentityServer и контроллеров
 app.UseCors("AllowFrontend");
-app.UseIdentityServer();
 app.UseAuthorization();
 app.MapControllers();
 

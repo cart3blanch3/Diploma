@@ -15,6 +15,9 @@ public class RefreshToken
     [MaxLength(512)]
     public string Token { get; set; } = string.Empty;
 
+    [MaxLength(200)]
+    public string Fingerprint { get; set; } = string.Empty;
+
     // Дата и время истечения срока действия токена
     public DateTime ExpiresAt { get; set; }
 

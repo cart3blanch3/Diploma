@@ -1,6 +1,5 @@
 ﻿using IdentityServer.Interfaces;
 using IdentityServer.Requests;
-using IdentityServer.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -41,11 +40,18 @@ public class AuthController : ControllerBase
         var (accessToken, refreshToken, requires2FA) = await _authService.LoginAsync(request);
 
         if (requires2FA)
-        {
             return Ok(new { Requires2FA = true });
-        }
 
-        return Ok(new { AccessToken = accessToken, RefreshToken = refreshToken });
+        // Установка refresh-токена в HttpOnly-куку
+        Response.Cookies.Append("refreshToken", refreshToken!, new CookieOptions
+        {
+            HttpOnly = false,
+            Secure = true,
+            SameSite = SameSiteMode.Strict,
+            Expires = DateTime.UtcNow.AddDays(60) // Можно вынести в конфиг
+        });
+
+        return Ok(new { AccessToken = accessToken });
     }
 
     /// Подтверждение входа по 2FA-коду.
@@ -53,7 +59,16 @@ public class AuthController : ControllerBase
     public async Task<IActionResult> VerifyTwoFactor([FromBody] VerifyTwoFactorRequest request)
     {
         var (accessToken, refreshToken) = await _authService.VerifyTwoFactorAsync(request);
-        return Ok(new { AccessToken = accessToken, RefreshToken = refreshToken });
+
+        Response.Cookies.Append("refreshToken", refreshToken, new CookieOptions
+        {
+            HttpOnly = false,
+            Secure = true,
+            SameSite = SameSiteMode.Strict,
+            Expires = DateTime.UtcNow.AddDays(60)
+        });
+
+        return Ok(new { AccessToken = accessToken });
     }
 
     /// Отправка письма для сброса пароля.
@@ -76,7 +91,16 @@ public class AuthController : ControllerBase
     [HttpPost("refresh-token")]
     public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenRequest request)
     {
-        var (accessToken, refreshToken) = await _authService.RefreshTokenAsync(request.RefreshToken);
-        return Ok(new { AccessToken = accessToken, RefreshToken = refreshToken });
+        var (accessToken, refreshToken) = await _authService.RefreshTokenAsync(request.Fingerprint);
+
+        Response.Cookies.Append("refreshToken", refreshToken, new CookieOptions
+        {
+            HttpOnly = false,
+            Secure = true,
+            SameSite = SameSiteMode.Strict,
+            Expires = DateTime.UtcNow.AddDays(60)
+        });
+
+        return Ok(new { AccessToken = accessToken });
     }
 }
