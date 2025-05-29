@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+.product-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.product-modal {
+    background: white;
+    padding: 32px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 540px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.product-modal h2 {
+    margin: 0 0 16px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+}
+
+.product-modal label {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    margin-top: 14px;
+    color: #444;
+}
+
+.product-modal input,
+.product-modal textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid #cbbba4;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.product-modal input:focus,
+.product-modal textarea:focus {
+    border-color: #a89072;
+    outline: none;
+}
+
+.product-modal textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.product-modal .image-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.product-modal .preview-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #cbbba4;
+}
+
+.product-modal .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.product-modal .modal-actions button {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.product-modal .modal-actions button:first-child {
+    background-color: #cbbba4;
+    color: white;
+}
+
+.product-modal .modal-actions button:first-child:hover {
+    background-color: #a89072;
+}
+
+.product-modal .modal-actions button:last-child {
+    background-color: #eee;
+    color: #333;
+}
+
+.product-modal .modal-actions button:last-child:hover {
+    background-color: #ddd;
+}

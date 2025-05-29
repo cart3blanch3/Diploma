@@ -1,0 +1,123 @@
+.floating-cart-icon {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #cbbba4;
+    color: white;
+    padding: 14px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.cart-count {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.floating-cart-dropdown {
+    position: fixed;
+    bottom: 80px;
+    right: 25px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    padding: 16px;
+    z-index: 999;
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.floating-cart-dropdown h4 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+/* удаление (только конкретные кнопки удаления) */
+.cart-item-remove,
+.cart-item-qty button.remove {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #c00;
+    font-size: 16px;
+}
+
+/* ✅ Оформить заказ — как "в корзину" */
+.checkout-button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #cbbba4;
+    color: white !important;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-button:hover {
+    background-color: #a89072;
+}
+
+.cart-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.cart-item-title {
+    font-weight: 600;
+    color: #333;
+    word-break: break-word;
+}
+
+.cart-item-price {
+    color: #a89072;
+    font-weight: bold;
+}
+
+.cart-item-qty {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cart-item-qty button {
+    background-color: #cbbba4;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    padding: 4px 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.cart-item-qty button:hover {
+    background-color: #a89072;
+}

@@ -1,0 +1,11 @@
+2025-05-16 02:39:39.568 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 20.0977 ms
+2025-05-16 02:39:40.038 +05:00 [INF] Пользователь admin@atoystore.com успешно вошёл в систему.
+2025-05-16 02:39:40.384 +05:00 [INF] HTTP POST /auth/login responded 200 in 747.6046 ms
+2025-05-16 03:52:58.105 +05:00 [INF] HTTP OPTIONS /auth/refresh-token responded 204 in 21.0037 ms
+2025-05-16 03:52:58.105 +05:00 [INF] HTTP OPTIONS /auth/refresh-token responded 204 in 21.0100 ms
+2025-05-16 03:52:58.674 +05:00 [INF] HTTP POST /auth/refresh-token responded 200 in 460.1571 ms
+2025-05-16 03:52:58.674 +05:00 [INF] HTTP POST /auth/refresh-token responded 200 in 460.1488 ms
+2025-05-16 03:58:29.937 +05:00 [INF] HTTP OPTIONS /auth/refresh-token responded 204 in 19.2514 ms
+2025-05-16 03:58:29.937 +05:00 [INF] HTTP OPTIONS /auth/refresh-token responded 204 in 19.1659 ms
+2025-05-16 03:58:30.600 +05:00 [INF] HTTP POST /auth/refresh-token responded 200 in 567.7639 ms
+2025-05-16 03:58:30.600 +05:00 [INF] HTTP POST /auth/refresh-token responded 200 in 567.7618 ms

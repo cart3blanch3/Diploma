@@ -1,0 +1,32 @@
+2025-05-27 16:20:06.725 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 18.6241 ms
+2025-05-27 16:20:07.705 +05:00 [INF] Пользователь sergei05037@gmail.com успешно вошёл в систему.
+2025-05-27 16:20:07.715 +05:00 [INF] Отправка 2FA кода на email для пользователя sergei05037@gmail.com
+2025-05-27 16:20:09.178 +05:00 [INF] HTTP POST /auth/login responded 200 in 2377.1864 ms
+2025-05-27 16:20:22.377 +05:00 [INF] HTTP OPTIONS /auth/verify-2fa responded 204 in 0.4457 ms
+2025-05-27 16:20:22.656 +05:00 [INF] HTTP POST /auth/verify-2fa responded 200 in 275.2477 ms
+2025-05-27 16:21:34.388 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 0.2911 ms
+2025-05-27 16:21:34.637 +05:00 [INF] Пользователь admin@atoystore.com успешно вошёл в систему.
+2025-05-27 16:21:34.646 +05:00 [FTL] Обнаружена попытка входа с третьего устройства. Возможная компрометация аккаунта cb32f405-02ab-4933-8703-3c753a33e2ea. Всего активных устройств: 3. Fingerprint: 042da2dd729d278fd4c8289a0ac9a401
+2025-05-27 16:21:34.782 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Security.SecurityException: Обнаружено более двух устройств. Возможна компрометация аккаунта.
+   at IdentityServer.Repositories.AuthRepository.SaveRefreshTokenAsync(RefreshToken refreshToken) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Repositories\AuthRepository.cs:line 155
+   at IdentityServer.Services.AuthService.LoginAsync(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Services\AuthService.cs:line 142
+   at IdentityServer.Controllers.AuthController.Login(LoginRequest request) in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Controllers\AuthController.cs:line 40
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Sergey\FinalCut\AToyStore.IdentityServer\IdentityServer\Program.cs:line 221
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-05-27 16:21:34.811 +05:00 [WRN] Ошибка 403: Обнаружено более двух устройств. Возможна компрометация аккаунта. | Path: /auth/login
+2025-05-27 16:21:34.826 +05:00 [INF] HTTP POST /auth/login responded 403 in 405.8150 ms
+2025-05-27 16:39:17.900 +05:00 [INF] HTTP OPTIONS /auth/login responded 204 in 2.4731 ms
+2025-05-27 16:39:18.102 +05:00 [INF] Пользователь admin@atoystore.com успешно вошёл в систему.
+2025-05-27 16:39:18.115 +05:00 [INF] HTTP POST /auth/login responded 200 in 201.9142 ms

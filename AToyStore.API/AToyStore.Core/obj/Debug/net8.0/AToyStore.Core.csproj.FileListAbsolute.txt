@@ -1,12 +1,13 @@
-C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Core\bin\Debug\net8.0\AToyStore.Core.deps.json
-C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Core\bin\Debug\net8.0\AToyStore.Core.dll
-C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Core\bin\Debug\net8.0\AToyStore.Core.pdb
+C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Core\obj\Debug\net8.0\AToyStore.Core.csproj.AssemblyReference.cache
 C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Core\obj\Debug\net8.0\AToyStore.Core.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Core\obj\Debug\net8.0\AToyStore.Core.AssemblyInfoInputs.cache
 C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Core\obj\Debug\net8.0\AToyStore.Core.AssemblyInfo.cs
 C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Core\obj\Debug\net8.0\AToyStore.Core.csproj.CoreCompileInputs.cache
+C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Core\obj\Debug\net8.0\AToyStore.Core.sourcelink.json
+C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Core\bin\Debug\net8.0\AToyStore.Core.deps.json
+C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Core\bin\Debug\net8.0\AToyStore.Core.dll
+C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Core\bin\Debug\net8.0\AToyStore.Core.pdb
 C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Core\obj\Debug\net8.0\AToyStore.Core.dll
 C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Core\obj\Debug\net8.0\refint\AToyStore.Core.dll
 C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Core\obj\Debug\net8.0\AToyStore.Core.pdb
 C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Core\obj\Debug\net8.0\ref\AToyStore.Core.dll
-C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.Core\obj\Debug\net8.0\AToyStore.Core.sourcelink.json

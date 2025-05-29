@@ -147,6 +147,7 @@ var app = builder.Build();
 
 // Middleware: заголовки безопасности
 app.UseSecurityHeaders();
+app.UseMiddleware<RequestSanitizationMiddleware>();
 
 // Middleware: логгирование запросов
 app.UseSerilogRequestLogging();

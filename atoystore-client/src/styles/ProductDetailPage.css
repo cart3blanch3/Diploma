@@ -1,0 +1,273 @@
+.product-detail {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.back-button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #a89072;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.product-detail-content {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.image-gallery-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    max-width: 400px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    background-color: #f4f4f4;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.carousel-button {
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-size: 24px;
+    padding: 8px 16px;
+    cursor: pointer;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.carousel-button:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.carousel-button.left {
+    left: 5px;
+}
+
+.carousel-button.right {
+    right: 5px;
+}
+
+.detail-info {
+    flex: 1;
+    min-width: 280px;
+}
+
+.detail-info h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 26px;
+    color: #a89072;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.description {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.add-to-cart-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #cbbba4;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #a89072;
+}
+
+/* Контейнер с количеством и избранным */
+.detail-controls {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 16px;
+    max-width: fit-content;
+}
+
+.detail-info .quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+    padding: 6px 10px;
+    border-radius: 10px;
+    gap: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.detail-info .qty-btn {
+    background-color: #cbbba4;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.detail-info .qty-btn:hover {
+    background-color: #a89072;
+}
+
+.detail-info .qty-count {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    min-width: 28px;
+    text-align: center;
+}
+
+/* Кнопка избранного */
+.favorite-btn {
+    background-color: transparent;
+    border: 2px solid #cbbba4;
+    color: #cbbba4;
+    font-size: 22px;
+    padding: 8px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.favorite-btn:hover {
+    background-color: #cbbba4;
+    color: white;
+}
+
+/* Раздел отзывов */
+.reviews-section {
+    margin-top: 40px;
+}
+
+.review {
+    background-color: #f9f9f9;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.rating {
+    color: #cbbba4;
+    font-weight: bold;
+}
+
+.review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.review-form textarea {
+    resize: vertical;
+    min-height: 80px;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.review-form button {
+    align-self: flex-start;
+    padding: 10px 20px;
+    background-color: #cbbba4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.review-form button:hover {
+    background-color: #a89072;
+}
+
+/* Пагинация */
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    gap: 8px;
+}
+
+.pagination button {
+    background: #eee;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.pagination button.active {
+    background-color: #cbbba4;
+    color: white;
+}
+
+.review-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.review-actions button {
+    background: #f0f0f0;
+    border: none;
+    font-size: 22px;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #a2a2a2;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.review-actions button:hover {
+    background-color: #cbbba4;
+    color: white;
+}

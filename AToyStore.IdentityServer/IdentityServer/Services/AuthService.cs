@@ -1,7 +1,6 @@
 ﻿using IdentityServer.Models;
 using IdentityServer.Interfaces;
 using IdentityServer.Requests;
-using Microsoft.AspNetCore.Identity;
 using Serilog;
 using System.Net;
 using System.Security;

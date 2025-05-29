@@ -1,0 +1,37 @@
+.admin-catalog-page {
+    padding: 20px;
+}
+
+.admin-toolbar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.toolbar-row {
+    margin-bottom: 10px;
+}
+
+.product-button {
+    background-color: #cbbba4;
+    color: white;
+    padding: 10px 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filters input,
+.filters select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

@@ -3,6 +3,8 @@ using IdentityServer.Models;
 using IdentityServer.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Security;
+using Serilog;
 
 namespace IdentityServer.Repositories;
 
@@ -119,6 +121,41 @@ public class AuthRepository : IAuthRepository
     // Сохранить refresh-токен
     public async Task SaveRefreshTokenAsync(RefreshToken refreshToken)
     {
+        // Получаем все активные токены пользователя
+        var activeTokens = await _context.RefreshTokens
+            .Where(rt =>
+                rt.UserId == refreshToken.UserId &&
+                !rt.IsRevoked &&
+                !rt.IsUsed &&
+                rt.ExpiresAt > DateTime.UtcNow)
+            .ToListAsync();
+
+        // Проверяем, есть ли уже токен с этим fingerprint
+        var sameDeviceToken = activeTokens.FirstOrDefault(t => t.Fingerprint == refreshToken.Fingerprint);
+        if (sameDeviceToken != null)
+        {
+            sameDeviceToken.IsRevoked = true;
+            _context.RefreshTokens.Update(sameDeviceToken);
+            _context.RefreshTokens.Add(refreshToken);
+            await _context.SaveChangesAsync();
+            return;
+        }
+
+        // Считаем количество уникальных fingerprint'ов
+        var distinctDevicesCount = activeTokens
+            .Select(t => t.Fingerprint)
+            .Distinct()
+            .Count();
+
+        if (distinctDevicesCount >= 3)
+        {
+            Log.Fatal("Обнаружена попытка входа с третьего устройства. Возможная компрометация аккаунта {UserId}. Всего активных устройств: {DeviceCount}. Fingerprint: {Fingerprint}",
+                refreshToken.UserId, distinctDevicesCount, refreshToken.Fingerprint);
+
+            throw new SecurityException("Обнаружено более двух устройств. Возможна компрометация аккаунта.");
+        }
+
+        // Сохраняем токен, если всё в порядке
         _context.RefreshTokens.Add(refreshToken);
         await _context.SaveChangesAsync();
     }

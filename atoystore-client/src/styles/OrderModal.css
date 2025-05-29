@@ -1,0 +1,96 @@
+/* OrderModal.css */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: white;
+    padding: 40px;
+    width: 460px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.modal h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.modal label {
+    align-self: flex-start;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.modal input,
+.modal textarea {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border: 2px solid #cbbba4;
+    border-radius: 12px;
+    outline: none;
+    font-family: 'Open Sans', sans-serif;
+    resize: none;
+}
+
+.modal textarea {
+    min-height: 80px;
+}
+
+.modal input:focus,
+.modal textarea:focus {
+    border-color: #a89072;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.modal-actions button {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.modal-actions button:first-of-type {
+    background-color: #cbbba4;
+    color: white;
+    margin-right: 10px;
+}
+
+.modal-actions .cancel {
+    background-color: #ddd;
+    color: #333;
+}

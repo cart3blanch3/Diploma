@@ -16,11 +16,11 @@ const schema = yup.object().shape({
   email: yup
     .string()
     .email("Введите корректный email")
-    .max(100, "Максимум 100 символов")
+    .max(25, "Максимум 25 символов")
     .required("Поле обязательно"),
   password: yup
     .string()
-    .max(100, "Максимум 100 символов")
+    .max(25, "Максимум 25 символов")
     .required("Поле обязательно"),
 });
 
@@ -95,7 +95,9 @@ const LoginModal: React.FC<LoginModalProps> = ({
   const onSubmit = async (data: any) => {
     setIsSubmittingLogin(true);
     try {
+      console.log(data);
       const fingerprint = await getDeviceFingerprint(); 
+      console.log(fingerprint);
       const response = await login({ ...data, fingerprint });
 
       if (response.requires2FA) {

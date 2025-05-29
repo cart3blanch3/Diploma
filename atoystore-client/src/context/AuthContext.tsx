@@ -5,6 +5,7 @@ import { getDeviceFingerprint } from "../utils/fingerprint";
 
 interface AuthContextProps {
     isAuthenticated: boolean;
+    userId: string | null; 
     role: string | null;
     isLoading: boolean;
     login: (token: string) => void;
@@ -15,6 +16,7 @@ const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [userId, setUserId] = useState<string | null>(null); // ✅
     const [role, setRole] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -22,10 +24,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         try {
             const decoded: any = jwtDecode(token);
             setIsAuthenticated(true);
+            setUserId(decoded.sub || null); 
             setRole(decoded.role || "Client");
         } catch (error) {
             console.error("[Auth] Ошибка декодирования токена:", error);
             setIsAuthenticated(false);
+            setUserId(null);
             setRole(null);
         }
     };
@@ -38,7 +42,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
             return;
         }
 
-        // Обновление токена с учётом fingerprint
         const fingerprint = await getDeviceFingerprint();
         const newToken = await refreshAccessToken(fingerprint);
         if (newToken) {
@@ -61,11 +64,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const logout = () => {
         sessionStorage.removeItem("accessToken");
         setIsAuthenticated(false);
+        setUserId(null); 
         setRole(null);
     };
 
     return (
-        <AuthContext.Provider value={{ isAuthenticated, role, isLoading, login, logout }}>
+        <AuthContext.Provider
+            value={{ isAuthenticated, userId, role, isLoading, login, logout }}
+        >
             {children}
         </AuthContext.Provider>
     );

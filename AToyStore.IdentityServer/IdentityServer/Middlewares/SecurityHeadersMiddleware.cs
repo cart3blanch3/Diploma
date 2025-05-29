@@ -47,6 +47,8 @@ public class SecurityHeadersMiddleware
         headers["Cross-Origin-Opener-Policy"] = "same-origin";
         headers["Cross-Origin-Embedder-Policy"] = "require-corp";
 
+        context.Response.Headers.Remove("X-Powered-By");
+
         await _next(context);
     }
 }

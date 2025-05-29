@@ -9,7 +9,11 @@ import "../styles/AuthModal.css";
 Modal.setAppElement("#root");
 
 const schema = yup.object().shape({
-    email: yup.string().email("Введите корректный email").required("Поле обязательно"),
+    email: yup
+        .string()
+        .email("Введите корректный email")
+        .max(50, "Максимум 50 символов")
+        .required("Поле обязательно"),
 });
 
 interface ForgotPasswordModalProps {
@@ -21,7 +25,7 @@ const ForgotPasswordModal: React.FC<ForgotPasswordModalProps> = ({ isOpen, onClo
     const { register, handleSubmit, formState: { errors } } = useForm({ resolver: yupResolver(schema) });
     const [message, setMessage] = useState("");
     const [cooldown, setCooldown] = useState(0);
-    const [isSubmitting, setIsSubmitting] = useState(false); // ← новое состояние
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     useEffect(() => {
         let timer: NodeJS.Timeout;
@@ -32,7 +36,7 @@ const ForgotPasswordModal: React.FC<ForgotPasswordModalProps> = ({ isOpen, onClo
     }, [cooldown]);
 
     const onSubmit = async (data: any) => {
-        setIsSubmitting(true); // ← блокируем кнопку
+        setIsSubmitting(true);
         setMessage("");
         try {
             await forgotPassword(data.email);
@@ -41,7 +45,7 @@ const ForgotPasswordModal: React.FC<ForgotPasswordModalProps> = ({ isOpen, onClo
         } catch (error) {
             setMessage("Ошибка отправки запроса.");
         } finally {
-            setIsSubmitting(false); // ← возвращаем кнопку
+            setIsSubmitting(false);
         }
     };
 
@@ -51,7 +55,12 @@ const ForgotPasswordModal: React.FC<ForgotPasswordModalProps> = ({ isOpen, onClo
             <div className="modal-content">
                 <h2>Восстановление пароля</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <input type="email" placeholder="Email" {...register("email")} />
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        maxLength={50}
+                        {...register("email")}
+                    />
                     {errors.email && <p className="error">{errors.email.message}</p>}
 
                     <button type="submit" disabled={cooldown > 0 || isSubmitting}>
