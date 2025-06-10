@@ -166,3 +166,8 @@ C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API\obj\Debug\net8.0\AToyStore.
 C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API\bin\Debug\net8.0\Yandex.Checkout.V3.dll
 C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API\bin\Debug\net8.0\AToyStore.API.staticwebassets.runtime.json
+C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API\bin\Debug\net8.0\MailKit.dll
+C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API\bin\Debug\net8.0\MimeKit.dll
+C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Sergey\FinalCut\AToyStore.API\AToyStore.API\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll

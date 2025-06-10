@@ -147,9 +147,9 @@ public class AuthRepository : IAuthRepository
             .Distinct()
             .Count();
 
-        if (distinctDevicesCount >= 3)
+        if (distinctDevicesCount >= 5)
         {
-            Log.Fatal("Обнаружена попытка входа с третьего устройства. Возможная компрометация аккаунта {UserId}. Всего активных устройств: {DeviceCount}. Fingerprint: {Fingerprint}",
+            Log.Fatal("Обнаружена попытка входа с пятого устройства. Возможная компрометация аккаунта {UserId}. Всего активных устройств: {DeviceCount}. Fingerprint: {Fingerprint}",
                 refreshToken.UserId, distinctDevicesCount, refreshToken.Fingerprint);
 
             throw new SecurityException("Обнаружено более двух устройств. Возможна компрометация аккаунта.");

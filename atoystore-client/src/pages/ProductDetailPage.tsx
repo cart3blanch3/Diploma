@@ -178,7 +178,7 @@ const ProductDetailPage: React.FC = () => {
         {paginatedReviews.map((r) => (
           <div key={r.id} className="review">
             <div className="review-header">
-              <strong>{r.userName || "Пользователь"}</strong>
+              <strong>{r.fullName || "Пользователь"}</strong>
               <span className="rating">{"★".repeat(r.rating)}{"☆".repeat(5 - r.rating)}</span>
             </div>
             <p>{r.comment}</p>

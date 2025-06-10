@@ -28,6 +28,8 @@ using AToyStore.Application.Payments.Interfaces;
 using AToyStore.Application.Payments.Services;
 using AToyStore.Core.Payments.Interfaces;
 using AToyStore.Infrastructure.Payments;
+using AToyStore.Core.Common.Interfaces;
+using AToyStore.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -102,6 +104,8 @@ builder.Services.AddScoped<IProductReviewService, ProductReviewService>();
 builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
 builder.Services.AddScoped<IPaymentService, PaymentService>();
 
+builder.Services.AddScoped<IEmailService, EmailService>();
+
 builder.Services.Configure<YooKassaOptions>(builder.Configuration.GetSection("YooKassa"));
 builder.Services.AddScoped<IYooKassaClient, YooKassaClient>(provider =>
 {
@@ -145,4 +149,22 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+    try
+    {
+        var dbContext = services.GetRequiredService<AppDbContext>();
+        dbContext.Database.Migrate();
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "Ошибка при автоматическом применении миграций");
+        throw;
+    }
+}
+
 app.Run();

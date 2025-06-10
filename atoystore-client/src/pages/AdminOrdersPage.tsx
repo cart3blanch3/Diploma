@@ -54,7 +54,7 @@ const AdminOrdersPage: React.FC = () => {
     try {
       await api.put(`/orders/${updated.id}`, updated);
       setOrders(prev =>
-        prev.map(o => o.id === updated.id ? { ...o, ...updated } : o)
+        prev.map(o => (o.id === updated.id ? { ...o, ...updated } : o))
       );
       setEditingOrder(null);
     } catch (err) {
@@ -75,6 +75,9 @@ const AdminOrdersPage: React.FC = () => {
     }
   };
 
+  // Функция для обрезки id (берём первые 8 символов)
+  const getShortId = (id: string) => id.substring(0, 8);
+
   return (
     <div className="admin-orders-page">
       <h2>Управление заказами</h2>
@@ -83,45 +86,51 @@ const AdminOrdersPage: React.FC = () => {
         <p>Загрузка...</p>
       ) : (
         <div className="orders-grid">
-          {orders.map(order => (
-            <div key={order.id} className="order-card">
-              <div className="order-header">
-                <span className="order-date">
-                  {new Date(order.createdAt).toLocaleDateString()}
-                </span>
-                <select
-                  className="status-dropdown"
-                  value={order.status}
-                  onChange={e => handleStatusChange(order.id, parseInt(e.target.value))}
-                >
-                  {Object.entries(statusLabel).map(([key, label]) => (
-                    <option key={key} value={key}>
-                      {label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="order-body">
-                <p><strong>Пользователь:</strong> {order.customerName}</p>
-                <p><strong>Телефон:</strong> {order.customerPhone}</p>
-                <p><strong>Комментарий:</strong> {order.note || "—"}</p>
-                <p><strong>Адрес:</strong> {order.shipping.address}</p>
-                <p><strong>Сумма:</strong> {order.totalPrice.toFixed(2)} ₸</p>
+          {orders.map(order => {
+            const shortOrderId = getShortId(order.id);
+            return (
+              <div key={order.id} className="order-card">
+                <div className="order-header">
+                  <span className="order-date">
+                    {new Date(order.createdAt).toLocaleDateString()}
+                  </span>
+                  <span className="order-id">
+                    Номер заказа: <strong>#{shortOrderId}</strong>
+                  </span>
+                  <select
+                    className="status-dropdown"
+                    value={order.status}
+                    onChange={e => handleStatusChange(order.id, parseInt(e.target.value))}
+                  >
+                    {Object.entries(statusLabel).map(([key, label]) => (
+                      <option key={key} value={key}>
+                        {label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="order-body">
+                  <p><strong>Пользователь:</strong> {order.customerName}</p>
+                  <p><strong>Телефон:</strong> {order.customerPhone}</p>
+                  <p><strong>Комментарий:</strong> {order.note || "—"}</p>
+                  <p><strong>Адрес:</strong> {order.shipping.address}</p>
+                  <p><strong>Сумма:</strong> {order.totalPrice.toFixed(2)} ₸</p>
 
-                <p><strong>Товары:</strong></p>
-                <ul className="order-items">
-                  {order.items.map((item, idx) => (
-                    <li key={idx}>
-                      {item.product.title} — {item.unitPrice} ₸ × {item.quantity}
-                    </li>
-                  ))}
-                </ul>
+                  <p><strong>Товары:</strong></p>
+                  <ul className="order-items">
+                    {order.items.map((item, idx) => (
+                      <li key={idx}>
+                        {item.product.title} — {item.unitPrice} ₸ × {item.quantity}
+                      </li>
+                    ))}
+                  </ul>
 
-                <button onClick={() => handleEdit(order)}>Редактировать</button>
-                <button className="delete-button" onClick={() => handleDelete(order.id)}>Удалить</button>
+                  <button onClick={() => handleEdit(order)}>Редактировать</button>
+                  <button className="delete-button" onClick={() => handleDelete(order.id)}>Удалить</button>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       )}
 

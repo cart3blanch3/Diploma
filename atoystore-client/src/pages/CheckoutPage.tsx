@@ -17,6 +17,7 @@ const CheckoutPage: React.FC = () => {
     const [note, setNote] = useState("");
     const [paymentMethod, setPaymentMethod] = useState<"Cash" | "YooKassa">("Cash");
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [agree, setAgree] = useState(false);
 
     const totalPrice = items.reduce(
         (sum, item) => sum + item.product.price * item.quantity,
@@ -45,6 +46,11 @@ const CheckoutPage: React.FC = () => {
 
         if (!address.trim()) {
             alert("Введите адрес доставки.");
+            return;
+        }
+
+        if (!agree) {
+            alert("Вы должны согласиться с обработкой персональных данных и условиями.");
             return;
         }
 
@@ -94,16 +100,7 @@ const CheckoutPage: React.FC = () => {
         <div className="checkout-container">
             <h2>Оформление заказа</h2>
 
-            <p
-                style={{
-                    backgroundColor: "#f6f0e4",
-                    padding: "10px",
-                    borderRadius: "6px",
-                    marginBottom: "20px",
-                    color: "#333",
-                    fontWeight: "500"
-                }}
-            >
+            <p className="checkout-warning">
                 🛵 Доставка осуществляется <strong>только по городу Костанай</strong>
             </p>
 
@@ -169,7 +166,7 @@ const CheckoutPage: React.FC = () => {
                         value={address}
                         onChange={e => setAddress(e.target.value)}
                     />
-                    <p style={{ fontSize: "0.9rem", color: "#888", marginTop: -10, marginBottom: 10 }}>
+                    <p className="checkout-hint">
                         Укажите улицу, дом, квартиру. Пример: ул. Абая, д. 10, кв. 25
                     </p>
 
@@ -183,7 +180,7 @@ const CheckoutPage: React.FC = () => {
 
                     <div className="checkout-payment-method">
                         <p><strong>Способ оплаты:</strong></p>
-                        <label style={{ display: "block", marginBottom: "5px" }}>
+                        <label>
                             <input
                                 type="radio"
                                 name="paymentMethod"
@@ -202,6 +199,24 @@ const CheckoutPage: React.FC = () => {
                                 onChange={() => setPaymentMethod("YooKassa")}
                             />
                             {" "}Онлайн-оплата (YooKassa)
+                        </label>
+                    </div>
+
+                    <div className="checkout-agreement">
+                        <label>
+                            <input
+                                type="checkbox"
+                                checked={agree}
+                                onChange={() => setAgree(prev => !prev)}
+                            />
+                            {" "}Я согласен(а) с{" "}
+                            <a href="/privacy" target="_blank" rel="noopener noreferrer">
+                                обработкой персональных данных
+                            </a>{" "}
+                            и{" "}
+                            <a href="/terms" target="_blank" rel="noopener noreferrer">
+                                условиями использования
+                            </a>
                         </label>
                     </div>
 

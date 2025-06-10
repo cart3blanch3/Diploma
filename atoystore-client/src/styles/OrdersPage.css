@@ -164,3 +164,32 @@
 .order-actions button.pay-button:hover {
   background-color: #388e3c;
 }
+
+.checkout-agreement {
+    margin: 1rem 0;
+    font-size: 14px;
+}
+
+.checkout-agreement input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.checkout-agreement a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.checkout-agreement a:hover {
+    text-decoration: underline;
+}
+
+.order-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.order-id {
+  font-weight: 600;
+  color: #555;
+}

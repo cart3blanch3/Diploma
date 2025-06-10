@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AToyStore.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4bb53d3e4f9cef558520ba15cf904f655fdd3d40")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8577ebe3a1f477274d2ca0719e7001c9e7cd446f")]
 [assembly: System.Reflection.AssemblyProductAttribute("AToyStore.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AToyStore.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

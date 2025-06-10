@@ -233,6 +233,11 @@ using (var scope = app.Services.CreateScope())
 
     try
     {
+        // ➕ Автоматически применить миграции
+        var dbContext = services.GetRequiredService<AppDbContext>();
+        dbContext.Database.Migrate();
+
+        // ➕ Инициализация ролей и администратора
         var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
         var userManager = services.GetRequiredService<UserManager<User>>();
 

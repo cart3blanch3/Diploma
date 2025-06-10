@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System.Text.Json;
+using Microsoft.AspNetCore.Mvc;
 using Serilog;
 
 public class RequestSanitizationMiddleware
@@ -35,18 +36,36 @@ public class RequestSanitizationMiddleware
                             var str = element.GetString() ?? "";
                             if (ContainsMaliciousInput(str))
                             {
-                                Log.Fatal("🚨 Обнаружена потенциальная атака в поле '{Field}': {Value}", key, str);
-                                context.Response.StatusCode = StatusCodes.Status400BadRequest;
-                                await context.Response.WriteAsync("Неверный или вредоносный ввод обнаружен.");
+                                var statusCode = StatusCodes.Status400BadRequest;
+
+                                var problemDetails = new ProblemDetails
+                                {
+                                    Type = "https://tools.ietf.org/html/rfc9110#section-15.5.1",
+                                    Title = "One or more validation errors occurred.",
+                                    Status = statusCode,
+                                    Detail = $"Потенциально вредоносный ввод обнаружен в поле '{key}'",
+                                    Instance = context.Request.Path
+                                };
+
+                                problemDetails.Extensions["errors"] = new Dictionary<string, string[]>
+                                {
+                                    { key, new[] { "Обнаружена потенциальная XSS/SQL-инъекция или недопустимый ввод." } }
+                                };
+
+                                Log.Fatal("Обнаружена потенциальная атака в поле '{Field}': {Value}", key, str);
+
+                                context.Response.StatusCode = statusCode;
+                                context.Response.ContentType = "application/problem+json";
+                                await context.Response.WriteAsJsonAsync(problemDetails);
                                 return;
                             }
                         }
                     }
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                Log.Warning("⚠️ Не удалось распарсить JSON для анализа.");
+                Log.Warning("Не удалось распарсить JSON для анализа: {Message}", ex.Message);
             }
         }
 
@@ -59,7 +78,8 @@ public class RequestSanitizationMiddleware
 
         var patterns = new[]
         {
-            "<script", "</script", "onerror=", "onload=", "alert(", "DROP TABLE", "SELECT ", "INSERT ", "DELETE ", "UNION ", "--", "' OR '1'='1", "xp_cmdshell"
+            "<script", "</script", "onerror=", "onload=", "alert(", "DROP TABLE", "SELECT ", "INSERT ",
+            "DELETE ", "UNION ", "--", "' OR '1'='1", "xp_cmdshell"
         };
 
         return patterns.Any(p => input.IndexOf(p, StringComparison.OrdinalIgnoreCase) >= 0);

@@ -11,9 +11,9 @@ interface Props {
 const ProductModal: React.FC<Props> = ({ product, onClose }) => {
     const [title, setTitle] = useState(product?.title || "");
     const [description, setDescription] = useState(product?.description || "");
-    const [price, setPrice] = useState(product?.price || 0);
+    const [price, setPrice] = useState(product ? product.price.toString() : "");
     const [category, setCategory] = useState(product?.category || "");
-    const [quantity, setQuantity] = useState(product?.quantity ?? 0);
+    const [quantity, setQuantity] = useState(product ? product.quantity.toString() : "");
     const [images, setImages] = useState<File[]>([]);
     const [previewUrls, setPreviewUrls] = useState<string[]>([]);
 
@@ -27,13 +27,30 @@ const ProductModal: React.FC<Props> = ({ product, onClose }) => {
 
     const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files) {
-            setImages(Array.from(e.target.files));
+            const filesArray = Array.from(e.target.files);
+            // Фильтруем только изображения
+            const imageFiles = filesArray.filter(file => file.type.startsWith("image/"));
+            if (imageFiles.length !== filesArray.length) {
+                alert("Разрешены только файлы изображений (jpeg, png, gif и т.д.)");
+            }
+            setImages(imageFiles);
         }
     };
 
     const handleSubmit = async () => {
         if (!title.trim() || !description.trim() || !category.trim()) {
             alert("Пожалуйста, заполните все обязательные поля.");
+            return;
+        }
+
+        const numericPrice = Number(price);
+        const numericQuantity = Number(quantity);
+
+        if (
+            isNaN(numericPrice) || isNaN(numericQuantity) ||
+            numericPrice < 0 || numericQuantity < 0
+        ) {
+            alert("Цена и количество должны быть неотрицательными числами.");
             return;
         }
 
@@ -44,9 +61,9 @@ const ProductModal: React.FC<Props> = ({ product, onClose }) => {
 
         formData.append("title", title);
         formData.append("description", description);
-        formData.append("price", price.toString());
+        formData.append("price", numericPrice.toString());
         formData.append("category", category);
-        formData.append("quantity", quantity.toString());
+        formData.append("quantity", numericQuantity.toString());
 
         images.forEach(file => {
             formData.append("images", file);
@@ -97,9 +114,15 @@ const ProductModal: React.FC<Props> = ({ product, onClose }) => {
                 <label>
                     Цена (₸):
                     <input
-                        type="number"
+                        type="text"
+                        inputMode="numeric"
                         value={price}
-                        onChange={e => setPrice(+e.target.value)}
+                        onChange={e => {
+                            const val = e.target.value;
+                            if (/^\d{0,7}$/.test(val)) setPrice(val);
+                        }}
+                        placeholder="Введите цену"
+                        maxLength={7}
                         required
                     />
                 </label>
@@ -117,15 +140,27 @@ const ProductModal: React.FC<Props> = ({ product, onClose }) => {
                 <label>
                     Количество:
                     <input
-                        type="number"
+                        type="text"
+                        inputMode="numeric"
                         value={quantity}
-                        onChange={e => setQuantity(+e.target.value)}
+                        onChange={e => {
+                            const val = e.target.value;
+                            if (/^\d{0,5}$/.test(val)) setQuantity(val);
+                        }}
+                        placeholder="Введите количество"
+                        maxLength={5}
+                        required
                     />
                 </label>
 
                 <label>
                     Загрузить изображения:
-                    <input type="file" multiple onChange={handleImageChange} />
+                    <input
+                        type="file"
+                        multiple
+                        accept="image/*"
+                        onChange={handleImageChange}
+                    />
                 </label>
 
                 {previewUrls.length > 0 && (

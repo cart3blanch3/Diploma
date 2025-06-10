@@ -14,6 +14,8 @@ import PaymentSuccessPage from "../pages/PaymentSuccessPage";
 import AdminOrdersPage from "../pages/AdminOrdersPage";
 import ProfilePage from "../pages/ProfilePage";
 import FavoritesPage from "../pages/FavoritesPage";
+import TermsPage from '../pages/TermsPage';
+import PrivacyPage from '../pages/PrivacyPage';
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const { isAuthenticated } = useAuth();
@@ -58,6 +60,9 @@ const AppRoutes: React.FC = () => {
             <Route path="/confirm-email" element={<ConfirmEmailPage />} />
             <Route path="/auth" element={<LoginModal isOpen={true} onClose={() => {}} onOpenRegister={() => {}} />} />
             <Route path="/register" element={<RegisterModal isOpen={true} onClose={() => {}} onOpenLogin={() => {}} />} />
+
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
 
             {/* Все несуществующие маршруты тоже ведут в нужное место */}
             <Route

@@ -22,6 +22,7 @@ const OrdersPage: React.FC = () => {
   const [rating, setRating] = useState(5);
   const [reviewingProductId, setReviewingProductId] = useState<string | null>(null);
   const [reviewedProductIds, setReviewedProductIds] = useState<string[]>([]);
+  const [commentError, setCommentError] = useState("");
   const { userId } = useAuth();
 
   const loadOrders = async () => {
@@ -54,6 +55,13 @@ const OrdersPage: React.FC = () => {
   }, [userId]);
 
   const handleSendReview = async (productId: string, orderId: string) => {
+    if (comment.trim().length < 5) {
+      setCommentError("Отзыв должен содержать минимум 5 символов");
+      return;
+    } else {
+      setCommentError("");
+    }
+
     try {
       if (!userId) return;
       await createReview({ productId, userId, comment, rating });
@@ -104,75 +112,87 @@ const OrdersPage: React.FC = () => {
         <p>У вас пока нет заказов.</p>
       ) : (
         <div className="orders-grid">
-          {orders.map(order => (
-            <div key={order.id} className="order-card">
-              <div className="order-header">
-                <span>{new Date(order.createdAt).toLocaleDateString()}</span>
-                <span className={`order-status status-${order.status}`}>
-                  {statusLabel[order.status]}
-                </span>
+          {orders.map(order => {
+            const shortOrderId = order.id.substring(0, 8);
+
+            return (
+              <div key={order.id} className="order-card">
+                <div className="order-header">
+                  <span>{new Date(order.createdAt).toLocaleDateString()}</span>
+                  <span className="order-id">
+                    Номер заказа: <strong>#{shortOrderId}</strong>
+                  </span>
+                  <span className={`order-status status-${order.status}`}>
+                    {statusLabel[order.status]}
+                  </span>
+                </div>
+
+                <p><strong>Адрес:</strong> {order.shipping.address}</p>
+                <p><strong>Сумма:</strong> {order.totalPrice.toFixed(2)} ₸</p>
+
+                <div className="order-actions">
+                  {(order.status === 0 || order.status === 1) && (
+                    <>
+                      <button onClick={() => handleCancelOrder(order.id)}>Отменить заказ</button>
+                      <p className="cancel-note">Можно отменить до отправки</p>
+                    </>
+                  )}
+                  {order.status === 0 && order.payment?.method === "YooKassa" && (
+                    <button onClick={() => handlePay(order.id)}>Оплатить онлайн</button>
+                  )}
+                </div>
+
+                <p><strong>Товары:</strong></p>
+                <ul className="order-items">
+                  {order.items.map((item, idx) => {
+                    const alreadyReviewed = reviewedProductIds.includes(item.product.id);
+
+                    return (
+                      <li key={idx}>
+                        {item.product.title} — {item.unitPrice} ₸ × {item.quantity}
+                        {order.status === 4 && !alreadyReviewed && (
+                          <>
+                            <button onClick={() => setReviewingProductId(item.product.id)}>
+                              Оставить отзыв
+                            </button>
+                            {reviewingProductId === item.product.id && (
+                              <div className="review-form-inline">
+                                <textarea
+                                  placeholder="Ваш отзыв"
+                                  value={comment}
+                                  onChange={(e) => {
+                                    if (e.target.value.length <= 500) setComment(e.target.value);
+                                  }}
+                                  maxLength={500}
+                                />
+                                <div className="char-counter">{comment.length} / 500</div>
+                                {commentError && <div className="error-text">{commentError}</div>}
+
+                                <select
+                                  value={rating}
+                                  onChange={(e) => setRating(+e.target.value)}
+                                >
+                                  {[5, 4, 3, 2, 1].map(r => (
+                                    <option key={r} value={r}>{r}</option>
+                                  ))}
+                                </select>
+                                <button onClick={() => handleSendReview(item.product.id, order.id)}>
+                                  Отправить
+                                </button>
+                              </div>
+                            )}
+                          </>
+                        )}
+                        {order.status === 4 && alreadyReviewed && (
+                          <span className="review-sent-label">✔️ Отзыв оставлен</span>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
-
-              <p><strong>Адрес:</strong> {order.shipping.address}</p>
-              <p><strong>Сумма:</strong> {order.totalPrice.toFixed(2)} ₸</p>
-
-              <div className="order-actions">
-                {(order.status === 0 || order.status === 1) && (
-                  <>
-                    <button onClick={() => handleCancelOrder(order.id)}>Отменить заказ</button>
-                    <p className="cancel-note">Можно отменить до отправки</p>
-                  </>
-                )}
-                {order.status === 0 && order.payment?.method === "YooKassa" && !order.payment.isPaid && (
-                  <button onClick={() => handlePay(order.id)}>Оплатить онлайн</button>
-                )}
-              </div>
-
-              <p><strong>Товары:</strong></p>
-              <ul className="order-items">
-                {order.items.map((item, idx) => {
-                  const alreadyReviewed = reviewedProductIds.includes(item.product.id);
-
-                  return (
-                    <li key={idx}>
-                      {item.product.title} — {item.unitPrice} ₸ × {item.quantity}
-                      {order.status === 4 && !alreadyReviewed && (
-                        <>
-                          <button onClick={() => setReviewingProductId(item.product.id)}>
-                            Оставить отзыв
-                          </button>
-                          {reviewingProductId === item.product.id && (
-                            <div className="review-form-inline">
-                              <textarea
-                                placeholder="Ваш отзыв"
-                                value={comment}
-                                onChange={(e) => setComment(e.target.value.slice(0, 255))}
-                                maxLength={255}
-                              />
-                              <select
-                                value={rating}
-                                onChange={(e) => setRating(+e.target.value)}
-                              >
-                                {[5, 4, 3, 2, 1].map(r => (
-                                  <option key={r} value={r}>{r}</option>
-                                ))}
-                              </select>
-                              <button onClick={() => handleSendReview(item.product.id, order.id)}>
-                                Отправить
-                              </button>
-                            </div>
-                          )}
-                        </>
-                      )}
-                      {order.status === 4 && alreadyReviewed && (
-                        <span className="review-sent-label">✔️ Отзыв оставлен</span>
-                      )}
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          ))}
+            );
+          })}
         </div>
       )}
     </div>

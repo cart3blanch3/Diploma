@@ -124,7 +124,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
   const onSubmit2FA = async () => {
     setIsSubmitting2FA(true);
     try {
-      const fingerprint = await getDeviceFingerprint(); // Получаем fingerprint
+      const fingerprint = await getDeviceFingerprint(); 
       const response = await verify2FA(email, code, fingerprint);
 
       if (!response || !response.accessToken) {
@@ -146,7 +146,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
 
   const resend2FACode = async () => {
     try {
-      const fingerprint = await getDeviceFingerprint(); // Получаем fingerprint
+      const fingerprint = await getDeviceFingerprint();
       await login({ email, password: cachedPassword, fingerprint });
       toast.success("📧 Код отправлен повторно");
       setCooldown2FA(60);
