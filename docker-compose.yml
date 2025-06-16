@@ -17,7 +17,7 @@ services:
   identityserver:
     build:
       context: ./AToyStore.IdentityServer
-      dockerfile: AToyStore.IdentityServer/Dockerfile
+      dockerfile: IdentityServer/Dockerfile
     container_name: identityserver
     ports:
       - "8000:8000"
