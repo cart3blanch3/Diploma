@@ -40,6 +40,8 @@ services:
       - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=AToyDB;Username=postgres;Password=9624
     depends_on:
       - postgres
+    volumes:
+      - /home/atoystore/uploads:/app/wwwroot/uploads
     restart: always
 
   frontend:

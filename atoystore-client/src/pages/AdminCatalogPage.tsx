@@ -5,7 +5,7 @@ import "../styles/ProductCard.css";
 import { Product } from "../types/Product";
 import ProductModal from "../components/ProductModal";
 
-const BASE_URL = process.env.REACT_APP_API_URL?.replace(/\/api\/?$/, "") || "http://localhost:5062";
+const BASE_URL = "http://83.222.22.162:8001/"
 
 const AdminCatalogPage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
