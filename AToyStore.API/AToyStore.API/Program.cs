@@ -30,6 +30,7 @@ using AToyStore.Core.Payments.Interfaces;
 using AToyStore.Infrastructure.Payments;
 using AToyStore.Core.Common.Interfaces;
 using AToyStore.Infrastructure.Services;
+using AToyStore.API.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -133,6 +134,9 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+app.UseSecurityHeaders();
+app.UseMiddleware<RequestSanitizationMiddleware>();
 
 app.UseStaticFiles();
 

@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 9624
+      POSTGRES_DB: AToyDB
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+  identityserver:
+    build:
+      context: .
+      dockerfile: AToyStore.IdentityServer/Dockerfile
+    container_name: identityserver
+    ports:
+      - "8000:8000"
+    environment:
+      - ASPNETCORE_URLS=http://+:8000
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=AToyDB;Username=postgres;Password=9624
+    depends_on:
+      - postgres
+    restart: always
+
+  api:
+    build:
+      context: .
+      dockerfile: AToyStore.API/Dockerfile
+    container_name: api
+    ports:
+      - "8001:8001"
+    environment:
+      - ASPNETCORE_URLS=http://+:8001
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=AToyDB;Username=postgres;Password=9624
+    depends_on:
+      - postgres
+    restart: always
+
+  frontend:
+    build:
+      context: ./atoystore-client
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - identityserver
+      - api
+    restart: always
+
+volumes:
+  postgres_data:

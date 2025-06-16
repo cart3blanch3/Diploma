@@ -2,6 +2,7 @@
   "name": "atoystore-client",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://83.222.22.162:8000",
   "dependencies": {
     "@fingerprintjs/fingerprintjs": "^4.6.2",
     "@hookform/resolvers": "^4.1.3",

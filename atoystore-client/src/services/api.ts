@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getDeviceFingerprint } from "../utils/fingerprint";
 
-const API_URL = "http://localhost:5062/api";
+const API_URL = process.env.REACT_APP_API_URL;
 
 const api = axios.create({
     baseURL: API_URL,
@@ -44,7 +44,7 @@ api.interceptors.response.use(
                 console.warn("🔁 Токен истёк. Отправляем запрос на /refresh-token...");
 
                 const refreshResponse = await axios.post(
-                    "http://localhost:5115/auth/refresh-token",
+                    `${process.env.REACT_APP_AUTH_URL}/refresh-token`,
                     { fingerprint },
                     {
                         withCredentials: true,
