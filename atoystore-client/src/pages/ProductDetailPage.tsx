@@ -139,7 +139,7 @@ const ProductDetailPage: React.FC = () => {
               {product.images.length > 1 && (
                 <button className="carousel-button left" onClick={handlePrevImage}>←</button>
               )}
-              <img src={`http://localhost:5062${currentImageUrl}`} alt="Изображение товара" className="gallery-image" />
+              <img src={`http://83.222.22.162:8001${currentImageUrl}`} alt="Изображение товара" className="gallery-image" />
               {product.images.length > 1 && (
                 <button className="carousel-button right" onClick={handleNextImage}>→</button>
               )}
