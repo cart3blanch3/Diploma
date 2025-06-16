@@ -30,6 +30,9 @@ COPY --from=build /app/publish .
 # Копируем ключи JWT в контейнер
 COPY AToyStore.API/Keys ./Keys
 
+# Копируем изображения в контейнер (в wwwroot/uploads)
+COPY AToyStore.API/wwwroot/uploads ./wwwroot/uploads
+
 # Открываем порт 8001
 EXPOSE 8001
 
