@@ -41,7 +41,7 @@ services:
     depends_on:
       - postgres
     volumes:
-      - /home/atoystore/uploads:/app/wwwroot/uploads
+      - /home/uploads:/app/wwwroot/uploads
     restart: always
 
   frontend:
