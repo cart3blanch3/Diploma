@@ -42,7 +42,7 @@ builder.Host.UseSerilog();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
-        policy.WithOrigins("http://localhost:3000")
+        policy.WithOrigins("http://localhost:3000", "http://83.222.22.162")
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials());
