@@ -6,6 +6,8 @@ import { useCart } from "../context/CartContext";
 import { Product } from "../types/Product";
 import "../styles/Catalog.css";
 
+const API_BASE_URL = process.env.REACT_APP_API_URL?.replace(/\/api\/?$/, "") || "http://localhost:5062";
+
 const FavoritesPage: React.FC = () => {
   const [favorites, setFavorites] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);

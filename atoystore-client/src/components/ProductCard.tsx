@@ -7,6 +7,8 @@ import { favoriteService } from "../services/favoriteService";
 import StarRating from "./StarRating";
 import "../styles/ProductCard.css";
 
+const API_BASE_URL = process.env.REACT_APP_API_URL?.replace(/\/api\/?$/, "") || "http://localhost:5062";
+
 interface Props {
   product: Product;
 }
@@ -98,7 +100,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
         </button>
 
         <img
-          src={`http://localhost:5062${images[currentImageIndex]}`}
+          src={`${API_BASE_URL}${images[currentImageIndex]}`}
           alt={product.title}
           className="product-image fade-in"
         />

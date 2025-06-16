@@ -5,6 +5,8 @@ import "../styles/ProductCard.css";
 import { Product } from "../types/Product";
 import ProductModal from "../components/ProductModal";
 
+const BASE_URL = process.env.REACT_APP_API_URL?.replace(/\/api\/?$/, "") || "http://localhost:5062";
+
 const AdminCatalogPage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [allCategories, setAllCategories] = useState<string[]>([]);
@@ -154,7 +156,7 @@ const AdminCatalogPage: React.FC = () => {
         {products.map((p, index) => {
           const currentImgIndex = currentImageIndexes[p.id] || 0;
           const imgUrl = p.images?.[currentImgIndex]
-            ? `http://localhost:5062${p.images[currentImgIndex]}`
+            ? `${BASE_URL}${p.images[currentImgIndex]}`
             : "/placeholder.png";
 
           return (
