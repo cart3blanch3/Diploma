@@ -17,6 +17,7 @@ using Serilog.Sinks.Http.BatchFormatters;
 using System.Security;
 using System.Security.Cryptography;
 using Microsoft.AspNetCore.Antiforgery;
+using Microsoft.AspNetCore.HttpOverrides;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,11 +45,11 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFrontend", policy =>
         policy.WithOrigins(
                 "http://localhost:3000",
-                "http://83.222.22.162",
-                "http://atoystore.ru",
-                "http://www.atoystore.ru",
-                "http://atoystore.store",
-                "http://www.atoystore.store"
+                "https://83.222.22.162",
+                "https://atoystore.ru",
+                "https://www.atoystore.ru",
+                "https://atoystore.store",
+                "https://www.atoystore.store"
             )
             .AllowAnyHeader()
             .AllowAnyMethod()
@@ -62,10 +63,6 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL"),
         npgsql => npgsql.MigrationsAssembly(migrationsAssembly)));
 
-//builder.Services.AddDbContext<PersistedGrantDbContext>(options =>
-//    options.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL"),
-//        npgsql => npgsql.MigrationsAssembly(migrationsAssembly)));
-
 // Использование кастомного хэшера паролей на основе BCrypt
 builder.Services.AddScoped<IPasswordHasher<User>, BcryptPasswordHasher<User>>();
 
@@ -78,15 +75,15 @@ builder.Services.ConfigureApplicationCookie(options =>
 {
     options.Cookie.Name = "AToyStore.Auth";
     options.Cookie.HttpOnly = true;
-    /*options.Cookie.SecurePolicy = CookieSecurePolicy.Always;*/ // Только по HTTPS
-    options.Cookie.SameSite = SameSiteMode.Strict; // Или Lax, если взаимодействие с внешними ресурсами
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Включено для HTTPS
+    options.Cookie.SameSite = SameSiteMode.Strict;
     options.LoginPath = "/auth/login";
     options.AccessDeniedPath = "/auth/access-denied";
     options.SlidingExpiration = true;
     options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
 });
 
-// Настройка параметров пароля
+// Настройка параметров пароля и блокировок
 builder.Services.Configure<IdentityOptions>(options =>
 {
     options.Password.RequiredLength = 12;
@@ -95,29 +92,25 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequireLowercase = true;
     options.Password.RequireNonAlphanumeric = true;
 
-    // Максимальное количество неудачных попыток входа — 10
     options.Lockout.MaxFailedAccessAttempts = 10;
-
-    // Время блокировки — 10 минут
     options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
-
-    // Включить блокировку для новых пользователей
     options.Lockout.AllowedForNewUsers = true;
 });
 
+// Анти-CSRF
 builder.Services.AddAntiforgery(options =>
 {
     options.Cookie.Name = "X-CSRF-TOKEN";
     options.HeaderName = "X-CSRF-TOKEN";
 });
 
-// Регистрация зависимостей
+// Регистрация сервисов
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 
-// Документация Swagger
+// Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
@@ -129,7 +122,7 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
-// Загрузка RSA-ключа для подписи токенов
+// Загрузка RSA-ключа для подписи JWT
 var rsa = RSA.Create();
 var privateKeyPath = builder.Configuration["JwtSettings:PrivateKeyPath"];
 if (!File.Exists(privateKeyPath))
@@ -142,6 +135,17 @@ var key = new RsaSecurityKey(rsa)
 };
 var signingCredentials = new SigningCredentials(key, SecurityAlgorithms.RsaSha256);
 
+// Добавляем IdentityServer с PublicOrigin (ВАЖНО для корректных redirect URL)
+builder.Services.AddIdentityServer(options =>
+{
+    options.PublicOrigin = "https://atoystore.ru"; // здесь укажите ваш публичный HTTPS URL
+})
+    .AddDeveloperSigningCredential() // заменить на вашу настройку ключей
+    .AddInMemoryApiScopes(YourApiScopes)
+    .AddInMemoryClients(YourClients)
+    .AddInMemoryIdentityResources(YourIdentityResources)
+    .AddAspNetIdentity<User>();
+
 builder.Services.AddAuthorization();
 builder.Services.AddHttpContextAccessor();
 
@@ -150,7 +154,19 @@ builder.Services.AddControllers(options =>
     options.Filters.Add<ValidateModelAttribute>();
 });
 
+// --- Конфигурация Forwarded Headers для работы за nginx ---
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+
+    // Очищаем KnownNetworks и KnownProxies чтобы принимать заголовки от любого прокси (только если доверяете сети!)
+    options.KnownNetworks.Clear();
+    options.KnownProxies.Clear();
+});
+
 var app = builder.Build();
+
+app.UseForwardedHeaders(); // добавляем middleware для чтения X-Forwarded-For и X-Forwarded-Proto
 
 // Middleware: заголовки безопасности
 app.UseSecurityHeaders();
@@ -213,6 +229,7 @@ app.UseExceptionHandler(errorApp =>
     });
 });
 
+// CSRF токен
 app.Use(async (context, next) =>
 {
     var antiforgery = context.RequestServices.GetRequiredService<IAntiforgery>();
@@ -228,23 +245,22 @@ app.Use(async (context, next) =>
     await next();
 });
 
-// Использование CORS, IdentityServer и контроллеров
 app.UseCors("AllowFrontend");
+
 app.UseAuthorization();
+
 app.MapControllers();
 
-// Инициализация ролей и администратора при запуске приложения
+// Инициализация ролей и администратора
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
 
     try
     {
-        // ➕ Автоматически применить миграции
         var dbContext = services.GetRequiredService<AppDbContext>();
         dbContext.Database.Migrate();
 
-        // ➕ Инициализация ролей и администратора
         var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
         var userManager = services.GetRequiredService<UserManager<User>>();
 
@@ -283,5 +299,4 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
-// Запуск приложения
 app.Run();

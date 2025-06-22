@@ -31,6 +31,7 @@ using AToyStore.Infrastructure.Payments;
 using AToyStore.Core.Common.Interfaces;
 using AToyStore.Infrastructure.Services;
 using AToyStore.API.Middlewares;
+using Microsoft.AspNetCore.HttpOverrides;  
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -128,11 +129,11 @@ builder.Services.AddCors(options =>
     {
         policy.WithOrigins(
                 "http://localhost:3000",
-                "http://83.222.22.162",
-                "http://atoystore.ru",
-                "http://www.atoystore.ru",
-                "http://atoystore.store",
-                "http://www.atoystore.store"
+                "https://83.222.22.162",
+                "https://atoystore.ru",
+                "https://www.atoystore.ru",
+                "https://atoystore.store",
+                "https://www.atoystore.store"
             )
             .AllowAnyHeader()
             .AllowAnyMethod()
@@ -140,7 +141,18 @@ builder.Services.AddCors(options =>
     });
 });
 
+// === Forwarded Headers для поддержки HTTPS за nginx
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+    options.KnownNetworks.Clear();
+    options.KnownProxies.Clear();
+});
+
 var app = builder.Build();
+
+// Включаем ForwardedHeaders Middleware сразу после билдера, до всего остального
+app.UseForwardedHeaders();
 
 app.UseSecurityHeaders();
 app.UseMiddleware<RequestSanitizationMiddleware>();
@@ -154,6 +166,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.UseCors("FrontendPolicy");
 
 app.UseAuthentication();
