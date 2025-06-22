@@ -5,10 +5,12 @@ using IdentityServer.Models;
 using IdentityServer.Repositories;
 using IdentityServer.Interfaces;
 using IdentityServer.Services;
-using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
@@ -16,14 +18,14 @@ using Serilog.Events;
 using Serilog.Sinks.Http.BatchFormatters;
 using System.Security;
 using System.Security.Cryptography;
+using System.Text;
 using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.HttpOverrides;
-using IdentityServer4.Models;  // Для IdentityServer4
-using System.Collections.Generic;
+using Microsoft.AspNetCore.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Настройка Serilog для логгирования
+// Serilog
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
     .Enrich.FromLogContext()
@@ -41,7 +43,7 @@ Log.Logger = new LoggerConfiguration()
 
 builder.Host.UseSerilog();
 
-// Настройка CORS для клиента React
+// CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
@@ -58,17 +60,15 @@ builder.Services.AddCors(options =>
             .AllowCredentials());
 });
 
-// Подключение базы данных и миграций
+// DbContext
 var migrationsAssembly = typeof(Program).Assembly.GetName().Name;
-
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL"),
         npgsql => npgsql.MigrationsAssembly(migrationsAssembly)));
 
-// Использование кастомного хэшера паролей на основе BCrypt
+// Identity с кастомным хэшером
 builder.Services.AddScoped<IPasswordHasher<User>, BcryptPasswordHasher<User>>();
 
-// Настройка Identity
 builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
@@ -77,7 +77,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 {
     options.Cookie.Name = "AToyStore.Auth";
     options.Cookie.HttpOnly = true;
-    options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Включено для HTTPS
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
     options.Cookie.SameSite = SameSiteMode.Strict;
     options.LoginPath = "/auth/login";
     options.AccessDeniedPath = "/auth/access-denied";
@@ -85,7 +85,7 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
 });
 
-// Настройка параметров пароля и блокировок
+// Password options
 builder.Services.Configure<IdentityOptions>(options =>
 {
     options.Password.RequiredLength = 12;
@@ -106,6 +106,49 @@ builder.Services.AddAntiforgery(options =>
     options.HeaderName = "X-CSRF-TOKEN";
 });
 
+// JWT Authentication
+
+var rsa = RSA.Create();
+var privateKeyPath = builder.Configuration["JwtSettings:PrivateKeyPath"];
+if (!File.Exists(privateKeyPath))
+    throw new FileNotFoundException($"Не найден приватный ключ по пути {privateKeyPath}");
+
+rsa.ImportFromPem(File.ReadAllText(privateKeyPath));
+var key = new RsaSecurityKey(rsa)
+{
+    KeyId = builder.Configuration["JwtSettings:KeyId"]
+};
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidIssuer = builder.Configuration["JwtSettings:Issuer"],
+
+        ValidateAudience = true,
+        ValidAudience = builder.Configuration["JwtSettings:Audience"],
+
+        ValidateLifetime = true,
+        RequireExpirationTime = true,
+        ClockSkew = TimeSpan.FromMinutes(1),
+
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = key,
+
+        RoleClaimType = "role",
+        NameClaimType = "sub"
+    };
+});
+
+builder.Services.AddAuthorization();
+builder.Services.AddHttpContextAccessor();
+
 // Регистрация сервисов
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
@@ -118,88 +161,35 @@ builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "IdentityServer API",
+        Title = "Identity API",
         Version = "v1",
         Description = "API для аутентификации, авторизации, JWT, 2FA и refresh-токенов"
     });
 });
 
-// Загрузка RSA-ключа для подписи JWT
-var rsa = RSA.Create();
-var privateKeyPath = builder.Configuration["JwtSettings:PrivateKeyPath"];
-if (!File.Exists(privateKeyPath))
-    throw new FileNotFoundException($"Не найден приватный ключ по пути {privateKeyPath}");
-
-rsa.ImportFromPem(File.ReadAllText(privateKeyPath));
-var key = new RsaSecurityKey(rsa)
-{
-    KeyId = builder.Configuration["JwtSettings:KeyId"]
-};
-var signingCredentials = new SigningCredentials(key, SecurityAlgorithms.RsaSha256);
-
-// Объявляем ApiScopes, Clients и IdentityResources для IdentityServer4
-IEnumerable<ApiScope> YourApiScopes = new List<ApiScope>
-{
-    new ApiScope("api1", "My API")
-};
-
-IEnumerable<Client> YourClients = new List<Client>
-{
-    new Client
-    {
-        ClientId = "client",
-        AllowedGrantTypes = GrantTypes.ClientCredentials,
-        ClientSecrets = { new Secret("secret".Sha256()) },
-        AllowedScopes = { "api1" }
-    }
-};
-
-IEnumerable<IdentityResource> YourIdentityResources = new List<IdentityResource>
-{
-    new IdentityResources.OpenId(),
-    new IdentityResources.Profile(),
-};
-
-// Добавляем IdentityServer с PublicOrigin (ВАЖНО для корректных redirect URL)
-builder.Services.AddIdentityServer(options =>
-{
-})
-    .AddDeveloperSigningCredential() // В реальной среде замените на постоянный ключ
-    .AddInMemoryApiScopes(YourApiScopes)
-    .AddInMemoryClients(YourClients)
-    .AddInMemoryIdentityResources(YourIdentityResources)
-    .AddAspNetIdentity<User>();
-
-builder.Services.AddAuthorization();
-builder.Services.AddHttpContextAccessor();
-
+// Фильтры и контроллеры
 builder.Services.AddControllers(options =>
 {
     options.Filters.Add<ValidateModelAttribute>();
 });
 
-// --- Конфигурация Forwarded Headers для работы за nginx ---
+// Forwarded headers (для nginx)
 builder.Services.Configure<ForwardedHeadersOptions>(options =>
 {
     options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
-
-    // Очищаем KnownNetworks и KnownProxies чтобы принимать заголовки от любого прокси (только если доверяете сети!)
     options.KnownNetworks.Clear();
     options.KnownProxies.Clear();
 });
 
 var app = builder.Build();
 
-app.UseForwardedHeaders(); // Middleware для чтения X-Forwarded-For и X-Forwarded-Proto
+app.UseForwardedHeaders();
 
-// Middleware: заголовки безопасности
 app.UseSecurityHeaders();
 app.UseMiddleware<RequestSanitizationMiddleware>();
 
-// Middleware: логгирование запросов
 app.UseSerilogRequestLogging();
 
-// Middleware: глобальная обработка исключений
 app.UseExceptionHandler(errorApp =>
 {
     errorApp.Run(async context =>
@@ -237,15 +227,9 @@ app.UseExceptionHandler(errorApp =>
         };
 
         if (statusCode == 500)
-        {
-            Log.Fatal("Критическая ошибка: {Message} | Path: {Path} | Exception: {Exception}",
-                exception.Message, context.Request.Path, exception);
-        }
+            Log.Fatal("Критическая ошибка: {Message} | Path: {Path} | Exception: {Exception}", exception.Message, context.Request.Path, exception);
         else
-        {
-            Log.Warning("Ошибка {StatusCode}: {Message} | Path: {Path}",
-                statusCode, exception.Message, context.Request.Path);
-        }
+            Log.Warning("Ошибка {StatusCode}: {Message} | Path: {Path}", statusCode, exception.Message, context.Request.Path);
 
         context.Response.StatusCode = statusCode;
         context.Response.ContentType = "application/problem+json";
@@ -253,7 +237,7 @@ app.UseExceptionHandler(errorApp =>
     });
 });
 
-// CSRF токен
+// CSRF
 app.Use(async (context, next) =>
 {
     var antiforgery = context.RequestServices.GetRequiredService<IAntiforgery>();
@@ -271,11 +255,12 @@ app.Use(async (context, next) =>
 
 app.UseCors("AllowFrontend");
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
 
-// Инициализация ролей и администратора
+// Миграция и создание ролей + администратора
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
