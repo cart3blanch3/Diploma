@@ -56,8 +56,8 @@ services:
       - identityserver
       - api
     volumes:
-      - /var/www/certbot:/var/www/certbot
-      - certbot-etc:/etc/letsencrypt
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+      - ./certbot/www:/var/www/certbot:rw
     restart: always
 
 volumes:
