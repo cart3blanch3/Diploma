@@ -39,7 +39,6 @@ export const favoriteService = {
     } else {
       await favoriteService.add(userId, productId);
       setFavorites([...currentFavorites, productId]);
-    }  
+    }
   }
-  
 };

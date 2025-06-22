@@ -43,7 +43,7 @@ export interface Order {
     country: string;
   };
   items: OrderItem[];
-  payment: PaymentInfoDto; // Добавлено для поддержки онлайн-оплаты
+  payment: PaymentInfoDto; 
 }
 
 export interface OrderItemDto {

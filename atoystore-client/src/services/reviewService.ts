@@ -2,7 +2,6 @@
 import api from "./api";
 import { ProductReview } from "../types/ProductReview";
 
-// Создание отзыва
 export const createReview = async (data: {
     productId: string;
     userId: string;
@@ -11,13 +10,12 @@ export const createReview = async (data: {
 }) => {
     const response = await api.post(`/productreviews`, {
         productId: data.productId,
-        userId: data.userId, // 👈 передаём userId
+        userId: data.userId, 
         rating: data.rating,
         comment: data.comment
     });
     return response.data as ProductReview;
 };
-
 
 // Обновление отзыва
 export const updateReview = async (reviewId: string, data: {

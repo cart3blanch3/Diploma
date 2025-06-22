@@ -5,7 +5,7 @@ export interface Product {
   price: number;
   category: string;
   quantity: number;
-  images: string[]; // ✅ изменено с { url: string }[] на string[]
+  images: string[]; 
   averageRating: number;
   reviewsCount: number;
 }
