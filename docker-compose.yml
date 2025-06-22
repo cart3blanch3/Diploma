@@ -57,7 +57,7 @@ services:
       - api
     volumes:
       - /var/www/certbot:/var/www/certbot
-      - /etc/letsencrypt:/etc/letsencrypt:ro
+      - certbot-etc:/etc/letsencrypt:ro
     restart: always
 
 volumes:
