@@ -62,3 +62,5 @@ services:
 
 volumes:
   postgres_data:
+  certbot-etc:
+  certbot-var:
