@@ -54,6 +54,8 @@ services:
     depends_on:
       - identityserver
       - api
+    volumes:
+      - /var/www/certbot:/var/www/certbot
     restart: always
 
 volumes:
