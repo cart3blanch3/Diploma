@@ -51,11 +51,13 @@ services:
     container_name: frontend
     ports:
       - "80:80"
+      - "443:443"
     depends_on:
       - identityserver
       - api
     volumes:
       - /var/www/certbot:/var/www/certbot
+      - /etc/letsencrypt:/etc/letsencrypt:ro
     restart: always
 
 volumes:
