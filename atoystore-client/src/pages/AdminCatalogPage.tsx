@@ -5,7 +5,7 @@ import "../styles/ProductCard.css";
 import { Product } from "../types/Product";
 import ProductModal from "../components/ProductModal";
 
-const BASE_URL = "https://83.222.22.162:8001"
+const BASE_URL = "https://atoystore.store"
 
 const AdminCatalogPage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);

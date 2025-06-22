@@ -88,7 +88,7 @@ const FavoritesPage: React.FC = () => {
                   onMouseMove={(e) => handleMouseMove(product.id, e, imagesLength)}
                 >
                   <img
-                    src={`https://83.222.22.162:8001${currentImage}`}
+                    src={`https://atoystore.store${currentImage}`}
                     alt={product.title}
                     className="product-image fade-in"
                   />
