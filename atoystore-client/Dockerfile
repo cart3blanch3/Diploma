@@ -10,10 +10,13 @@ RUN npm run build
 
 # Stage 2: Serve with Nginx
 FROM nginx:alpine
+
 COPY --from=builder /app/build /usr/share/nginx/html
 
-# Если есть nginx.conf, копируем:
+# Копируем nginx конфиг с поддержкой HTTP и HTTPS
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE 80
+# Открываем 80 и 443 порты
+EXPOSE 80 443
+
 CMD ["nginx", "-g", "daemon off;"]
