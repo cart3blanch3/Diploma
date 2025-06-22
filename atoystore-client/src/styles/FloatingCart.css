@@ -9,6 +9,9 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cart-count {
@@ -43,7 +46,6 @@
     font-size: 18px;
 }
 
-/* удаление (только конкретные кнопки удаления) */
 .cart-item-remove,
 .cart-item-qty button.remove {
     background: none;
@@ -53,7 +55,6 @@
     font-size: 16px;
 }
 
-/* ✅ Оформить заказ — как "в корзину" */
 .checkout-button {
     margin-top: 10px;
     width: 100%;
@@ -120,4 +121,67 @@
 
 .cart-item-qty button:hover {
     background-color: #a89072;
+}
+
+/* --- Адаптивность --- */
+
+@media (max-width: 480px) {
+    .floating-cart-icon {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px;
+        font-size: 18px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .cart-count {
+        top: 3px;
+        right: 3px;
+        padding: 1px 5px;
+        font-size: 10px;
+    }
+
+    .floating-cart-dropdown {
+        width: 90vw;
+        max-width: 320px;
+        bottom: 70px;
+        right: 5vw;
+        padding: 12px;
+        max-height: 300px;
+        font-size: 14px;
+    }
+
+    .cart-item {
+        font-size: 13px;
+        gap: 6px;
+        grid-template-columns: 1fr auto auto;
+    }
+
+    .cart-item-title {
+        font-size: 14px;
+    }
+
+    .cart-item-price {
+        font-size: 14px;
+    }
+
+    .cart-item-qty button {
+        padding: 3px 8px;
+        font-size: 14px;
+    }
+
+    .checkout-button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 320px) {
+    .floating-cart-dropdown {
+        width: 95vw;
+        right: 2.5vw;
+        padding: 10px;
+        max-height: 250px;
+    }
 }

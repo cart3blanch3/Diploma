@@ -11,12 +11,15 @@
     align-items: center;
     justify-content: center;
     z-index: 1000;
+    padding: 20px; /* добавим паддинг для небольших экранов */
+    box-sizing: border-box;
 }
 
 .modal {
     background: white;
-    padding: 40px;
+    padding: 40px 30px;
     width: 460px;
+    max-width: 100%;
     border-radius: 15px;
     text-align: center;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
@@ -25,6 +28,7 @@
     align-items: center;
     position: relative;
     font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
 }
 
 .modal h2 {
@@ -35,7 +39,7 @@
 }
 
 .modal input {
-    width: 95%;
+    width: 100%;
     padding: 14px;
     margin-bottom: 15px;
     border: 2px solid #cbbba4;
@@ -44,6 +48,7 @@
     outline: none;
     font-family: 'Open Sans', sans-serif;
     transition: border 0.2s;
+    box-sizing: border-box;
 }
 
 .modal input:focus {
@@ -63,6 +68,7 @@
     border-radius: 12px;
     transition: background 0.3s;
     font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
 }
 
 .modal button:hover {
@@ -194,4 +200,37 @@
     background-color: #ddd;
     color: #999;
     cursor: not-allowed;
+}
+
+/* Адаптивность */
+
+@media (max-width: 520px) {
+    .modal {
+        padding: 30px 20px;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    .modal h2 {
+        font-size: 22px;
+    }
+
+    .modal input,
+    .modal button {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .forgot-password,
+    .switch-modal,
+    .switch-text {
+        font-size: 14px;
+    }
+
+    .close-icon {
+        top: 12px;
+        right: 15px;
+        font-size: 20px;
+    }
 }

@@ -5,6 +5,7 @@
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
 }
 
 .orders-title {
@@ -25,6 +26,7 @@
   padding: 16px;
   background-color: #fafafa;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
 }
 
 .order-header {
@@ -33,6 +35,15 @@
   margin-bottom: 10px;
   font-size: 14px;
   color: #555;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.order-id {
+  font-weight: 600;
+  color: #555;
+  white-space: nowrap;
 }
 
 .order-status {
@@ -40,6 +51,7 @@
   border-radius: 8px;
   font-weight: bold;
   font-size: 13px;
+  white-space: nowrap;
 }
 
 .status-0 { background-color: #f0f0f0; color: #999; }
@@ -102,6 +114,7 @@
   font-size: 14px;
   border-radius: 8px;
   border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 .review-form-inline select {
@@ -157,6 +170,7 @@
   font-style: italic;
   margin-left: 4px;
 }
+
 .order-actions button.pay-button {
   background-color: #4caf50;
 }
@@ -183,13 +197,101 @@
     text-decoration: underline;
 }
 
-.order-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+/* --- Адаптивность --- */
+
+@media (max-width: 1024px) {
+  .orders-page {
+    padding: 15px;
+  }
+  .orders-title {
+    font-size: 24px;
+  }
+  .order-card {
+    padding: 14px;
+  }
+  .order-items li {
+    font-size: 15px;
+  }
+  .order-items button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  .order-actions button {
+    padding: 7px 14px;
+    font-size: 13px;
+  }
 }
 
-.order-id {
-  font-weight: 600;
-  color: #555;
+@media (max-width: 768px) {
+  .orders-page {
+    margin: 20px 15px;
+    padding: 15px;
+  }
+  .orders-title {
+    font-size: 22px;
+    text-align: center;
+  }
+  .order-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .order-id {
+    white-space: normal;
+  }
+  .order-status {
+    white-space: normal;
+  }
+  .order-items li {
+    font-size: 14px;
+  }
+  .order-items button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  .review-form-inline textarea {
+    font-size: 13px;
+  }
+  .review-form-inline select {
+    font-size: 13px;
+  }
+  .review-form-inline button {
+    padding: 7px 14px;
+    font-size: 13px;
+  }
+  .order-actions {
+    align-items: stretch;
+  }
+  .order-actions button {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .orders-page {
+    margin: 15px 10px;
+    padding: 10px;
+  }
+  .orders-title {
+    font-size: 20px;
+  }
+  .order-items li {
+    font-size: 13px;
+  }
+  .order-actions button {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+  .review-form-inline textarea {
+    font-size: 12px;
+  }
+  .review-form-inline select {
+    font-size: 12px;
+  }
+  .review-form-inline button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
 }
