@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import api from "../services/api";
 import ProductCard from "../components/ProductCard";
 import "../styles/Catalog.css";
@@ -15,6 +15,15 @@ interface Product {
   reviewsCount: number;
 }
 
+// Простая debounce-функция
+function debounce<T extends (...args: any[]) => void>(func: T, delay: number): T {
+  let timeout: ReturnType<typeof setTimeout>;
+  return function (this: any, ...args: any[]) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), delay);
+  } as T;
+}
+
 const CatalogPage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [allCategories, setAllCategories] = useState<string[]>([]);
@@ -26,7 +35,7 @@ const CatalogPage: React.FC = () => {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
 
   const loadCategories = async () => {
@@ -71,16 +80,18 @@ const CatalogPage: React.FC = () => {
     }
   };
 
+  // Дебаунс-функция
+  const debouncedFetch = useMemo(() => debounce(fetchProducts, 300), [
+    query, category, minQuantity, minPrice, maxPrice, page,
+  ]);
+
   useEffect(() => {
     loadCategories();
   }, []);
 
   useEffect(() => {
-    fetchProducts();
+    debouncedFetch();
   }, [query, category, minQuantity, minPrice, maxPrice, page]);
-
-  if (loading) return <div>Загрузка товаров...</div>;
-  if (hasError) return <div>Загрузка товаров...</div>;
 
   return (
     <div className="catalog-page">
@@ -130,27 +141,32 @@ const CatalogPage: React.FC = () => {
           placeholder="Мин. цена"
           value={minPrice ?? ""}
           onChange={(e) => {
-            const val = e.target.value;
             setPage(1);
-            setMinPrice(val ? parseFloat(val) : null);
+            setMinPrice(e.target.value ? parseFloat(e.target.value) : null);
           }}
         />
+
         <input
           type="number"
           placeholder="Макс. цена"
           value={maxPrice ?? ""}
           onChange={(e) => {
-            const val = e.target.value;
             setPage(1);
-            setMaxPrice(val ? parseFloat(val) : null);
+            setMaxPrice(e.target.value ? parseFloat(e.target.value) : null);
           }}
         />
       </div>
 
-      <div className="product-grid">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+      {hasError && <div className="error-message">Ошибка загрузки товаров. Попробуйте позже.</div>}
+
+      <div className="product-grid-wrapper">
+        {loading && <div className="overlay-loading">Загрузка...</div>}
+
+        <div className="product-grid">
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
       </div>
 
       <div className="pagination">
