@@ -7,7 +7,7 @@ import { favoriteService } from "../services/favoriteService";
 import StarRating from "./StarRating";
 import "../styles/ProductCard.css";
 
-const API_BASE_URL = "https://83.222.22.162:8001"
+const API_BASE_URL = "https://atoystore.store"
 
 interface Props {
   product: Product;
