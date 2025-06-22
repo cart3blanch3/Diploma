@@ -18,6 +18,8 @@ using System.Security;
 using System.Security.Cryptography;
 using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.HttpOverrides;
+using IdentityServer4.Models;  // Для IdentityServer4
+using System.Collections.Generic;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -135,12 +137,34 @@ var key = new RsaSecurityKey(rsa)
 };
 var signingCredentials = new SigningCredentials(key, SecurityAlgorithms.RsaSha256);
 
+// Объявляем ApiScopes, Clients и IdentityResources для IdentityServer4
+IEnumerable<ApiScope> YourApiScopes = new List<ApiScope>
+{
+    new ApiScope("api1", "My API")
+};
+
+IEnumerable<Client> YourClients = new List<Client>
+{
+    new Client
+    {
+        ClientId = "client",
+        AllowedGrantTypes = GrantTypes.ClientCredentials,
+        ClientSecrets = { new Secret("secret".Sha256()) },
+        AllowedScopes = { "api1" }
+    }
+};
+
+IEnumerable<IdentityResource> YourIdentityResources = new List<IdentityResource>
+{
+    new IdentityResources.OpenId(),
+    new IdentityResources.Profile(),
+};
+
 // Добавляем IdentityServer с PublicOrigin (ВАЖНО для корректных redirect URL)
 builder.Services.AddIdentityServer(options =>
 {
-    options.PublicOrigin = "https://atoystore.ru"; // здесь укажите ваш публичный HTTPS URL
 })
-    .AddDeveloperSigningCredential() // заменить на вашу настройку ключей
+    .AddDeveloperSigningCredential() // В реальной среде замените на постоянный ключ
     .AddInMemoryApiScopes(YourApiScopes)
     .AddInMemoryClients(YourClients)
     .AddInMemoryIdentityResources(YourIdentityResources)
@@ -166,7 +190,7 @@ builder.Services.Configure<ForwardedHeadersOptions>(options =>
 
 var app = builder.Build();
 
-app.UseForwardedHeaders(); // добавляем middleware для чтения X-Forwarded-For и X-Forwarded-Proto
+app.UseForwardedHeaders(); // Middleware для чтения X-Forwarded-For и X-Forwarded-Proto
 
 // Middleware: заголовки безопасности
 app.UseSecurityHeaders();
