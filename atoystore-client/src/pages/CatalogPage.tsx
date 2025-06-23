@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import api from "../services/api";
 import ProductCard from "../components/ProductCard";
 import "../styles/Catalog.css";
@@ -15,15 +15,6 @@ interface Product {
   reviewsCount: number;
 }
 
-// Простая debounce-функция
-function debounce<T extends (...args: any[]) => void>(func: T, delay: number): T {
-  let timeout: ReturnType<typeof setTimeout>;
-  return function (this: any, ...args: any[]) {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => func.apply(this, args), delay);
-  } as T;
-}
-
 const CatalogPage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [allCategories, setAllCategories] = useState<string[]>([]);
@@ -37,23 +28,6 @@ const CatalogPage: React.FC = () => {
 
   const [loading, setLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
-
-  const loadCategories = async () => {
-    try {
-      const res = await api.get<{ items: Product[] }>("/products/filter", {
-        params: {
-          pageNumber: 1,
-          pageSize: 9999,
-        },
-      });
-
-      const unique = new Set(res.data.items.map((p) => p.category));
-      setAllCategories(Array.from(unique));
-    } catch (error) {
-      setHasError(true);
-      console.error("Ошибка загрузки категорий:", error);
-    }
-  };
 
   const fetchProducts = async () => {
     setLoading(true);
@@ -69,9 +43,9 @@ const CatalogPage: React.FC = () => {
         pageSize: 12,
       };
 
-      const response = await api.get<{ items: Product[]; totalPages: number }>("/products/filter", { params });
-      setProducts(response.data.items);
-      setTotalPages(response.data.totalPages);
+      const res = await api.get<{ items: Product[]; totalPages: number }>("/products/filter", { params });
+      setProducts(res.data.items || []);
+      setTotalPages(res.data.totalPages || 1);
     } catch (error) {
       setHasError(true);
       console.error("Ошибка загрузки товаров:", error);
@@ -80,17 +54,25 @@ const CatalogPage: React.FC = () => {
     }
   };
 
-  // Дебаунс-функция
-  const debouncedFetch = useMemo(() => debounce(fetchProducts, 300), [
-    query, category, minQuantity, minPrice, maxPrice, page,
-  ]);
+  const loadCategories = async () => {
+    try {
+      const res = await api.get<{ items: Product[] }>("/products/filter", {
+        params: { pageNumber: 1, pageSize: 9999 },
+      });
+      const unique = new Set(res.data.items.map((p) => p.category));
+      setAllCategories(Array.from(unique));
+    } catch (error) {
+      setHasError(true);
+      console.error("Ошибка загрузки категорий:", error);
+    }
+  };
 
   useEffect(() => {
     loadCategories();
   }, []);
 
   useEffect(() => {
-    debouncedFetch();
+    fetchProducts();
   }, [query, category, minQuantity, minPrice, maxPrice, page]);
 
   return (
